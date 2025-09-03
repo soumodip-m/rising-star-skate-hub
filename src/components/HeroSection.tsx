@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Trophy, Users, Calendar } from "lucide-react";
-import heroImage from "@/assets/hero-skating.jpg";
+import Logo from "@/components/Logo";
+import heroImage from "@/assets/hero-skating-rsa.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -18,6 +19,9 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-float">
+          <div className="mb-6">
+            <Logo size="xl" className="mx-auto mb-4" />
+          </div>
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
             Rising Star Academy
           </h1>
@@ -51,7 +55,7 @@ const HeroSection = () => {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="hero" size="lg" className="animate-glow">
+          <Button variant="sports" size="lg" className="animate-glow">
             Start Your Journey
             <ArrowRight className="ml-2" />
           </Button>

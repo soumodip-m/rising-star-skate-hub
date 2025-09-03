@@ -77,7 +77,8 @@ export default {
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-accent': 'var(--gradient-accent)',
-				'gradient-hero': 'var(--gradient-hero)'
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-sports': 'var(--gradient-sports)'
 			},
 			boxShadow: {
 				'glow': 'var(--shadow-glow)',

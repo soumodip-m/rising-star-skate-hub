@@ -9,27 +9,27 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 98%;
-    --foreground: 220 15% 10%;
+    --foreground: 220 20% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 10%;
+    --card-foreground: 220 20% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 10%;
+    --popover-foreground: 220 20% 8%;
 
-    --primary: 215 80% 50%;
+    --primary: 220 91% 48%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 215 85% 65%;
+    --primary-glow: 220 85% 65%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 220 15% 10%;
+    --secondary: 210 35% 94%;
+    --secondary-foreground: 220 20% 8%;
 
-    --muted: 210 40% 96%;
+    --muted: 210 35% 94%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 25 95% 53%;
+    --accent: 0 84% 55%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 25 100% 68%;
+    --accent-glow: 0 90% 68%;
 
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
@@ -39,12 +39,13 @@ All colors MUST be HSL.
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 215 80% 50%;
+    --ring: 220 91% 48%;
 
     /* Custom design tokens */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-sports: linear-gradient(45deg, hsl(220 91% 48%) 0%, hsl(0 84% 55%) 50%, hsl(220 91% 48%) 100%);
     --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
     --shadow-accent-glow: 0 0 25px hsl(var(--accent) / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
