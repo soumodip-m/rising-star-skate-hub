@@ -29,7 +29,7 @@ const Header = () => {
             <Logo size="md" />
             <div className="hidden sm:block">
               <h1 className="font-bold text-foreground text-left text-xs">RSA-Rising Stars Academy</h1>
-              <p className="text-xs text-muted-foreground">Premier Sports Academy</p>
+              <p className="text-xs text-muted-foreground">Premier Sports Academy </p>
             </div>
           </div>
 
