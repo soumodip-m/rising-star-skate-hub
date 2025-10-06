@@ -2,17 +2,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Trophy, Users, Calendar } from "lucide-react";
 import Logo from "@/components/Logo";
 import heroImage from "@/assets/hero-skating-rsa.jpg";
-
 const HeroSection = () => {
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Kids roller skating at Rising Star Academy"
-          className="w-full h-full object-cover"
-        />
+        <img src={heroImage} alt="Kids roller skating at Rising Star Academy" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/80"></div>
       </div>
       
@@ -22,9 +16,7 @@ const HeroSection = () => {
           <div className="mb-6">
             <Logo size="xl" className="mx-auto mb-4" />
           </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
-            Rising Star Academy
-          </h1>
+          <h1 className="text-5xl font-bold text-primary-foreground mb-6 md:text-6xl">RSA-Rising Stars Academy</h1>
           <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 font-medium">
             Premier Roller Skating Academy • Ahmedabad, Gujarat
           </p>
@@ -64,8 +56,6 @@ const HeroSection = () => {
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
