@@ -51,7 +51,7 @@ const HeroSection = () => {
             Start Your Journey
             <ArrowRight className="ml-2" />
           </Button>
-          <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+          <Button variant="sports" size="lg" className="animate-glow">
             View Programs
           </Button>
         </div>
