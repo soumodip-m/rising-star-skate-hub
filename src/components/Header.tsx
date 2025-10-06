@@ -1,41 +1,43 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Mail } from "lucide-react";
 import Logo from "@/components/Logo";
-
 const Header = () => {
-  const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Programs", href: "#programs" },
-    { name: "Achievements", href: "#achievements" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact", href: "#contact" }
-  ];
-
-  return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+  const navItems = [{
+    name: "Home",
+    href: "#home"
+  }, {
+    name: "About",
+    href: "#about"
+  }, {
+    name: "Programs",
+    href: "#programs"
+  }, {
+    name: "Achievements",
+    href: "#achievements"
+  }, {
+    name: "Blog",
+    href: "#blog"
+  }, {
+    name: "Contact",
+    href: "#contact"
+  }];
+  return <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <Logo size="md" />
             <div className="hidden sm:block">
-              <h1 className="font-bold text-foreground">RSA-Rising Stars Academy</h1>
-              <p className="text-xs text-muted-foreground">RSA4U - Roller Skating Excellence</p>
+              <h1 className="font-bold text-foreground text-left text-xs">RSA-Rising Stars Academy</h1>
+              <p className="text-xs text-muted-foreground">Premier Sports Academy</p>
             </div>
           </div>
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-foreground hover:text-primary transition-colors font-medium"
-              >
+            {navItems.map(item => <a key={item.name} href={item.href} className="text-foreground hover:text-primary transition-colors font-medium">
                 {item.name}
-              </a>
-            ))}
+              </a>)}
           </nav>
 
           {/* Contact Info & CTA */}
@@ -55,8 +57,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-    </header>
-  );
+    </header>;
 };
-
 export default Header;
