@@ -105,7 +105,7 @@ const AchievementsSection = () => {
             Your Success Story Starts Here
           </h3>
           <p className="text-lg text-accent-foreground/90 mb-6 max-w-2xl mx-auto">
-            Join the legacy of champions at Rising Star Academy. With our proven training methods 
+            Join the legacy of champions at RSA-Rising Stars Academy. With our proven training methods 
             and experienced coaching staff, your child can achieve greatness in roller skating.
           </p>
           <div className="flex justify-center">

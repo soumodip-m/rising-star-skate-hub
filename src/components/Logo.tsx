@@ -1,4 +1,4 @@
-import rsaLogo from "@/assets/rsa-logo.webp";
+import rsaLogo from "@/assets/rsa-logo.jpg";
 
 interface LogoProps {
   className?: string;
@@ -16,7 +16,7 @@ const Logo = ({ className = "", size = "md" }: LogoProps) => {
   return (
     <img 
       src={rsaLogo}
-      alt="Rising Star Academy Logo"
+      alt="RSA-Rising Stars Academy Logo"
       className={`${sizeClasses[size]} ${className}`}
     />
   );

@@ -8,6 +8,7 @@ const Header = () => {
     { name: "About", href: "#about" },
     { name: "Programs", href: "#programs" },
     { name: "Achievements", href: "#achievements" },
+    { name: "Blog", href: "#blog" },
     { name: "Contact", href: "#contact" }
   ];
 
@@ -19,7 +20,7 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <Logo size="md" />
             <div className="hidden sm:block">
-              <h1 className="font-bold text-foreground">Rising Star Academy</h1>
+              <h1 className="font-bold text-foreground">RSA-Rising Stars Academy</h1>
               <p className="text-xs text-muted-foreground">RSA4U - Roller Skating Excellence</p>
             </div>
           </div>

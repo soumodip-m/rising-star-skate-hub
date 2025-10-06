@@ -30,10 +30,10 @@ const AboutSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            About Rising Star Academy
+            About RSA-Rising Stars Academy
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            For over two decades, Rising Star Academy has been Ahmedabad's premier destination 
+            For over two decades, RSA-Rising Stars Academy has been Ahmedabad's premier destination 
             for roller skating excellence. We specialize in training young athletes in both 
             inline and quad skating, building champions who shine at every level.
           </p>

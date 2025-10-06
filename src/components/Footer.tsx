@@ -1,4 +1,4 @@
-import { Heart, MapPin, Phone, Mail } from "lucide-react";
+import { Heart, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,11 +7,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Academy Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">Rising Star Academy</h3>
+            <h3 className="text-2xl font-bold mb-4">RSA-Rising Stars Academy</h3>
             <p className="text-primary-foreground/80 mb-4">
               Nurturing roller skating champions for over 20 years in Ahmedabad, Gujarat.
             </p>
-            <div className="space-y-2 text-sm">
+            <div className="space-y-2 text-sm mb-4">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />
                 <span>Ahmedabad, Gujarat, India</span>
@@ -24,6 +24,17 @@ const Footer = () => {
                 <Mail className="w-4 h-4" />
                 <span>info@risingsportsacademy.com</span>
               </div>
+            </div>
+            <div className="flex gap-4">
+              <a href="https://www.facebook.com/RSA4U/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="https://www.instagram.com/rsa4u" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://www.youtube.com/@rsa4u" target="_blank" rel="noopener noreferrer" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+                <Youtube className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
@@ -60,7 +71,7 @@ const Footer = () => {
             Made with <Heart className="w-4 h-4 text-accent" /> for the skating community
           </p>
           <p className="text-sm text-primary-foreground/60 mt-2">
-            © 2024 Rising Star Academy. All rights reserved.
+            © 2024 RSA-Rising Stars Academy. All rights reserved.
           </p>
         </div>
       </div>
