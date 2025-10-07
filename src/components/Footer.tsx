@@ -1,8 +1,6 @@
 import { Heart, MapPin, Phone, Mail, Facebook, Instagram, Youtube } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="bg-primary text-primary-foreground py-12">
+  return <footer className="bg-primary text-primary-foreground py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Academy Info */}
@@ -56,7 +54,7 @@ const Footer = () => {
             <div className="text-primary-foreground/80 space-y-2">
               <div>
                 <div className="font-medium">Monday - Friday</div>
-                <div className="text-sm">5:00 PM - 8:00 PM</div>
+                <div className="text-sm">4:00 PM - 9:00 PM</div>
               </div>
               <div>
                 <div className="font-medium">Weekend Sessions</div>
@@ -75,8 +73,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
