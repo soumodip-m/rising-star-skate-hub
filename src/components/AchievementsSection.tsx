@@ -1,5 +1,9 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Medal, Award, Target } from "lucide-react";
+import teamTrophiesImg from "@/assets/team-trophies.jpg";
+import teamChampionsImg from "@/assets/team-champions.jpg";
+import rsaTeamFlagImg from "@/assets/rsa-team-flag.jpg";
+import flagBearersImg from "@/assets/flag-bearers.jpg";
 
 const AchievementsSection = () => {
   const achievements = [
@@ -96,6 +100,43 @@ const AchievementsSection = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+
+        {/* Gallery of Achievement Photos */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-center text-foreground mb-12">
+            Our Champions Gallery
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <img 
+                src={teamChampionsImg} 
+                alt="RSA team with medals and trophies at Rising Stars Academy championship event" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <img 
+                src={teamTrophiesImg} 
+                alt="Championship winning team with coach displaying trophies and medals" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <img 
+                src={rsaTeamFlagImg} 
+                alt="RSA team members with academy flag at competitive event" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <img 
+                src={flagBearersImg} 
+                alt="Young skaters representing India with national flag at roller skating championship" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
 

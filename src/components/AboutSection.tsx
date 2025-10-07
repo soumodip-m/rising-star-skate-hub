@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Medal, Target, Heart, Star } from "lucide-react";
+import teamGujaratImg from "@/assets/team-gujarat.jpg";
+import racerActionImg from "@/assets/racer-action.jpg";
 
 const AboutSection = () => {
   const features = [
@@ -49,6 +51,24 @@ const AboutSection = () => {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Team Images Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <img 
+              src={teamGujaratImg} 
+              alt="RSA team representing Gujarat at national championships" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
+            <img 
+              src={racerActionImg} 
+              alt="Young skaters competing in high-speed roller skating race" 
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
 
         <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-center">

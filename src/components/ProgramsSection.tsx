@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Clock, Users, Zap, Award } from "lucide-react";
+import raceStartImg from "@/assets/race-start.jpg";
 
 const ProgramsSection = () => {
   const programs = [
@@ -40,10 +41,17 @@ const ProgramsSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Training Programs
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             We offer three specialized training batches every weekday evening, 
             designed to cater to different skill levels and age groups.
           </p>
+          <div className="rounded-2xl overflow-hidden shadow-xl max-w-4xl mx-auto mb-8">
+            <img 
+              src={raceStartImg} 
+              alt="Young skaters at the starting line of competitive roller skating race" 
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
