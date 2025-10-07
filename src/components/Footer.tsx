@@ -68,9 +68,7 @@ const Footer = () => {
           <p className="text-primary-foreground/80 flex items-center justify-center gap-2">
             Made with <Heart className="w-4 h-4 text-accent" /> for the skating community
           </p>
-          <p className="text-sm text-primary-foreground/60 mt-2">
-            © 2024 RSA-Rising Stars Academy. All rights reserved.
-          </p>
+          <p className="text-sm text-primary-foreground/60 mt-2">© 2025 RSA-Rising Stars Academy. All rights reserved.</p>
         </div>
       </div>
     </footer>;
