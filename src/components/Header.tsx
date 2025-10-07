@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Mail } from "lucide-react";
 import Logo from "@/components/Logo";
+import LanguageSelector from "@/components/LanguageSelector";
 const Header = () => {
   const navItems = [{
     name: "Home",
@@ -48,6 +49,7 @@ const Header = () => {
                 <span className="text-muted-foreground">+91 98242 34663</span>
               </div>
             </div>
+            <LanguageSelector />
             <Button variant="sports" size="sm" className="hidden sm:block">
               Join Now
             </Button>
