@@ -28,7 +28,7 @@ const ContactSection = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Rising Star Academy<br />
+                  Rising Stars Academy<br />
                   Ahmedabad, Gujarat<br />
                   India
                 </p>
@@ -45,8 +45,8 @@ const ContactSection = () => {
               <CardContent>
                 <div className="space-y-2 text-muted-foreground">
                   <div className="flex justify-between">
-                    <span>Monday - Friday:</span>
-                    <span>5:00 PM - 8:00 PM</span>
+                    <span>Monday - Saturday:</span>
+                    <span>4:00 PM - 9:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Weekends:</span>
@@ -67,11 +67,11 @@ const ContactSection = () => {
                 <div className="space-y-2 text-muted-foreground">
                   <div className="flex items-center gap-2">
                     <Phone className="w-4 h-4" />
-                    <span>+91 82005 43153</span>
+                    <span>+91 98242 34663</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <Mail className="w-4 h-4" />
-                    <span>info@risingsportsacademy.com</span>
+                    <span>rsaindia@gmail.com</span>
                   </div>
                 </div>
               </CardContent>
@@ -148,9 +148,9 @@ const ContactSection = () => {
                   Preferred Batch
                 </label>
                 <select className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
-                  <option>Cadets & Junior Batch (5:00 PM - 6:00 PM)</option>
-                  <option>Pre-Advance Batch (6:00 PM - 7:00 PM)</option>
-                  <option>Advance Batch (7:00 PM - 8:00 PM)</option>
+                  <option>Cadets & Junior Batch (4:00 PM - 5:30 PM)</option>
+                  <option>Pre-Advance Batch (5:30 PM - 8:00 PM)</option>
+                  <option>Advance Batch (6:00 PM - 9:00 PM)</option>
                 </select>
               </div>
 
