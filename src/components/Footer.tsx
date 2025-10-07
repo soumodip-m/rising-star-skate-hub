@@ -58,7 +58,7 @@ const Footer = () => {
               </div>
               <div>
                 <div className="font-medium">Weekend Sessions</div>
-                <div className="text-sm">Special Programs</div>
+                <div className="text-sm">Special Programs/Road Sessions</div>
               </div>
             </div>
           </div>
