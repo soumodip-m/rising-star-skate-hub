@@ -120,4 +120,37 @@ All colors MUST be HSL.
   #home {
     cursor: url('/skate-cursor.png') 16 16, auto;
   }
+
+  /* Marquee Animation */
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .marquee-content {
+    display: flex;
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .marquee-content:hover {
+    animation-play-state: paused;
+  }
 }
