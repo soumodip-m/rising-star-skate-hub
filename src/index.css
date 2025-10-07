@@ -116,4 +116,8 @@ All colors MUST be HSL.
   body {
     @apply bg-background text-foreground;
   }
+
+  #home {
+    cursor: url('/skate-cursor.png') 16 16, auto;
+  }
 }
