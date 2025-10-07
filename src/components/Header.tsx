@@ -45,7 +45,7 @@ const Header = () => {
             <div className="hidden lg:flex items-center gap-4 text-sm">
               <div className="flex items-center gap-1">
                 <Phone className="w-4 h-4 text-primary" />
-                <span className="text-muted-foreground">+91 82005 43153</span>
+                <span className="text-muted-foreground">+91 98242 34663</span>
               </div>
             </div>
             <Button variant="sports" size="sm" className="hidden sm:block">
