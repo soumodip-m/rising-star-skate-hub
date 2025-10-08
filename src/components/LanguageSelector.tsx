@@ -17,19 +17,22 @@ declare global {
 
 const LanguageSelector = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");
+  const [translateLoaded, setTranslateLoaded] = useState(false);
 
   useEffect(() => {
-    // Initialize Google Translate
+    // Add Google Translate script if not already present
     const addGoogleTranslateScript = () => {
       if (!document.getElementById("google-translate-script")) {
         const script = document.createElement("script");
         script.id = "google-translate-script";
-        script.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        script.src =
+          "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
         script.async = true;
         document.body.appendChild(script);
       }
     };
 
+    // Google Translate callback
     window.googleTranslateElementInit = () => {
       new window.google.translate.TranslateElement(
         {
@@ -40,6 +43,7 @@ const LanguageSelector = () => {
         },
         "google_translate_element"
       );
+      setTranslateLoaded(true);
     };
 
     addGoogleTranslateScript();
@@ -47,26 +51,33 @@ const LanguageSelector = () => {
 
   const handleLanguageChange = (value: string) => {
     setSelectedLanguage(value);
-    
-    // Trigger Google Translate
-    const googleTranslateSelect = document.querySelector(
-      ".goog-te-combo"
-    ) as HTMLSelectElement;
-    
-    if (googleTranslateSelect) {
-      googleTranslateSelect.value = value;
-      googleTranslateSelect.dispatchEvent(new Event("change"));
-    }
+
+    // Wait for Google Translate dropdown to be ready
+    const tryTranslate = () => {
+      const googleTranslateSelect = document.querySelector(
+        ".goog-te-combo"
+      ) as HTMLSelectElement;
+
+      if (googleTranslateSelect) {
+        googleTranslateSelect.value = value;
+        googleTranslateSelect.dispatchEvent(new Event("change"));
+      } else {
+        // Retry until it exists (for async load)
+        setTimeout(tryTranslate, 500);
+      }
+    };
+
+    if (translateLoaded) tryTranslate();
   };
 
   return (
     <div className="flex items-center gap-2">
       {/* Hidden Google Translate Element */}
       <div id="google_translate_element" className="hidden"></div>
-      
+
       {/* Custom Language Selector */}
       <Select value={selectedLanguage} onValueChange={handleLanguageChange}>
-        <SelectTrigger className="w-[140px] bg-background border-border">
+        <SelectTrigger className="w-[160px] bg-background border-border">
           <Globe className="w-4 h-4 mr-2" />
           <SelectValue placeholder="Language" />
         </SelectTrigger>
