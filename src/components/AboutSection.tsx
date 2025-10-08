@@ -3,33 +3,25 @@ import { Medal, Target, Heart, Star, Eye } from "lucide-react";
 import teamGujaratImg from "@/assets/team-gujarat.jpg";
 import racerActionImg from "@/assets/racer-action.jpg";
 import ImageLightbox from "@/components/ImageLightbox";
-
 const AboutSection = () => {
-  const features = [
-    {
-      icon: Medal,
-      title: "20+ Years Legacy",
-      description: "Established excellence in roller skating training with a proven track record of success"
-    },
-    {
-      icon: Target,
-      title: "Professional Training",
-      description: "Expert coaching for both inline and quad skating with structured programs"
-    },
-    {
-      icon: Heart,
-      title: "Nurturing Environment",
-      description: "Safe, supportive atmosphere where young skaters develop confidence and skills"
-    },
-    {
-      icon: Star,
-      title: "National Champions",
-      description: "Our students regularly compete and win at state and national level championships"
-    }
-  ];
-
-  return (
-    <section className="py-20 bg-background">
+  const features = [{
+    icon: Medal,
+    title: "20+ Years Legacy",
+    description: "Established excellence in roller skating training with a proven track record of success"
+  }, {
+    icon: Target,
+    title: "Professional Training",
+    description: "Expert coaching for both inline and quad skating with structured programs"
+  }, {
+    icon: Heart,
+    title: "Nurturing Environment",
+    description: "Safe, supportive atmosphere where young skaters develop confidence and skills"
+  }, {
+    icon: Star,
+    title: "National Champions",
+    description: "Our students regularly compete and win at state and national level championships"
+  }];
+  return <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -44,7 +36,7 @@ const AboutSection = () => {
 
         {/* Vision and Mission */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+          <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20 bg-orange-200">
             <CardContent className="pt-6">
               <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
                 <Eye className="w-6 h-6 text-primary" />
@@ -69,8 +61,7 @@ const AboutSection = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {features.map((feature, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
+          {features.map((feature, index) => <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
               <CardContent className="pt-6">
                 <div className="relative">
                   <feature.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
@@ -83,25 +74,16 @@ const AboutSection = () => {
                 <h3 className="text-xl font-semibold mb-3 text-card-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Team Images Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 h-64 md:h-80">
-            <ImageLightbox
-              src={teamGujaratImg}
-              alt="RSA team representing Gujarat at national championships"
-              className="h-full"
-            />
+            <ImageLightbox src={teamGujaratImg} alt="RSA team representing Gujarat at national championships" className="h-full" />
           </div>
           <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 h-64 md:h-80">
-            <ImageLightbox
-              src={racerActionImg}
-              alt="Young skaters competing in high-speed roller skating race"
-              className="h-full"
-            />
+            <ImageLightbox src={racerActionImg} alt="Young skaters competing in high-speed roller skating race" className="h-full" />
           </div>
         </div>
 
@@ -134,8 +116,6 @@ const AboutSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AboutSection;
