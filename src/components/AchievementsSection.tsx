@@ -2,8 +2,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Medal, Award, Target } from "lucide-react";
 import teamTrophiesImg from "@/assets/team-trophies.jpg";
 import teamChampionsImg from "@/assets/team-champions.jpg";
-import rsaTeamFlagImg from "@/assets/rsa-team-flag.jpg";
+import teamYellowImg from "@/assets/team-yellow.jpg";
 import flagBearersImg from "@/assets/flag-bearers.jpg";
+import teamSkatersImg from "@/assets/team-skaters.jpg";
 
 const AchievementsSection = () => {
   const achievements = [
@@ -108,7 +109,7 @@ const AchievementsSection = () => {
           <h3 className="text-3xl font-bold text-center text-foreground mb-12">
             Our Champions Gallery
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <img 
                 src={teamChampionsImg} 
@@ -125,8 +126,8 @@ const AchievementsSection = () => {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
               <img 
-                src={rsaTeamFlagImg} 
-                alt="RSA team members with academy flag at competitive event" 
+                src={teamYellowImg} 
+                alt="RSA yellow team with trophies and medals at championship" 
                 className="w-full h-full object-cover"
               />
             </div>
@@ -137,20 +138,27 @@ const AchievementsSection = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+            <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+              <img 
+                src={teamSkatersImg} 
+                alt="RSA team skaters celebrating on track with arms raised" 
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
 
         {/* Call to Action */}
-        <div className="bg-gradient-accent rounded-2xl p-8 md:p-12 text-center">
-          <h3 className="text-3xl md:text-4xl font-bold text-accent-foreground mb-4">
+        <div className="bg-gradient-sports rounded-2xl p-8 md:p-12 text-center">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Your Success Story Starts Here
           </h3>
-          <p className="text-lg text-accent-foreground/90 mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
             Join the legacy of champions at RSA-Rising Stars Academy. With our proven training methods 
             and experienced coaching staff, your child can achieve greatness in roller skating.
           </p>
           <div className="flex justify-center">
-            <Trophy className="w-16 h-16 text-accent-foreground/60 animate-float" />
+            <Trophy className="w-16 h-16 text-white/60 animate-float" />
           </div>
         </div>
       </div>

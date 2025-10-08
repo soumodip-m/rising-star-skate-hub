@@ -154,6 +154,32 @@ All colors MUST be HSL.
     animation-play-state: paused;
   }
 
+  /* Testimonials Scroll Animation */
+  .testimonials-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .testimonials-scroll {
+    display: flex;
+    animation: scroll-left 45s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-33.333%);
+    }
+  }
+
+  .testimonials-scroll:hover {
+    animation-play-state: paused;
+  }
+
   /* Hide Google Translate toolbar and branding */
   .goog-te-banner-frame.skiptranslate {
     display: none !important;
@@ -168,6 +194,10 @@ All colors MUST be HSL.
   }
   
   .goog-te-gadget .goog-te-combo {
+    display: none !important;
+  }
+
+  #google_translate_element {
     display: none !important;
   }
 }

@@ -10,7 +10,7 @@ const ProgramsSection = () => {
     features: ["Basic skating techniques", "Fun and games approach", "Safety first training", "Building confidence"],
     time: "5:00 PM - 6:00 PM",
     level: "Beginner",
-    color: "bg-success"
+    gradient: "bg-gradient-sports"
   }, {
     icon: Zap,
     title: "Pre-Advance Batch",
@@ -18,7 +18,7 @@ const ProgramsSection = () => {
     features: ["Advanced techniques", "Speed development", "Agility training", "Competition prep"],
     time: "6:00 PM - 7:00 PM",
     level: "Intermediate",
-    color: "bg-primary"
+    gradient: "bg-gradient-sports"
   }, {
     icon: Award,
     title: "Advance Batch",
@@ -26,7 +26,7 @@ const ProgramsSection = () => {
     features: ["Professional coaching", "Competition strategies", "Performance optimization", "Tournament preparation"],
     time: "7:00 PM - 8:00 PM",
     level: "Advanced",
-    color: "bg-accent"
+    gradient: "bg-gradient-sports"
   }];
   return <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,7 +45,7 @@ const ProgramsSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
           {programs.map((program, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
-              <CardHeader className={`${program.color} text-white`}>
+              <CardHeader className={`${program.gradient} text-white`}>
                 <div className="flex items-center justify-between">
                   <program.icon className="w-8 h-8" />
                   <span className="text-sm font-medium opacity-90">{program.level}</span>
