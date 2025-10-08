@@ -48,7 +48,7 @@ const AboutSection = () => {
             </CardContent>
           </Card>
           <Card className="bg-gradient-to-br from-accent/5 to-primary/5 border-accent/20">
-            <CardContent className="bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20 bg-orange-200">
+            <CardContent className="bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20 bg-orange-200 rounded">
               <h3 className="font-bold text-foreground mb-4 flex items-center gap-2 text-left text-2xl">
                 <Target className="w-6 h-6 text-accent" />
                 Our Mission
