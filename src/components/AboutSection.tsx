@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Medal, Target, Heart, Star } from "lucide-react";
+import { Medal, Target, Heart, Star, Eye } from "lucide-react";
 import teamGujaratImg from "@/assets/team-gujarat.jpg";
 import racerActionImg from "@/assets/racer-action.jpg";
+import ImageLightbox from "@/components/ImageLightbox";
 
 const AboutSection = () => {
   const features = [
@@ -41,11 +42,44 @@ const AboutSection = () => {
           </p>
         </div>
 
+        {/* Vision and Mission */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+            <CardContent className="pt-6">
+              <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                <Eye className="w-6 h-6 text-primary" />
+                Our Vision
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To inspire and nurture young athletes to reach their fullest potential — building champions in sport and character for life.
+              </p>
+            </CardContent>
+          </Card>
+          <Card className="bg-gradient-to-br from-accent/5 to-primary/5 border-accent/20">
+            <CardContent className="pt-6">
+              <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-2">
+                <Target className="w-6 h-6 text-accent" />
+                Our Mission
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                To provide world-class sports training, promote discipline and teamwork, and create an engaging environment where every child and youth can discover their passion, develop skills, and achieve excellence both on and off the field.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {features.map((feature, index) => (
-            <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <Card key={index} className="text-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group relative overflow-hidden">
               <CardContent className="pt-6">
-                <feature.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
+                <div className="relative">
+                  <feature.icon className="w-12 h-12 mx-auto mb-4 text-primary" />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="bg-primary/10 rounded-full p-8">
+                      <feature.icon className="w-16 h-16 text-primary animate-pulse" />
+                    </div>
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold mb-3 text-card-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground">{feature.description}</p>
               </CardContent>
@@ -55,18 +89,18 @@ const AboutSection = () => {
 
         {/* Team Images Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
-            <img 
-              src={teamGujaratImg} 
-              alt="RSA team representing Gujarat at national championships" 
-              className="w-full h-full object-cover"
+          <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 h-64 md:h-80">
+            <ImageLightbox
+              src={teamGujaratImg}
+              alt="RSA team representing Gujarat at national championships"
+              className="h-full"
             />
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300">
-            <img 
-              src={racerActionImg} 
-              alt="Young skaters competing in high-speed roller skating race" 
-              className="w-full h-full object-cover"
+          <div className="rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 h-64 md:h-80">
+            <ImageLightbox
+              src={racerActionImg}
+              alt="Young skaters competing in high-speed roller skating race"
+              className="h-full"
             />
           </div>
         </div>

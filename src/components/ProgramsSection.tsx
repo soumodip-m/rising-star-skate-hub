@@ -1,7 +1,10 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Clock, Users, Zap, Award } from "lucide-react";
+import { Clock, Users, Zap, Award, Settings } from "lucide-react";
 import raceStartImg from "@/assets/race-start.jpg";
+import racerActionImg from "@/assets/racer-action.jpg";
+import teamGujaratImg from "@/assets/team-gujarat.jpg";
+import ImageLightbox from "@/components/ImageLightbox";
 const ProgramsSection = () => {
   const programs = [{
     icon: Users,
@@ -27,6 +30,14 @@ const ProgramsSection = () => {
     time: "7:00 PM - 8:00 PM",
     level: "Advanced",
     gradient: "bg-gradient-sports"
+  }, {
+    icon: Settings,
+    title: "Custom Programs",
+    description: "Tailored training programs designed to meet specific needs and goals",
+    features: ["Personalized coaching", "Flexible schedules", "Individual attention", "Goal-oriented training"],
+    time: "By Appointment",
+    level: "All Levels",
+    gradient: "bg-gradient-sports"
   }];
   return <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,11 +46,55 @@ const ProgramsSection = () => {
             Training Programs
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-            We offer three specialized training batches every weekday evening, 
+            We offer specialized training batches every weekday evening, 
             designed to cater to different skill levels and age groups.
           </p>
-          <div className="rounded-2xl overflow-hidden shadow-xl max-w-4xl mx-auto mb-8">
-            <img src={raceStartImg} alt="Young skaters at the starting line of competitive roller skating race" className="w-full h-auto object-cover" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+            <div className="rounded-xl overflow-hidden shadow-lg h-48">
+              <ImageLightbox
+                src={raceStartImg}
+                alt="Young skaters at the starting line of competitive roller skating race"
+                className="h-full"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg h-48">
+              <ImageLightbox
+                src={racerActionImg}
+                alt="Skater in action during training session"
+                className="h-full"
+              />
+            </div>
+            <div className="rounded-xl overflow-hidden shadow-lg h-48">
+              <ImageLightbox
+                src={teamGujaratImg}
+                alt="RSA team representing Gujarat"
+                className="h-full"
+              />
+            </div>
+          </div>
+          
+          <div className="max-w-4xl mx-auto mb-8">
+            <h3 className="text-2xl font-bold text-center text-foreground mb-4">Training Videos</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Training Video 1"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="Training Video 2"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </div>
         </div>
 
