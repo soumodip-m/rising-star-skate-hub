@@ -42,7 +42,7 @@ const AboutSection = () => {
                 <Eye className="w-6 h-6 text-primary" />
                 Our Vision
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="leading-relaxed text-red-900">
                 To inspire and nurture young athletes to reach their fullest potential — building champions in sport and character for life.
               </p>
             </CardContent>
@@ -53,7 +53,7 @@ const AboutSection = () => {
                 <Target className="w-6 h-6 text-accent" />
                 Our Mission
               </h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="leading-relaxed text-orange-800">
                 To provide world-class sports training, promote discipline and teamwork, and create an engaging environment where every child and youth can discover their passion, develop skills, and achieve excellence both on and off the field.
               </p>
             </CardContent>
