@@ -98,31 +98,31 @@ const ProgramsSection = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {programs.map((program, index) => <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
               <CardHeader className={`${program.gradient} text-white`}>
                 <div className="flex items-center justify-between">
-                  <program.icon className="w-8 h-8" />
-                  <span className="text-sm font-medium opacity-90">{program.level}</span>
+                  <program.icon className="w-6 h-6" />
+                  <span className="text-xs font-medium opacity-90">{program.level}</span>
                 </div>
-                <CardTitle className="text-xl">{program.title}</CardTitle>
+                <CardTitle className="text-lg">{program.title}</CardTitle>
               </CardHeader>
-              <CardContent className="p-6">
-                <p className="text-muted-foreground mb-4">{program.description}</p>
+              <CardContent className="p-4">
+                <p className="text-muted-foreground text-sm mb-3">{program.description}</p>
                 
-                <div className="flex items-center gap-2 mb-4 text-sm font-medium">
-                  <Clock className="w-4 h-4 text-primary" />
+                <div className="flex items-center gap-2 mb-3 text-xs font-medium">
+                  <Clock className="w-3 h-3 text-primary" />
                   {program.time}
                 </div>
 
-                <ul className="space-y-2 mb-6">
-                  {program.features.map((feature, idx) => <li key={idx} className="flex items-center gap-2 text-sm">
-                      <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
+                <ul className="space-y-1 mb-4">
+                  {program.features.map((feature, idx) => <li key={idx} className="flex items-center gap-2 text-xs">
+                      <div className="w-1 h-1 bg-primary rounded-full"></div>
                       {feature}
                     </li>)}
                 </ul>
 
-                <Button variant="outline" className="w-full">
+                <Button variant="outline" className="w-full text-xs h-8">
                   Learn More
                 </Button>
               </CardContent>

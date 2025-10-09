@@ -1,8 +1,60 @@
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactSection = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = useState({
+    childName: "",
+    age: "",
+    parentName: "",
+    phone: "",
+    email: "",
+    preferredBatch: "Cadets & Junior Batch (4:00 PM - 5:30 PM)",
+    notes: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-trial-email', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Request Submitted!",
+        description: "We'll contact you within 24 hours to confirm your trial session.",
+      });
+
+      setFormData({
+        childName: "",
+        age: "",
+        parentName: "",
+        phone: "",
+        email: "",
+        preferredBatch: "Cadets & Junior Batch (4:00 PM - 5:30 PM)",
+        notes: ""
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast({
+        title: "Error",
+        description: "Failed to submit the form. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,92 +150,120 @@ const ContactSection = () => {
                 Fill out the form below and we'll get back to you within 24 hours
               </p>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <CardContent>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-sm font-medium text-foreground block mb-2">
+                      Child's Name
+                    </label>
+                    <input 
+                      type="text" 
+                      required
+                      value={formData.childName}
+                      onChange={(e) => setFormData({...formData, childName: e.target.value})}
+                      className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
+                      placeholder="Enter child's name"
+                    />
+                  </div>
+                  <div>
+                    <label className="text-sm font-medium text-foreground block mb-2">
+                      Age
+                    </label>
+                    <input 
+                      type="number" 
+                      required
+                      value={formData.age}
+                      onChange={(e) => setFormData({...formData, age: e.target.value})}
+                      className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
+                      placeholder="Age"
+                    />
+                  </div>
+                </div>
+                
                 <div>
                   <label className="text-sm font-medium text-foreground block mb-2">
-                    Child's Name
+                    Parent/Guardian Name
                   </label>
                   <input 
                     type="text" 
-                    className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Enter child's name"
+                    required
+                    value={formData.parentName}
+                    onChange={(e) => setFormData({...formData, parentName: e.target.value})}
+                    className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
+                    placeholder="Your name"
                   />
                 </div>
+
                 <div>
                   <label className="text-sm font-medium text-foreground block mb-2">
-                    Age
+                    Phone Number
                   </label>
                   <input 
-                    type="number" 
-                    className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder="Age"
+                    type="tel" 
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
+                    placeholder="+91 XXXXX XXXXX"
                   />
                 </div>
-              </div>
-              
-              <div>
-                <label className="text-sm font-medium text-foreground block mb-2">
-                  Parent/Guardian Name
-                </label>
-                <input 
-                  type="text" 
-                  className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="Your name"
-                />
-              </div>
 
-              <div>
-                <label className="text-sm font-medium text-foreground block mb-2">
-                  Phone Number
-                </label>
-                <input 
-                  type="tel" 
-                  className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="+91 XXXXX XXXXX"
-                />
-              </div>
+                <div>
+                  <label className="text-sm font-medium text-foreground block mb-2">
+                    Email Address
+                  </label>
+                  <input 
+                    type="email" 
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
+                    placeholder="your.email@example.com"
+                  />
+                </div>
 
-              <div>
-                <label className="text-sm font-medium text-foreground block mb-2">
-                  Email Address
-                </label>
-                <input 
-                  type="email" 
-                  className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                  placeholder="your.email@example.com"
-                />
-              </div>
+                <div>
+                  <label className="text-sm font-medium text-foreground block mb-2">
+                    Preferred Batch
+                  </label>
+                  <select 
+                    value={formData.preferredBatch}
+                    onChange={(e) => setFormData({...formData, preferredBatch: e.target.value})}
+                    className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
+                  >
+                    <option>Cadets & Junior Batch (4:00 PM - 5:30 PM)</option>
+                    <option>Pre-Advance Batch (5:30 PM - 8:00 PM)</option>
+                    <option>Advance Batch (6:00 PM - 9:00 PM)</option>
+                  </select>
+                </div>
 
-              <div>
-                <label className="text-sm font-medium text-foreground block mb-2">
-                  Preferred Batch
-                </label>
-                <select className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent">
-                  <option>Cadets & Junior Batch (4:00 PM - 5:30 PM)</option>
-                  <option>Pre-Advance Batch (5:30 PM - 8:00 PM)</option>
-                  <option>Advance Batch (6:00 PM - 9:00 PM)</option>
-                </select>
-              </div>
+                <div>
+                  <label className="text-sm font-medium text-foreground block mb-2">
+                    Additional Notes (Optional)
+                  </label>
+                  <textarea 
+                    value={formData.notes}
+                    onChange={(e) => setFormData({...formData, notes: e.target.value})}
+                    className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent bg-background"
+                    rows={3}
+                    placeholder="Any specific questions or requirements..."
+                  ></textarea>
+                </div>
 
-              <div>
-                <label className="text-sm font-medium text-foreground block mb-2">
-                  Additional Notes (Optional)
-                </label>
-                <textarea 
-                  className="w-full px-3 py-2 border border-input rounded-md focus:ring-2 focus:ring-primary focus:border-transparent"
-                  rows={3}
-                  placeholder="Any specific questions or requirements..."
-                ></textarea>
-              </div>
+                <Button 
+                  type="submit" 
+                  variant="hero" 
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Submitting..." : "Schedule Trial Session"}
+                </Button>
 
-              <Button variant="hero" className="w-full">
-                Schedule Trial Session
-              </Button>
-
-              <p className="text-xs text-muted-foreground text-center">
-                We'll contact you within 24 hours to confirm your trial session
-              </p>
+                <p className="text-xs text-muted-foreground text-center">
+                  We'll contact you within 24 hours to confirm your trial session
+                </p>
+              </form>
             </CardContent>
           </Card>
         </div>

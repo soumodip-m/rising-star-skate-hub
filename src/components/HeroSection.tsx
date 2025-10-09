@@ -47,12 +47,23 @@ const HeroSection = () => {
         
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button variant="sports" size="lg" className="animate-glow">
+          <Button 
+            variant="sports" 
+            size="lg" 
+            className="animate-glow"
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Start Your Journey
             <ArrowRight className="ml-2" />
           </Button>
-          <Button variant="sports" size="lg" className="animate-glow">
+          <Button 
+            variant="sports" 
+            size="lg" 
+            className="animate-glow"
+            onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             View Programs
+            <ArrowRight className="ml-2" />
           </Button>
         </div>
       </div>

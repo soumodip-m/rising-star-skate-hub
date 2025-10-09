@@ -80,30 +80,6 @@ const AchievementsSection = () => {
           ))}
         </div>
 
-        {/* Success Stories */}
-        <div className="mb-16">
-          <h3 className="text-3xl font-bold text-center text-foreground mb-12">
-            Success Stories
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="mb-4">
-                    <div className="flex items-center gap-2 mb-2">
-                      <Trophy className="w-5 h-5 text-accent" />
-                      <span className="text-sm font-medium text-accent">{testimonial.achievement}</span>
-                    </div>
-                    <h4 className="text-lg font-semibold text-foreground">{testimonial.name}</h4>
-                  </div>
-                  <blockquote className="text-muted-foreground italic">
-                    "{testimonial.quote}"
-                  </blockquote>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
 
         {/* Achievement Images */}
         <div className="mb-16">
@@ -186,15 +162,41 @@ const AchievementsSection = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="bg-gradient-sports rounded-2xl p-8 md:p-12 text-center">
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+        {/* Call to Action with Success Stories */}
+        <div className="bg-gradient-sports rounded-2xl p-8 md:p-12">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 text-center">
             Your Success Story Starts Here
           </h3>
-          <p className="text-lg text-white/90 mb-6 max-w-2xl mx-auto">
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto text-center">
             Join the legacy of champions at RSA-Rising Stars Academy. With our proven training methods 
             and experienced coaching staff, your child can achieve greatness in roller skating.
           </p>
+          
+          {/* Success Stories inside the colored box */}
+          <div className="mb-6">
+            <h4 className="text-2xl font-bold text-center text-white mb-8">
+              Success Stories
+            </h4>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="hover:shadow-lg transition-all duration-300 bg-white/95">
+                  <CardContent className="p-6">
+                    <div className="mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Trophy className="w-5 h-5 text-accent" />
+                        <span className="text-sm font-medium text-accent">{testimonial.achievement}</span>
+                      </div>
+                      <h5 className="text-lg font-semibold text-foreground">{testimonial.name}</h5>
+                    </div>
+                    <blockquote className="text-muted-foreground italic">
+                      "{testimonial.quote}"
+                    </blockquote>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
           <div className="flex justify-center">
             <Trophy className="w-16 h-16 text-white/60 animate-float" />
           </div>

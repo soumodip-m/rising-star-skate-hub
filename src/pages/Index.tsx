@@ -10,6 +10,7 @@ import ContactSection from "@/components/ContactSection";
 import WellWishersSection from "@/components/WellWishersSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -40,6 +41,7 @@ const Index = () => {
       <WellWishersSection />
       <Footer />
       <WhatsAppButton />
+      <ScrollToTop />
     </div>
   );
 };
