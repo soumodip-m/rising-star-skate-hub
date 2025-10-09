@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
 
           {/* Programs */}
-          <div>
+          <div className="bg-transparent">
             <h4 className="text-lg font-semibold mb-4">Our Programs</h4>
             <ul className="space-y-2 text-white/80">
               <li>Cadets & Junior Batch</li>
@@ -72,7 +72,7 @@ const Footer = () => {
             <img src={footerDesign} alt="Footer design" className="h-12 w-auto object-contain" />
           </div>
           <p className="text-white/90 flex items-center justify-center gap-2">
-            Made with <Heart className="w-4 h-4 text-red-400 animate-pulse" /> for the skating community
+            Made with <Heart className="w-4 h-4 text-red-400 animate-pulse bg-yellow-300" /> for the skating community
           </p>
           <p className="text-sm text-white/70 mt-2 text-center">© 2025 RSA-Rising Stars Academy. All rights reserved.</p>
         </div>
