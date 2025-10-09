@@ -8,16 +8,14 @@ const Footer = () => {
           {/* Academy Info */}
           <div>
             <h3 className="text-2xl font-bold mb-4">RSA-Rising Stars Academy</h3>
-            <p className="text-white/90 mb-2 font-semibold text-lg italic">
+            <p className="mb-2 text-lg italic font-semibold text-yellow-300">
               Work hard, Dream Big!
             </p>
-            <p className="text-white/80 mb-4">
-              Nurturing roller skating champions for over 20 years in Ahmedabad, Gujarat.
-            </p>
+            <p className="text-white/80 mb-4">Nurturing roller skating champions for over 20 years in Ahmedabad, Gujarat.</p>
             <div className="space-y-2 text-sm mb-4">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
-                <span>Ahmedabad, Gujarat, India</span>
+                <MapPin className="w-6 h-4/6 " />
+                <span>DPS Bopal Skating Rink, Ahmedabad, Gujarat, India 380058</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4" />
@@ -71,11 +69,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-8 pt-8">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <img 
-              src={footerDesign} 
-              alt="Footer design" 
-              className="h-12 w-auto object-contain"
-            />
+            <img src={footerDesign} alt="Footer design" className="h-12 w-auto object-contain" />
           </div>
           <p className="text-white/90 flex items-center justify-center gap-2">
             Made with <Heart className="w-4 h-4 text-red-400 animate-pulse" /> for the skating community
