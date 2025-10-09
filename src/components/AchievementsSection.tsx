@@ -81,39 +81,48 @@ const AchievementsSection = () => {
         </div>
 
 
-        {/* Achievement Images */}
+        {/* Achievement Images - Horizontal Scroll */}
         <div className="mb-16">
           <h3 className="text-3xl font-bold text-center text-foreground mb-12">
             Achievement Highlights
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-40">
-              <ImageLightbox
-                src={teamChampionsImg}
-                alt="RSA team with medals and trophies"
-                className="h-full"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-40">
-              <ImageLightbox
-                src={teamTrophiesImg}
-                alt="Championship winning team with coach"
-                className="h-full"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-40">
-              <ImageLightbox
-                src={teamYellowImg}
-                alt="RSA yellow team with trophies"
-                className="h-full"
-              />
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-40">
-              <ImageLightbox
-                src={flagBearersImg}
-                alt="Young skaters representing India"
-                className="h-full"
-              />
+          <div className="overflow-x-auto pb-4">
+            <div className="flex gap-4 min-w-max px-4">
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-64 w-80 flex-shrink-0">
+                <ImageLightbox
+                  src={teamChampionsImg}
+                  alt="RSA team with medals and trophies"
+                  className="h-full"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-64 w-80 flex-shrink-0">
+                <ImageLightbox
+                  src={teamTrophiesImg}
+                  alt="Championship winning team with coach"
+                  className="h-full"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-64 w-80 flex-shrink-0">
+                <ImageLightbox
+                  src={teamYellowImg}
+                  alt="RSA yellow team with trophies"
+                  className="h-full"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-64 w-80 flex-shrink-0">
+                <ImageLightbox
+                  src={flagBearersImg}
+                  alt="Young skaters representing India"
+                  className="h-full"
+                />
+              </div>
+              <div className="rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 h-64 w-80 flex-shrink-0">
+                <ImageLightbox
+                  src={teamSkatersImg}
+                  alt="RSA team skaters celebrating"
+                  className="h-full"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -22,7 +22,7 @@ const Header = () => {
     href: "/other-sports"
   }, {
     name: "Blog",
-    href: "#blog"
+    href: "/skating-blog"
   }, {
     name: "Contact",
     href: "#contact"

@@ -19,24 +19,41 @@ const Index = () => {
       <section id="home">
         <HeroSection />
       </section>
-      <section id="about">
-        <AboutSection />
+      <section id="about" className="relative bg-[image:var(--gradient-layer-1)]">
+        <div className="absolute inset-0 bg-[image:var(--gradient-layer-2)] pointer-events-none"></div>
+        <div className="relative z-10">
+          <AboutSection />
+        </div>
       </section>
-      <section id="programs">
-        <ProgramsSection />
+      <section id="programs" className="relative">
+        <div className="absolute inset-0 bg-[image:var(--gradient-layer-3)] pointer-events-none"></div>
+        <div className="relative z-10">
+          <ProgramsSection />
+        </div>
       </section>
-      <section id="achievements">
-        <AchievementsSection />
+      <section id="achievements" className="relative bg-[image:var(--gradient-layer-1)]">
+        <div className="absolute inset-0 bg-[image:var(--gradient-layer-2)] pointer-events-none opacity-50"></div>
+        <div className="relative z-10">
+          <AchievementsSection />
+        </div>
       </section>
-      <section id="testimonials">
-        <TestimonialsSection />
+      <section id="testimonials" className="relative">
+        <div className="absolute inset-0 bg-[image:var(--gradient-layer-3)] pointer-events-none opacity-70"></div>
+        <div className="relative z-10">
+          <TestimonialsSection />
+        </div>
       </section>
-      <section id="blog">
-        <BlogSection />
+      <section id="blog" className="relative bg-[image:var(--gradient-layer-1)]">
+        <div className="relative z-10">
+          <BlogSection />
+        </div>
       </section>
       <SocialSection />
-      <section id="contact">
-        <ContactSection />
+      <section id="contact" className="relative">
+        <div className="absolute inset-0 bg-[image:var(--gradient-layer-2)] pointer-events-none opacity-60"></div>
+        <div className="relative z-10">
+          <ContactSection />
+        </div>
       </section>
       <WellWishersSection />
       <Footer />
