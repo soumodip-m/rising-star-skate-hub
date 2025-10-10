@@ -1,72 +1,60 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Trophy, Users, Calendar } from "lucide-react";
-import Logo from "@/components/Logo";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-skating-rsa.jpg";
+
 const HeroSection = () => {
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+  return (
+    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-16">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
-        <img src={heroImage} alt="Kids roller skating at Rising Star Academy" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-accent/80"></div>
+        <img 
+          src={heroImage} 
+          alt="Kids roller skating at Rising Star Academy" 
+          className="w-full h-full object-cover" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-secondary/80 to-primary/90"></div>
       </div>
       
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="animate-float">
-          <div className="mb-6">
-            <Logo size="xl" className="mx-auto mb-4" />
-          </div>
-          <h1 className="text-5xl font-bold text-primary-foreground mb-6 md:text-6xl">RSA-Rising Stars Academy</h1>
-          <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 font-medium">
-            Premier Roller Skating Academy • Ahmedabad, Gujarat
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in">
+            Rise Faster. Shine Brighter.
+          </h1>
+          <p className="text-xl md:text-2xl text-white/95 mb-8 animate-fade-in max-w-3xl mx-auto">
+            Ahmedabad's premier multi-sport academy with a flagship Roller Skating program. 
+            Expert coaching, world-class facilities, and a pathway to excellence.
           </p>
-          <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 max-w-3xl mx-auto">
-            Nurturing young champions in inline and quad roller skating for over 20 years. 
-            Join our legacy of excellence with state and national level training.
-          </p>
-        </div>
-        
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-          <div className="bg-card/20 backdrop-blur-sm rounded-lg p-6 text-primary-foreground">
-            <Trophy className="w-8 h-8 mx-auto mb-2 text-accent" />
-            <div className="text-2xl font-bold">20+</div>
-            <div className="text-sm">Years of Excellence</div>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+            <Button 
+              size="lg" 
+              className="bg-primary text-white hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Book a Trial
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-2 border-white text-white hover:bg-white hover:text-primary transition-all"
+              onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Join Now
+            </Button>
           </div>
-          <div className="bg-card/20 backdrop-blur-sm rounded-lg p-6 text-primary-foreground">
-            <Users className="w-8 h-8 mx-auto mb-2 text-accent" />
-            <div className="text-2xl font-bold">500+</div>
-            <div className="text-sm">Students Trained</div>
-          </div>
-          <div className="bg-card/20 backdrop-blur-sm rounded-lg p-6 text-primary-foreground">
-            <Calendar className="w-8 h-8 mx-auto mb-2 text-accent" />
-            <div className="text-2xl font-bold">3</div>
-            <div className="text-sm">Training Batches</div>
-          </div>
-        </div>
-        
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button 
-            variant="sports" 
-            size="lg" 
-            className="animate-glow"
-            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            Start Your Journey
-            <ArrowRight className="ml-2" />
-          </Button>
-          <Button 
-            variant="sports" 
-            size="lg" 
-            className="animate-glow"
-            onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
-          >
-            View Programs
-            <ArrowRight className="ml-2" />
-          </Button>
         </div>
       </div>
-    </section>;
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce z-10">
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
+          <div className="w-1 h-3 bg-white/50 rounded-full"></div>
+        </div>
+      </div>
+    </section>
+  );
 };
 export default HeroSection;

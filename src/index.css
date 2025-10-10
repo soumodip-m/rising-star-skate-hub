@@ -17,19 +17,22 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 8%;
 
-    --primary: 220 91% 48%;
+    /* Orange theme (#FF7A00) */
+    --primary: 25 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 220 85% 65%;
+    --primary-glow: 32 100% 65%;
 
-    --secondary: 210 35% 94%;
-    --secondary-foreground: 220 20% 8%;
+    /* Blue secondary */
+    --secondary: 220 91% 48%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 35% 94%;
     --muted-foreground: 215 16% 47%;
 
-    --accent: 0 84% 55%;
-    --accent-foreground: 0 0% 100%;
-    --accent-glow: 0 90% 68%;
+    /* Yellow accent */
+    --accent: 45 100% 51%;
+    --accent-foreground: 220 20% 8%;
+    --accent-glow: 48 100% 68%;
 
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
@@ -41,19 +44,19 @@ All colors MUST be HSL.
     --input: 214 32% 91%;
     --ring: 220 91% 48%;
 
-    /* Custom design tokens */
+    /* Custom design tokens - RSA Theme */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--accent-glow)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
-    --gradient-sports: linear-gradient(45deg, hsl(220 91% 48%) 0%, hsl(0 84% 55%) 50%, hsl(220 91% 48%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 50%, hsl(var(--primary)) 100%);
+    --gradient-sports: linear-gradient(45deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--secondary)) 100%);
     --shadow-glow: 0 0 30px hsl(var(--primary) / 0.3);
     --shadow-accent-glow: 0 0 25px hsl(var(--accent) / 0.4);
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
     /* Background layering gradients */
-    --gradient-layer-1: linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--muted)/0.3) 50%, hsl(var(--background)) 100%);
-    --gradient-layer-2: linear-gradient(200deg, transparent 0%, hsl(var(--primary)/0.05) 40%, transparent 100%);
-    --gradient-layer-3: radial-gradient(ellipse at top, hsl(var(--primary)/0.1) 0%, transparent 70%);
+    --gradient-layer-1: linear-gradient(165deg, hsl(var(--background)) 0%, hsl(var(--primary)/0.05) 50%, hsl(var(--background)) 100%);
+    --gradient-layer-2: linear-gradient(200deg, transparent 0%, hsl(var(--accent)/0.08) 40%, transparent 100%);
+    --gradient-layer-3: radial-gradient(ellipse at top, hsl(var(--secondary)/0.1) 0%, transparent 70%);
 
     --radius: 0.5rem;
 
