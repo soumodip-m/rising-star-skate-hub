@@ -56,15 +56,14 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-gradient-to-b from-background to-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Get Started Today
+            Book Your Free Trial
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ready to begin your roller skating journey? Contact us to learn more about 
-            our programs and schedule a trial session for your child.
+            Experience our world-class coaching firsthand. No commitment required.
           </p>
         </div>
 

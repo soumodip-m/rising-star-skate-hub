@@ -19,82 +19,51 @@ const FeaturedSports = () => {
     {
       name: "Roller Skating",
       icon: Flame,
-      description: "Our flagship program with inline & quad skating",
+      description: "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
       href: "/sports/roller-skating",
       featured: true,
     },
     {
       name: "Cricket",
       icon: Circle,
-      description: "Professional cricket coaching for all levels",
-      href: "/sports/cricket",
+      description: "Professional cricket coaching with focus on technique, fitness, and match strategy.",
+      href: "/other-sports",
     },
     {
       name: "Football",
       icon: Trophy,
-      description: "Build teamwork and technical skills",
-      href: "/sports/football",
+      description: "Comprehensive football training from grassroots to competitive level.",
+      href: "/other-sports",
     },
     {
       name: "Basketball",
       icon: Target,
-      description: "Fast-paced training and strategy",
-      href: "/sports/basketball",
+      description: "Develop fundamental skills, team play, and competitive edge in basketball.",
+      href: "/other-sports",
     },
     {
       name: "Tennis",
       icon: Zap,
-      description: "Master technique and court strategy",
-      href: "/sports/tennis",
+      description: "Expert tennis coaching for beginners to advanced players.",
+      href: "/other-sports",
     },
     {
       name: "Badminton",
       icon: Award,
-      description: "Agility and precision training",
-      href: "/sports/badminton",
-    },
-    {
-      name: "Athletics",
-      icon: Activity,
-      description: "Track and field excellence",
-      href: "/sports/athletics",
-    },
-    {
-      name: "Kho-Kho",
-      icon: User,
-      description: "Traditional Indian sport mastery",
-      href: "/sports/kho-kho",
-    },
-    {
-      name: "Kabaddi",
-      icon: Dumbbell,
-      description: "Strength and strategy combined",
-      href: "/sports/kabaddi",
-    },
-    {
-      name: "Shooting",
-      icon: Flag,
-      description: "Precision and focus training",
-      href: "/sports/shooting",
-    },
-    {
-      name: "Swimming",
-      icon: Waves,
-      description: "Aquatic excellence and fitness",
-      href: "/sports/swimming",
+      description: "Structured badminton training with certified coaches.",
+      href: "/other-sports",
     },
   ];
 
   return (
-    <section className="py-20 bg-[image:var(--gradient-layer-1)]">
+    <section className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
             Our Sports Programs
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose from our wide range of professional coaching programs designed 
-            to unlock your athletic potential
+            Choose from our wide range of sports programs, each designed to help you excel
           </p>
         </div>
 
@@ -158,6 +127,12 @@ const FeaturedSports = () => {
               </Card>
             );
           })}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button variant="outline" size="lg" asChild>
+            <a href="/other-sports">View All Sports</a>
+          </Button>
         </div>
       </div>
     </section>
