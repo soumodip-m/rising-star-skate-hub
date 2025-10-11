@@ -1,240 +1,254 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
-import Logo from "@/components/Logo";
-import { Link } from "react-router-dom";
-import UtilityBar from "@/components/UtilityBar";
+import { Button } from "@/components/ui/button";
+import rsaLogo from "@/assets/rsa-logo.png";
 
-const Navbar = () => {
+interface NavItem {
+  label: string;
+  path?: string;
+  submenu?: { label: string; path: string }[];
+}
+
+const navItems: NavItem[] = [
+  { label: "Home", path: "/" },
+  {
+    label: "About Us",
+    submenu: [
+      { label: "Our Story", path: "/about" },
+      { label: "Founder's Message", path: "/about/founder" },
+      { label: "Coaches & Trainers", path: "/about/coaches" },
+      { label: "Achievements & Milestones", path: "/about/milestones" },
+      { label: "Infrastructure & Facilities", path: "/about/facilities" },
+      { label: "Well-Wishers", path: "/about/well-wishers" },
+    ],
+  },
+  {
+    label: "Sports & Coaching",
+    submenu: [
+      { label: "Roller Skating (Flagship)", path: "/sports/roller-skating" },
+      { label: "Cricket", path: "/sports/cricket" },
+      { label: "Football", path: "/sports/football" },
+      { label: "Basketball", path: "/sports/basketball" },
+      { label: "Tennis", path: "/sports/tennis" },
+      { label: "Badminton", path: "/sports/badminton" },
+      { label: "Athletics", path: "/sports/athletics" },
+      { label: "Other Sports", path: "/sports" },
+    ],
+  },
+  {
+    label: "Admissions",
+    submenu: [
+      { label: "How to Join", path: "/admissions" },
+      { label: "Fees & Packages", path: "/admissions/fees" },
+      { label: "Registration", path: "/admissions/register" },
+      { label: "Book a Trial", path: "/admissions/trial" },
+    ],
+  },
+  {
+    label: "Events & Achievements",
+    submenu: [
+      { label: "Upcoming Events", path: "/events/upcoming" },
+      { label: "Past Highlights", path: "/events/past" },
+      { label: "Competition Schedule", path: "/events/schedule" },
+      { label: "Student Achievements", path: "/achievements" },
+    ],
+  },
+  {
+    label: "Facilities",
+    path: "/facilities",
+  },
+  {
+    label: "Gallery",
+    submenu: [
+      { label: "Photos", path: "/gallery/photos" },
+      { label: "Videos", path: "/gallery/videos" },
+    ],
+  },
+  {
+    label: "Blog",
+    path: "/blog",
+  },
+  {
+    label: "Contact Us",
+    path: "/contact",
+  },
+];
+
+export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const location = useLocation();
 
-  const navigation = [
-    { name: "Home", href: "/" },
-    {
-      name: "About Us",
-      href: "#",
-      submenu: [
-        { name: "Our Story", href: "/about#story" },
-        { name: "Founder's Message", href: "/about#founder" },
-        { name: "Coaches & Trainers", href: "/about#coaches" },
-        { name: "Achievements & Milestones", href: "/about#milestones" },
-        { name: "Infrastructure & Facilities", href: "/about#facilities" },
-        { name: "Well-Wishers", href: "/about#wellwishers" },
-      ],
-    },
-    {
-      name: "Sports & Coaching",
-      href: "#",
-      submenu: [
-        { name: "Roller Skating (Flagship)", href: "/sports/roller-skating" },
-        { name: "Cricket", href: "/sports/cricket" },
-        { name: "Football", href: "/sports/football" },
-        { name: "Basketball", href: "/sports/basketball" },
-        { name: "Tennis", href: "/sports/tennis" },
-        { name: "Badminton", href: "/sports/badminton" },
-        { name: "Athletics", href: "/sports/athletics" },
-        { name: "Kho-Kho", href: "/sports/kho-kho" },
-        { name: "Kabaddi", href: "/sports/kabaddi" },
-        { name: "Shooting", href: "/sports/shooting" },
-        { name: "Swimming", href: "/sports/swimming" },
-        { name: "Private Coaching", href: "/coaching/private" },
-        { name: "Seasonal Camps", href: "/coaching/camps" },
-      ],
-    },
-    {
-      name: "Admissions",
-      href: "#",
-      submenu: [
-        { name: "How to Join", href: "/admissions#howtojoin" },
-        { name: "Fees & Packages", href: "/admissions#fees" },
-        { name: "Registration", href: "/admissions#registration" },
-        { name: "Book a Trial", href: "/admissions#trial" },
-      ],
-    },
-    {
-      name: "Events & Achievements",
-      href: "#",
-      submenu: [
-        { name: "Upcoming Events", href: "/events#upcoming" },
-        { name: "Past Highlights", href: "/events#past" },
-        { name: "Competition Schedule", href: "/events#schedule" },
-        { name: "Student Achievements", href: "/achievements" },
-        { name: "Alumni Success", href: "/achievements#alumni" },
-      ],
-    },
-    {
-      name: "Facilities",
-      href: "#",
-      submenu: [
-        { name: "Courts & Grounds", href: "/facilities#courts" },
-        { name: "Rinks", href: "/facilities#rinks" },
-        { name: "Gym", href: "/facilities#gym" },
-        { name: "Pool", href: "/facilities#pool" },
-        { name: "Safety & Security", href: "/facilities#safety" },
-        { name: "Virtual Tour", href: "/facilities#tour" },
-      ],
-    },
-    { name: "Gallery", href: "/gallery" },
-    { name: "Blog", href: "/skating-blog" },
-    { name: "Contact Us", href: "#contact" },
-  ];
+  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <>
-      <UtilityBar />
-      <header className="fixed top-[38px] left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-md">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <Logo size="md" />
-            <div className="hidden sm:block">
-              <h1 className="font-bold text-foreground text-left text-xs">
-                RSA-Rising Stars Academy
-              </h1>
-              <p className="text-xs text-muted-foreground">
-                Premier Sports Academy
-              </p>
+          <Link to="/" className="flex items-center space-x-3 hover-scale">
+            <img src={rsaLogo} alt="RSA Logo" className="h-12 w-auto" />
+            <div className="hidden md:block">
+              <div className="text-xl font-bold text-primary">RSA</div>
+              <div className="text-xs text-muted-foreground">Rising Stars Academy</div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            {navigation.map((item) => (
+          <div className="hidden lg:flex items-center space-x-1">
+            {navItems.map((item) => (
               <div
-                key={item.name}
+                key={item.label}
                 className="relative group"
-                onMouseEnter={() => item.submenu && setActiveDropdown(item.name)}
+                onMouseEnter={() => item.submenu && setActiveDropdown(item.label)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                {item.submenu ? (
-                  <>
-                    <button className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors">
-                      {item.name}
-                      <ChevronDown className="w-4 h-4" />
-                    </button>
-                    {activeDropdown === item.name && (
-                      <div className="absolute top-full left-0 mt-1 w-64 bg-card border border-border rounded-lg shadow-lg py-2 z-50">
-                        {item.submenu.map((subitem) => (
-                          <a
-                            key={subitem.name}
-                            href={subitem.href}
-                            className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary transition-colors"
-                          >
-                            {subitem.name}
-                          </a>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <a
-                    href={item.href}
-                    className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                {item.path ? (
+                  <Link
+                    to={item.path}
+                    className={`px-4 py-2 text-sm font-medium transition-colors rounded-md ${
+                      isActive(item.path)
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground hover:text-primary hover:bg-muted"
+                    }`}
                   >
-                    {item.name}
-                  </a>
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors flex items-center gap-1">
+                    {item.label}
+                    <ChevronDown className="h-4 w-4" />
+                  </button>
                 )}
-              </div>
-            ))}
-          </nav>
 
-          {/* Right side actions */}
-          <div className="flex items-center gap-4">
-            <div className="hidden md:flex items-center gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                asChild
-              >
-                <a href="/shop">Shop</a>
-              </Button>
-              <Button
-                variant="default"
-                size="sm"
-                className="bg-gradient-primary"
-                onClick={() =>
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                Book a Trial
-              </Button>
-            </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-background border-t border-border">
-          <div className="max-w-7xl mx-auto px-4 py-4 space-y-2">
-            {navigation.map((item) => (
-              <div key={item.name}>
-                {item.submenu ? (
-                  <details className="group">
-                    <summary className="flex items-center justify-between py-2 cursor-pointer font-medium text-foreground">
-                      {item.name}
-                      <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform" />
-                    </summary>
-                    <div className="pl-4 space-y-1 mt-1">
+                {/* Dropdown */}
+                {item.submenu && activeDropdown === item.label && (
+                  <div className="absolute left-0 top-full pt-2 w-56 animate-fade-in">
+                    <div className="bg-popover border border-border rounded-lg shadow-lg py-2 overflow-hidden">
                       {item.submenu.map((subitem) => (
-                        <a
-                          key={subitem.name}
-                          href={subitem.href}
-                          className="block py-2 text-sm text-muted-foreground hover:text-primary"
-                          onClick={() => setMobileMenuOpen(false)}
+                        <Link
+                          key={subitem.path}
+                          to={subitem.path}
+                          className={`block px-4 py-3 text-sm transition-colors ${
+                            isActive(subitem.path)
+                              ? "bg-primary text-primary-foreground font-medium"
+                              : "text-popover-foreground hover:bg-muted hover:text-primary"
+                          }`}
                         >
-                          {subitem.name}
-                        </a>
+                          {subitem.label}
+                        </Link>
                       ))}
                     </div>
-                  </details>
-                ) : (
-                  <a
-                    href={item.href}
-                    className="block py-2 font-medium text-foreground hover:text-primary"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
+                  </div>
                 )}
               </div>
             ))}
-            <div className="pt-4 flex flex-col gap-2">
-              <Button variant="outline" size="sm" asChild>
-                <a href="/shop">Shop</a>
+          </div>
+
+          {/* Utility Items */}
+          <div className="hidden lg:flex items-center gap-3">
+            <Link to="/shop">
+              <Button variant="ghost" size="sm">
+                Shop
               </Button>
-              <Button
-                variant="default"
-                size="sm"
-                className="bg-gradient-primary"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
+            </Link>
+            <Link to="/membership">
+              <Button variant="outline" size="sm">
+                Membership
+              </Button>
+            </Link>
+            <Link to="/admissions/trial">
+              <Button size="sm" className="gradient-primary shadow-glow">
                 Book a Trial
               </Button>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden py-4 animate-fade-in">
+            <div className="flex flex-col space-y-2">
+              {navItems.map((item) => (
+                <div key={item.label}>
+                  {item.path ? (
+                    <Link
+                      to={item.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
+                        isActive(item.path)
+                          ? "text-primary bg-primary/10"
+                          : "text-foreground hover:bg-muted"
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <>
+                      <button
+                        onClick={() =>
+                          setActiveDropdown(activeDropdown === item.label ? null : item.label)
+                        }
+                        className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
+                      >
+                        {item.label}
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform ${
+                            activeDropdown === item.label ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      {activeDropdown === item.label && item.submenu && (
+                        <div className="ml-4 mt-1 space-y-1">
+                          {item.submenu.map((subitem) => (
+                            <Link
+                              key={subitem.path}
+                              to={subitem.path}
+                              onClick={() => setMobileMenuOpen(false)}
+                              className={`block px-4 py-2 text-sm rounded-md transition-colors ${
+                                isActive(subitem.path)
+                                  ? "text-primary bg-primary/10"
+                                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                              }`}
+                            >
+                              {subitem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </>
+                  )}
+                </div>
+              ))}
+              <div className="pt-4 space-y-2">
+                <Link to="/shop" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="ghost" className="w-full">
+                    Shop
+                  </Button>
+                </Link>
+                <Link to="/membership" onClick={() => setMobileMenuOpen(false)}>
+                  <Button variant="outline" className="w-full">
+                    Membership
+                  </Button>
+                </Link>
+                <Link to="/admissions/trial" onClick={() => setMobileMenuOpen(false)}>
+                  <Button className="w-full gradient-primary">Book a Trial</Button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-      </header>
-    </>
+        )}
+      </div>
+    </nav>
   );
-};
-
-export default Navbar;
+}
