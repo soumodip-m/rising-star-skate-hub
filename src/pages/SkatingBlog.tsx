@@ -1,3 +1,8 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import ScrollToTop from "@/components/ScrollToTop";
+import UtilityBar from "@/components/UtilityBar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Home, BookOpen, Trophy, Users, Dumbbell } from "lucide-react";
@@ -37,23 +42,8 @@ const SkatingBlog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header with Home Button */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <h1 className="text-xl font-bold text-foreground">Speed Skating World</h1>
-            <Button 
-              variant="sports" 
-              size="sm"
-              onClick={() => navigate('/')}
-              className="gap-2"
-            >
-              <Home className="w-4 h-4" />
-              Home
-            </Button>
-          </div>
-        </div>
-      </header>
+      <UtilityBar />
+      <Navbar />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-sports text-white">
@@ -126,6 +116,10 @@ const SkatingBlog = () => {
           </div>
         </div>
       </section>
+
+      <Footer />
+      <WhatsAppButton />
+      <ScrollToTop />
     </div>
   );
 };

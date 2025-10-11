@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Phone, Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import Logo from "@/components/Logo";
 import { Link } from "react-router-dom";
+import UtilityBar from "@/components/UtilityBar";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -80,8 +81,10 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <>
+      <UtilityBar />
+      <header className="fixed top-[38px] left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
@@ -139,10 +142,6 @@ const Navbar = () => {
 
           {/* Right side actions */}
           <div className="flex items-center gap-4">
-            <div className="hidden xl:flex items-center gap-2 text-sm">
-              <Phone className="w-4 h-4 text-primary" />
-              <span className="text-muted-foreground">+91 98242 34663</span>
-            </div>
             <div className="hidden md:flex items-center gap-2">
               <Button
                 variant="outline"
@@ -233,7 +232,8 @@ const Navbar = () => {
           </div>
         </div>
       )}
-    </header>
+      </header>
+    </>
   );
 };
 

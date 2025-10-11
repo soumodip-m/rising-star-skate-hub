@@ -16,7 +16,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <section id="home">
+      <section id="home" className="pt-[38px]">
         <HeroSection />
       </section>
       
