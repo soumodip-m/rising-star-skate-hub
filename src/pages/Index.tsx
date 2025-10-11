@@ -10,58 +10,47 @@ import SportCard from "@/components/SportCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import heroImage from "@/assets/hero-roller-skating.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
-
 export default function Index() {
-  const sports = [
-    {
-      name: "Roller Skating",
-      description: "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
-      image: heroImage,
-      path: "/sports/roller-skating",
-      featured: true,
-    },
-    {
-      name: "Cricket",
-      description: "Professional cricket coaching with focus on technique, fitness, and match strategy.",
-      image: trainingImage,
-      path: "/sports/cricket",
-    },
-    {
-      name: "Football",
-      description: "Comprehensive football training from grassroots to competitive level.",
-      image: trainingImage,
-      path: "/sports/football",
-    },
-    {
-      name: "Basketball",
-      description: "Develop fundamental skills, team play, and competitive edge in basketball.",
-      image: trainingImage,
-      path: "/sports/basketball",
-    },
-    {
-      name: "Tennis",
-      description: "Expert tennis coaching for beginners to advanced players.",
-      image: trainingImage,
-      path: "/sports/tennis",
-    },
-    {
-      name: "Badminton",
-      description: "Structured badminton training with certified coaches.",
-      image: trainingImage,
-      path: "/sports/badminton",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen bg-background">
+  const sports = [{
+    name: "Roller Skating",
+    description: "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
+    image: heroImage,
+    path: "/sports/roller-skating",
+    featured: true
+  }, {
+    name: "Cricket",
+    description: "Professional cricket coaching with focus on technique, fitness, and match strategy.",
+    image: trainingImage,
+    path: "/sports/cricket"
+  }, {
+    name: "Football",
+    description: "Comprehensive football training from grassroots to competitive level.",
+    image: trainingImage,
+    path: "/sports/football"
+  }, {
+    name: "Basketball",
+    description: "Develop fundamental skills, team play, and competitive edge in basketball.",
+    image: trainingImage,
+    path: "/sports/basketball"
+  }, {
+    name: "Tennis",
+    description: "Expert tennis coaching for beginners to advanced players.",
+    image: trainingImage,
+    path: "/sports/tennis"
+  }, {
+    name: "Badminton",
+    description: "Structured badminton training with certified coaches.",
+    image: trainingImage,
+    path: "/sports/badminton"
+  }];
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        >
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: `url(${heroImage})`
+      }}>
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         </div>
 
@@ -69,10 +58,7 @@ export default function Index() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in">
             Rise Faster. <span className="text-gradient">Shine Brighter.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto animate-slide-up">
-            Ahmedabad's premier multi-sport academy with a flagship Roller Skating program.
-            Expert coaching, modern facilities, and a supportive culture.
-          </p>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto animate-slide-up">Ahmedabad's premier multi-sport academy with 20+ years of experience. Expert coaching, modern facilities, and a supportive culture.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
             <Link to="/admissions/trial">
               <Button variant="hero" size="lg" className="min-w-[200px]">
@@ -143,9 +129,7 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sports.map((sport) => (
-              <SportCard key={sport.name} {...sport} />
-            ))}
+            {sports.map(sport => <SportCard key={sport.name} {...sport} />)}
           </div>
 
           <div className="text-center mt-10">
@@ -167,23 +151,9 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <TestimonialCard
-              quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at state level!"
-              name="Priya Sharma"
-              role="Parent"
-              achievement="State Medalist"
-            />
-            <TestimonialCard
-              quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
-              name="Arjun Patel"
-              role="Student (14)"
-              achievement="National Qualifier"
-            />
-            <TestimonialCard
-              quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment."
-              name="Rajesh Kumar"
-              role="Parent"
-            />
+            <TestimonialCard quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at state level!" name="Priya Sharma" role="Parent" achievement="State Medalist" />
+            <TestimonialCard quote="The coaches here are amazing. They pushed me to achieve more than I thought possible." name="Arjun Patel" role="Student (14)" achievement="National Qualifier" />
+            <TestimonialCard quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment." name="Rajesh Kumar" role="Parent" />
           </div>
         </div>
       </section>
@@ -263,6 +233,5 @@ export default function Index() {
 
       <WhatsAppButton />
       <Footer />
-    </div>
-  );
+    </div>;
 }
