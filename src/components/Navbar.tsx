@@ -153,11 +153,6 @@ export default function Navbar() {
                 Shop
               </Button>
             </Link>
-            <Link to="/membership">
-              <Button variant="outline" size="sm">
-                Membership
-              </Button>
-            </Link>
             <Link to="/admissions/trial">
               <Button size="sm" className="gradient-primary shadow-glow">
                 Book a Trial
@@ -234,11 +229,6 @@ export default function Navbar() {
                 <Link to="/shop" onClick={() => setMobileMenuOpen(false)}>
                   <Button variant="ghost" className="w-full">
                     Shop
-                  </Button>
-                </Link>
-                <Link to="/membership" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="outline" className="w-full">
-                    Membership
                   </Button>
                 </Link>
                 <Link to="/admissions/trial" onClick={() => setMobileMenuOpen(false)}>
