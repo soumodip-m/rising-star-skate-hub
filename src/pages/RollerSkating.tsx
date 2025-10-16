@@ -27,16 +27,16 @@ export default function RollerSkating() {
   }];
   const achievements = [{
     title: "State Championships",
-    count: "25+ Medals"
+    count: "200+ Medals"
   }, {
     title: "National Qualifiers",
     count: "15+ Students"
   }, {
-    title: "Best Times",
+    title: "Best Timings",
     count: "Multiple Records"
   }, {
     title: "Years of Excellence",
-    count: "8+ Years"
+    count: "15+ Years"
   }];
   return <div className="min-h-screen bg-background">
       <Navbar />
