@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Trophy, Users, Clock, Award, ChevronRight } from "lucide-react";
-import heroImage from "@/assets/hero-roller-skating.jpg";
+import startSkateImage from "@/assets/Start Line updated2.jpg";
 export default function RollerSkating() {
   const levels = [{
     name: "Beginner",
