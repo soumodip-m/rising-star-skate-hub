@@ -10,6 +10,7 @@ import SportCard from "@/components/SportCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import SocialWall from "@/components/SocialWall";
 import heroImage from "@/assets/hero-roller-skating.jpg";
+import skatingImage from "@/assets/Racer.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
@@ -19,7 +20,7 @@ export default function Index() {
   const sports = [{
     name: "Roller Skating",
     description: "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
-    image: heroImage,
+    image: skatingImage,
     path: "/sports/roller-skating",
     featured: true
   }, {
