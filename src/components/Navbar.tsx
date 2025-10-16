@@ -54,11 +54,7 @@ const navItems: NavItem[] = [
       { label: "Student Achievements", path: "/achievements" },
     ],
   },
-  {
-    label: "Facilities",
-    path: "/facilities",
-  },
-  {
+    {
     label: "Gallery",
     submenu: [
       { label: "Photos", path: "/gallery/photos" },
