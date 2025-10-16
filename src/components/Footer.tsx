@@ -19,13 +19,13 @@ export default function Footer() {
               Ahmedabad's premier multi-sport academy helping young athletes rise faster and shine brighter.
             </p>
             <div className="flex gap-3">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Facebook">
+              <a href="https://www.facebook.com/RSA4U/" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Facebook">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/@rising-stars" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="YouTube">
                 <Youtube className="h-4 w-4" />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram/rsa4sports" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Instagram">
                 <Instagram className="h-4 w-4" />
               </a>
             </div>
