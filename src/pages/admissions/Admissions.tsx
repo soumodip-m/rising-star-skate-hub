@@ -4,16 +4,14 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-
 export default function Admissions() {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="gradient-hero text-white py-20">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">How to Join RSA</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">How to Join RSA -Rising Stars Academy</h1>
             <p className="text-xl">Start your journey to sporting excellence</p>
           </div>
         </section>
@@ -98,9 +96,7 @@ export default function Admissions() {
                   </Button>
                 </Link>
                 <Link to="/admissions/register">
-                  <Button size="lg" variant="outline">
-                    Register Now
-                  </Button>
+                  
                 </Link>
               </div>
             </div>
@@ -109,6 +105,5 @@ export default function Admissions() {
       </main>
       <Footer />
       <WhatsAppButton />
-    </div>
-  );
+    </div>;
 }
