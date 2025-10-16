@@ -11,6 +11,10 @@ import TestimonialCard from "@/components/TestimonialCard";
 import SocialWall from "@/components/SocialWall";
 import heroImage from "@/assets/hero-roller-skating.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
+import srLogo from "@/assets/wellwishers/sr-logo-color.png";
+import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
+import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
+import dpsLogo from "@/assets/wellwishers/dps-logo-color.png";
 export default function Index() {
   const sports = [{
     name: "Roller Skating",
@@ -231,6 +235,27 @@ export default function Index() {
                 We respect your privacy. Your information will never be shared with third parties.
               </p>
             </form>
+          </div>
+        </div>
+      </section>
+
+      {/* Well Wishers Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Well Wishers</h2>
+            <p className="text-muted-foreground">
+              Proudly supported by leading organizations
+            </p>
+          </div>
+          
+          <div className="relative overflow-hidden">
+            <div className="flex animate-marquee-right gap-16 items-center justify-center">
+              <img src={srLogo} alt="Simmons Rama" className="h-24 object-contain" />
+              <img src={rsfiLogo} alt="Roller Skating Federation of India" className="h-24 object-contain" />
+              <img src={grsaLogo} alt="Gujarat State Roller Skating Association" className="h-24 object-contain" />
+              <img src={dpsLogo} alt="Delhi Public School Bopal" className="h-24 object-contain" />
+            </div>
           </div>
         </div>
       </section>
