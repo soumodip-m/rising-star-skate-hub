@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import { Facebook, Youtube, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import rsaLogo from "@/assets/rsa-logo.png";
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-
-  return (
-    <footer className="bg-foreground text-background pt-12 pb-6">
+  return <footer className="bg-foreground text-background pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Academy Info */}
@@ -22,31 +19,13 @@ export default function Footer() {
               Ahmedabad's premier multi-sport academy helping young athletes rise faster and shine brighter.
             </p>
             <div className="flex gap-3">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Facebook"
-              >
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Facebook">
                 <Facebook className="h-4 w-4" />
               </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="YouTube"
-              >
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="YouTube">
                 <Youtube className="h-4 w-4" />
               </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
-                aria-label="Instagram"
-              >
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="h-9 w-9 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Instagram">
                 <Instagram className="h-4 w-4" />
               </a>
             </div>
@@ -131,9 +110,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="tel:+919999999999" className="hover:text-primary transition-colors">
-                  +91 99999 99999
-                </a>
+                <a href="tel:+919999999999" className="hover:text-primary transition-colors">+91 98242 34663</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
@@ -170,6 +147,5 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
