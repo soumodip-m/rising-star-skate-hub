@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SportCard from "@/components/SportCard";
 import TestimonialCard from "@/components/TestimonialCard";
+import SocialMediaSection from "@/components/SocialMediaSection";
 import heroImage from "@/assets/hero-roller-skating.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
 export default function Index() {
@@ -157,6 +158,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Social Media Section */}
+      <SocialMediaSection />
 
       {/* Quick Trial Form */}
       <section className="py-16 bg-background">
