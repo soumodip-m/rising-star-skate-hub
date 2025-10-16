@@ -103,7 +103,7 @@ export default function Navbar() {
                 {item.path ? (
                   <Link
                     to={item.path}
-                    className={`px-4 py-2 text-sm font-medium transition-colors rounded-md ${
+                    className={`px-4 py-2 text-sm font-medium transition-colors rounded-md flex items-center justify-center ${
                       isActive(item.path)
                         ? "text-primary bg-primary/10"
                         : "text-foreground hover:text-primary hover:bg-muted"
@@ -112,7 +112,7 @@ export default function Navbar() {
                     {item.label}
                   </Link>
                 ) : (
-                  <button className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors flex items-center gap-1">
+                  <button className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-md transition-colors flex items-center justify-center gap-1">
                     {item.label}
                     <ChevronDown className="h-4 w-4" />
                   </button>
