@@ -1,0 +1,101 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import { Card, CardContent } from "@/components/ui/card";
+import { Play } from "lucide-react";
+
+const videos = [
+  {
+    title: "RSA Academy Overview 2024",
+    description: "A comprehensive look at our facilities, coaches, and programs",
+    thumbnail: "/images/facilities-gym.jpg"
+  },
+  {
+    title: "National Championship Highlights",
+    description: "Watch our students compete at the national roller skating championship",
+    thumbnail: "/images/events-medals.jpg"
+  },
+  {
+    title: "Training Sessions - Behind the Scenes",
+    description: "Experience a day in the life of RSA athletes",
+    thumbnail: "/images/coach-team.jpg"
+  },
+  {
+    title: "Student Success Stories",
+    description: "Hear from our champions about their journey",
+    thumbnail: "/images/pool-cross-training.jpg"
+  },
+  {
+    title: "Football Skills Workshop",
+    description: "Professional coaching techniques and drills",
+    thumbnail: "/images/training-facility.jpg"
+  },
+  {
+    title: "Annual Sports Day 2024",
+    description: "Highlights from our biggest event of the year",
+    thumbnail: "/images/hero-roller.jpg"
+  }
+];
+
+export default function Videos() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="gradient-hero text-white py-20">
+          <div className="container mx-auto px-4">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Video Gallery</h1>
+            <p className="text-xl">Watch our athletes in action</p>
+          </div>
+        </section>
+
+        {/* Video Grid */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              {videos.map((video, index) => (
+                <Card key={index} className="hover-lift overflow-hidden group cursor-pointer">
+                  <div className="relative">
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      className="w-full h-48 object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors flex items-center justify-center">
+                      <div className="bg-white/90 rounded-full p-4 group-hover:scale-110 transition-transform">
+                        <Play className="h-8 w-8 text-primary" fill="currentColor" />
+                      </div>
+                    </div>
+                  </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-bold mb-2">{video.title}</h3>
+                    <p className="text-sm text-muted-foreground">{video.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            <div className="text-center mt-12 bg-muted/50 p-8 rounded-lg max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">Subscribe to Our YouTube Channel</h3>
+              <p className="text-muted-foreground mb-6">
+                Stay updated with the latest videos, training tips, and event highlights
+              </p>
+              <a 
+                href="https://www.youtube.com/@rising-stars" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md hover:bg-primary/90 transition-colors"
+              >
+                <Play className="h-5 w-5" />
+                Visit Our YouTube Channel
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+      <WhatsAppButton />
+    </div>
+  );
+}
