@@ -97,6 +97,14 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "marquee-right": {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-50%)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -104,6 +112,7 @@ export default {
         "fade-in": "fade-in 0.5s ease-out",
         "slide-up": "slide-up 0.5s ease-out",
         "bounce-slow": "bounce 3s infinite",
+        "marquee-right": "marquee-right 20s linear infinite",
       },
     },
   },

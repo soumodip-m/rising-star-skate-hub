@@ -5,6 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
+import srLogo from "@/assets/wellwishers/sr-logo.png";
+import rsfiLogo from "@/assets/wellwishers/rsfi-logo.png";
+import grsaLogo from "@/assets/wellwishers/grsa-logo.jpg";
+import dpsLogo from "@/assets/wellwishers/dps-logo.png";
 
 const packages = [
   {
@@ -99,6 +103,34 @@ export default function Fees() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Well Wishers Section */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Well Wishers</h2>
+              <p className="text-muted-foreground">
+                Proudly supported by leading organizations
+              </p>
+            </div>
+            
+            <div className="relative overflow-hidden">
+              <div className="flex animate-marquee-right gap-16">
+                {/* First set of logos */}
+                <img src={srLogo} alt="Simmons Rama" className="h-24 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src={rsfiLogo} alt="Roller Skating Federation of India" className="h-24 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src={grsaLogo} alt="Gujarat State Roller Skating Association" className="h-24 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src={dpsLogo} alt="Delhi Public School Bopal" className="h-24 object-contain grayscale hover:grayscale-0 transition-all" />
+                
+                {/* Duplicate set for seamless loop */}
+                <img src={srLogo} alt="Simmons Rama" className="h-24 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src={rsfiLogo} alt="Roller Skating Federation of India" className="h-24 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src={grsaLogo} alt="Gujarat State Roller Skating Association" className="h-24 object-contain grayscale hover:grayscale-0 transition-all" />
+                <img src={dpsLogo} alt="Delhi Public School Bopal" className="h-24 object-contain grayscale hover:grayscale-0 transition-all" />
+              </div>
             </div>
           </div>
         </section>
