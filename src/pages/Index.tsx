@@ -16,6 +16,7 @@ import bgWaves from "@/assets/bg-waves.png";
 import skatingImage from "@/assets/Racer.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
 import sportsSilhouettes from "@/assets/sports-silhouettes.png";
+import otherSportsImage from "@/assets/other-sports.png";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
@@ -39,30 +40,10 @@ export default function Index() {
     path: "/sports/roller-skating",
     featured: true
   }, {
-    name: "Cricket",
-    description: "Professional cricket coaching with focus on technique, fitness, and match strategy.",
-    image: trainingImage,
-    path: "/sports/cricket"
-  }, {
-    name: "Football",
-    description: "Comprehensive football training from grassroots to competitive level.",
-    image: trainingImage,
-    path: "/sports/football"
-  }, {
-    name: "Basketball",
-    description: "Develop fundamental skills, team play, and competitive edge in basketball.",
-    image: trainingImage,
-    path: "/sports/basketball"
-  }, {
-    name: "Tennis",
-    description: "Expert tennis coaching for beginners to advanced players.",
-    image: trainingImage,
-    path: "/sports/tennis"
-  }, {
-    name: "Badminton",
-    description: "Structured badminton training with certified coaches.",
-    image: trainingImage,
-    path: "/sports/badminton"
+    name: "Other Sports",
+    description: "Explore our comprehensive range of sports including Cricket, Football, Basketball, Tennis, Badminton & more.",
+    image: otherSportsImage,
+    path: "/sports"
   }];
   return <div className="min-h-screen bg-background">
       <Navbar />
