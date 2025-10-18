@@ -64,8 +64,7 @@ export default function Index() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in">
             Rise Faster. <span className="text-gradient">Shine Brighter.</span>
           </h1>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto animate-slide-up md:text-2xl text-center">Ahmedabad's premier multi-sport academy with 31+ years of experience.  
-Expert coaching, modern facilities, and a supportive culture.</p>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto animate-slide-up">Ahmedabad's premier multi-sport academy with 20+ years of experience. Expert coaching, modern facilities, and a supportive culture.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
             <Link to="/admissions/trial">
               <Button variant="hero" size="lg" className="min-w-[200px]">
@@ -92,7 +91,11 @@ Expert coaching, modern facilities, and a supportive culture.</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Building Champions, One Athlete at a Time
             </h2>
-            <p className="text-muted-foreground leading-relaxed text-lg text-center">RSA – Rising Stars Academy helps young athletes learn faster and compete smarter. From our flagship Roller Skating program to multi-sport coaching, we blend certified training, modern facilities, and a supportive culture-right here in Ahmedabad.</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              RSA – Rising Stars Academy helps young athletes learn faster and compete smarter. From our flagship
+              Roller Skating program to multi-sport coaching, we blend certified training, modern facilities, and
+              a supportive culture—right here in Ahmedabad.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -152,7 +155,10 @@ Expert coaching, modern facilities, and a supportive culture.</p>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
             <p className="text-lg text-muted-foreground">Hear from our athletes and parents</p>
           </div>
-
+<!-- Elfsight Google Reviews | RSA Google Reviews -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-5bc3cfa8-a98a-48a0-af1b-af4b1a492fd5" data-elfsight-app-lazy></div>
+  
           <div className="grid md:grid-cols-3 gap-6">
             <TestimonialCard quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at state level!" name="Priya Sharma" role="Parent" achievement="State Medalist" />
             <TestimonialCard quote="The coaches here are amazing. They pushed me to achieve more than I thought possible." name="Arjun Patel" role="Student (14)" achievement="National Qualifier" />
