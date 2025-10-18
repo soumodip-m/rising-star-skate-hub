@@ -5,10 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
-
 export default function Contact() {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
@@ -140,11 +138,7 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium mb-2">Your Message *</label>
-                    <Textarea
-                      placeholder="Tell us more about your inquiry..."
-                      rows={5}
-                      required
-                    />
+                    <Textarea placeholder="Tell us more about your inquiry..." rows={5} required />
                   </div>
 
                   <div className="flex items-start gap-2">
@@ -170,27 +164,11 @@ export default function Contact() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8">Visit Us</h2>
           <div className="max-w-5xl mx-auto bg-card rounded-lg border overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.511634288925!2d72.45613897596665!3d23.041544179152756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0014a98971%3A0xa0362b0e0241daff!2sDPS%20Skating%20Rink!5e0!3m2!1sen!2sin!4v1729281234567!5m2!1sen!2sin"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full"
-              title="DPS Skating Rink Location"
-            />
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.511634288925!2d72.45613897596665!3d23.041544179152756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0014a98971%3A0xa0362b0e0241daff!2sDPS%20Skating%20Rink!5e0!3m2!1sen!2sin!4v1729281234567!5m2!1sen!2sin" width="100%" height="450" style={{
+            border: 0
+          }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="w-full" title="DPS Skating Rink Location" />
             <div className="p-4 bg-card text-center">
-              <a
-                href="https://www.google.com/maps/place/DPS+Skating+Rink/@23.0415442,72.4587389,17z/data=!3m1!4b1!4m6!3m5!1s0x395e9b0014a98971:0xa0362b0e0241daff!8m2!3d23.0415442!4d72.4587389!16s%2Fg%2F11zk25bsdj?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
-              >
-                <MapPin className="h-4 w-4" />
-                View Larger Map
-              </a>
+              
             </div>
           </div>
         </div>
@@ -198,6 +176,5 @@ export default function Contact() {
 
       <WhatsAppButton />
       <Footer />
-    </div>
-  );
+    </div>;
 }
