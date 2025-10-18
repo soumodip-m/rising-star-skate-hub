@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-foreground text-background pt-12 pb-6">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Academy Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
@@ -94,50 +94,65 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Location Map */}
-          <div>
-            <h3 className="text-lg font-bold mb-4 text-primary">Location</h3>
-            <a 
-              href="https://www.google.com/maps/place/DPS+Skating+Rink/@23.0415442,72.4587389,17z/data=!3m1!4b1!4m6!3m5!1s0x395e9b0014a98971:0xa0362b0e0241daff!8m2!3d23.0415442!4d72.4587389!16s%2Fg%2F11zk25bsdj?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="block rounded-lg overflow-hidden border border-primary/20 hover:border-primary transition-colors"
-            >
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.511634288925!2d72.45613897596665!3d23.041544179152756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0014a98971%3A0xa0362b0e0241daff!2sDPS%20Skating%20Rink!5e0!3m2!1sen!2sin!4v1729281234567!5m2!1sen!2sin"
-                width="100%"
-                height="150"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="pointer-events-none"
-                title="DPS Bopal Skating Rink Location"
-              />
-            </a>
-          </div>
-
           {/* Connect */}
           <div>
             <h3 className="text-lg font-bold mb-4 text-primary">Connect</h3>
-            <ul className="space-y-3 text-sm text-background/80">
-              <li className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                <span>DPS Bopal Skating Rink, Bopal, Ahmedabad Gujarat 380058 India</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <Phone className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="tel:+919999999999" className="hover:text-primary transition-colors">
-                  +91 70435 35505
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="mailto:info@rsaacademy.com" className="hover:text-primary transition-colors">
-                  rsa4sports@gmail.com
-                </a>
-              </li>
-            </ul>
+            import { useState } from "react"
+import { MapPin, Phone, Mail } from "lucide-react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+
+export default function ContactSection() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <ul className="space-y-3 text-sm text-background/80">
+      <li className="flex items-start gap-2">
+        <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
+        <Dialog open={open} onOpenChange={setOpen}>
+          <DialogTrigger asChild>
+            <button className="hover:text-primary transition-colors text-left">
+              DPS Bopal Skating Rink, Bopal, Ahmedabad Gujarat 380058 India
+            </button>
+          </DialogTrigger>
+          <DialogContent className="max-w-3xl">
+            <DialogHeader>
+              <DialogTitle className="text-lg font-semibold">
+                Find Us on Map
+              </DialogTitle>
+            </DialogHeader>
+            <div className="aspect-video w-full">
+              <iframe
+                title="RSA Location"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.134497839814!2d72.45743067506862!3d23.002399116053532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9d74ab1a1d8b%3A0xf646e2e1d1a8fba5!2sDPS%20Bopal!5e0!3m2!1sen!2sin!4v1697274000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </li>
+
+      <li className="flex items-center gap-2">
+        <Phone className="h-4 w-4 flex-shrink-0 text-primary" />
+        <a href="tel:+917043535505" className="hover:text-primary transition-colors">
+          +91 70435 35505
+        </a>
+      </li>
+
+      <li className="flex items-center gap-2">
+        <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
+        <a href="mailto:rsa4sports@gmail.com" className="hover:text-primary transition-colors">
+          rsa4sports@gmail.com
+        </a>
+      </li>
+    </ul>
+  )
+}
+
             <div className="mt-4">
               <Link to="/contact">
                 <button className="text-sm font-medium text-primary hover:text-primary-light transition-colors">
