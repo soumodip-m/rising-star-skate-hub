@@ -106,11 +106,11 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-background/80">
               <li className="flex items-start gap-2">
                 <MapPin className="h-4 w-4 mt-1 flex-shrink-0 text-primary" />
-                <span>DPS Bopal,Ahmedabad, Gujarat, India</span>
+                <span>DPS Bopal Skating Rink, Bopal, Ahmedabad Gujarat 380058 India</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="tel:+919999999999" className="hover:text-primary transition-colors">+91 98242 34663</a>
+                <a href="tel:+919999999999" className="hover:text-primary transition-colors">+91 70435 35505</a>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
