@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-foreground text-background pt-12 pb-6">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Academy Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
@@ -92,6 +92,29 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
+          </div>
+
+          {/* Location Map */}
+          <div>
+            <h3 className="text-lg font-bold mb-4 text-primary">Location</h3>
+            <a 
+              href="https://share.google.com/kIB9YOde1Vz5etqM8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block rounded-lg overflow-hidden border border-primary/20 hover:border-primary transition-colors"
+            >
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.4830486777847!2d72.43977931495832!3d23.04506368492345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b4e5c5c5c5d%3A0x5c5c5c5c5c5c5c5c!2sDPS%20Bopal%20Skating%20Rink!5e0!3m2!1sen!2sin!4v1234567890"
+                width="100%"
+                height="150"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="pointer-events-none"
+                title="DPS Bopal Skating Rink Location"
+              />
+            </a>
           </div>
 
           {/* Connect */}
