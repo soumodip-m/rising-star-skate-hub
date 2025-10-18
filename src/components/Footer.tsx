@@ -139,7 +139,7 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-4">
-              <Link to="/contact">
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
                 <button className="text-sm font-medium text-primary hover:text-primary-light transition-colors">
                   Contact Us →
                 </button>
