@@ -15,6 +15,7 @@ import bgTexture from "@/assets/bg-texture.jpg";
 import bgWaves from "@/assets/bg-waves.png";
 import skatingImage from "@/assets/Racer.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
+import sportsSilhouettes from "@/assets/sports-silhouettes.png";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
@@ -116,8 +117,17 @@ export default function Index() {
       </section>
 
       {/* Quick Intro */}
-      <section className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
+      <section className="relative py-16 bg-muted/50 overflow-hidden">
+        {/* Background Image Layer */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-20">
+          <img 
+            src={sportsSilhouettes} 
+            alt="Sports silhouettes" 
+            className="w-full max-w-4xl object-contain"
+          />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Building Champions, One Athlete at a Time</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
