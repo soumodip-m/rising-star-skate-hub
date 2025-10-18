@@ -194,7 +194,7 @@ export default function Index() {
               quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
               name="Soumodip Mukherjee"
               role="Parent"
-              achievement="Advanced Inline Skater"
+              achievement="Advanced Skater"
             />
             <TestimonialCard
               quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
@@ -207,6 +207,12 @@ export default function Index() {
               name="Gourab Mitra"
               role="Parent"
               achievement="National Qualifier"
+            />
+            <TestimonialCard
+              quote="Highly recommended RSA -Rising Stars Academy for kids alike who want to learn skating the right way with proper technique, safety and discipline!"
+              name="Yogendrasinh Rana"
+              role="Parent"
+              achievement="Junior Skater"
             />
           </div>
 
