@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, Award, Users, Target, Calendar } from "lucide-react";
+import { ChevronDown, Award, Users, Target, Calendar, Trophy, Building2, Dumbbell, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -17,6 +17,7 @@ import skatingImage from "@/assets/Racer.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
 import sportsSilhouettes from "@/assets/sports-silhouettes.png";
 import otherSportsImage from "@/assets/other-sports.png";
+import whyChooseImage from "@/assets/why-choose-rsa.jpg";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
@@ -184,11 +185,94 @@ export default function Index() {
         </div>
       </section>
 
+      {/* Why Choose RSA Program */}
+      <section className="py-16 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose RSA Program?</h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            {/* Image */}
+            <div className="order-2 lg:order-1">
+              <img
+                src={whyChooseImage}
+                alt="RSA Training Facility"
+                className="w-full h-full object-cover rounded-lg shadow-xl"
+              />
+            </div>
+
+            {/* Features Grid */}
+            <div className="order-1 lg:order-2 grid gap-8">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Trophy className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">30+ Years of Excellence</h3>
+                  <p className="text-muted-foreground">
+                    Three decades of proven success in roller skating training with a legacy of champions and
+                    disciplined coaching.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Building2 className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">World-Class Facilities</h3>
+                  <p className="text-muted-foreground">
+                    Train in professional grounds and atmosphere with top-tier equipment & facilities, ensuring
+                    performance, comfort, and safety.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Dumbbell className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Fitness & Growth Focus</h3>
+                  <p className="text-muted-foreground">
+                    Programs designed to build strength, stamina, and confidence — nurturing both athletic and personal
+                    growth.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0">
+                  <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <Handshake className="h-6 w-6 text-primary" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-2">Inclusive & Safe Environment</h3>
+                  <p className="text-muted-foreground">
+                    Every athlete matters — we ensure equal opportunities, safety, and encouragement for all ages and
+                    skill levels.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Community Speaks</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
             <p className="text-lg text-muted-foreground">Stories That Inspire Us Every Day</p>
           </div>
 
