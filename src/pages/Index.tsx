@@ -48,6 +48,7 @@ export default function Index() {
         "Explore our comprehensive range of sports including Cricket, Football, Basketball, Tennis, Badminton & more.",
       image: otherSportsImage,
       path: "/sports",
+      featured: true,
     },
   ];
   return (
