@@ -43,6 +43,14 @@ import Videos from "./pages/gallery/Videos";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
 
+// Blog pages
+import BlogHistory from "./pages/blog/History";
+import BlogTypes from "./pages/blog/Types";
+import BlogCompetitions from "./pages/blog/Competitions";
+import BlogTraining from "./pages/blog/Training";
+import BlogEquipment from "./pages/blog/Equipment";
+import BlogCommunity from "./pages/blog/Community";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -90,6 +98,14 @@ const App = () => (
           <Route path="/gallery/videos" element={<Videos />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/shop" element={<Shop />} />
+
+          {/* Blog Routes */}
+          <Route path="/blog/history" element={<BlogHistory />} />
+          <Route path="/blog/types" element={<BlogTypes />} />
+          <Route path="/blog/competitions" element={<BlogCompetitions />} />
+          <Route path="/blog/training" element={<BlogTraining />} />
+          <Route path="/blog/equipment" element={<BlogEquipment />} />
+          <Route path="/blog/community" element={<BlogCommunity />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

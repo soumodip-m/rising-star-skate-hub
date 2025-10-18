@@ -5,27 +5,32 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Book, Zap, Trophy, Users, Globe, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 
 const features = [
   {
     icon: Book,
     title: "Rich History",
     description: "Explore the fascinating evolution of roller skating from 1760 to modern speed skating.",
+    link: "/blog/history"
   },
   {
     icon: Zap,
     title: "Types & Techniques",
     description: "Master both inline and quad skating with expert guidance and practice tips.",
+    link: "/blog/types"
   },
   {
     icon: Trophy,
     title: "Global Competitions",
     description: "Stay updated with international championships and competitions worldwide.",
+    link: "/blog/competitions"
   },
   {
     icon: Users,
     title: "Training Programs",
     description: "Structured programs from beginner to advanced with exercise routines.",
+    link: "/blog/training"
   }
 ];
 
@@ -61,11 +66,13 @@ export default function Blog() {
               Your complete guide to roller skating - from history and techniques to equipment and competitions. Join the global community of speed skating enthusiasts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                Start Learning <ArrowRight className="ml-2 h-5 w-5" />
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
+                <Link to="/blog/types">
+                  Start Learning <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Equipment Guide
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+                <Link to="/blog/equipment">Equipment Guide</Link>
               </Button>
             </div>
           </div>
@@ -81,8 +88,10 @@ export default function Blog() {
                     <feature.icon className="h-12 w-12 text-primary mb-4" />
                     <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                     <p className="text-muted-foreground mb-4">{feature.description}</p>
-                    <Button variant="ghost" className="group p-0">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <Button variant="ghost" className="group p-0" asChild>
+                      <Link to={feature.link}>
+                        Learn More <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -138,11 +147,11 @@ export default function Blog() {
               Whether you're a complete beginner or looking to improve your technique, we have the resources and community to help you succeed.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-primary hover:bg-white/90">
-                Start Training
+              <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
+                <Link to="/blog/training">Start Training</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                Join Community
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10" asChild>
+                <Link to="/blog/community">Join Community</Link>
               </Button>
             </div>
           </div>
