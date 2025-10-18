@@ -60,21 +60,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/sports/cricket" className="hover:text-primary transition-colors">
-                  Cricket
-                </Link>
-              </li>
-              <li>
-                <Link to="/sports/football" className="hover:text-primary transition-colors">
-                  Football
-                </Link>
-              </li>
-              <li>
-                <Link to="/sports/basketball" className="hover:text-primary transition-colors">
-                  Basketball
-                </Link>
-              </li>
-              <li>
                 <Link to="/sports" className="hover:text-primary transition-colors">
                   All Sports
                 </Link>
