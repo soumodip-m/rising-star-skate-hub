@@ -186,7 +186,7 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
-            <p className="text-lg text-muted-foreground">Hear from our athletes and parents</p>
+            <p className="text-lg text-muted-foreground">Stories That Inspire Us Every Day</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
@@ -194,7 +194,7 @@ export default function Index() {
               quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
               name="Soumodip Mukherjee"
               role="Parent"
-              achievement="Advanced Skater"
+              achievement="Advanced Inline Skater"
             />
             <TestimonialCard
               quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
@@ -207,12 +207,6 @@ export default function Index() {
               name="Gourab Mitra"
               role="Parent"
               achievement="National Qualifier"
-            />
-            <TestimonialCard
-              quote="Highly recommended RSA -Rising Stars Academy for kids alike who want to learn skating the right way with proper technique, safety and discipline!"
-              name="Yogendrasinh Rana"
-              role="Parent"
-              achievement="Junior Skater"
             />
           </div>
 
