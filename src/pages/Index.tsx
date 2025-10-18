@@ -194,18 +194,19 @@ export default function Index() {
               quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
               name="Soumodip Mukherjee"
               role="Parent"
-              achievement="State Medalist"
+              achievement="Advanced Inline Skater"
             />
             <TestimonialCard
               quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
               name="Rudra Gol"
               role="Student (16)"
-              achievement="National Qualifier"
+              achievement="National Medalist"
             />
             <TestimonialCard
               quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment."
               name="Gourab Mitra"
               role="Parent"
+              achievement="National Qualifier"
             />
           </div>
 
