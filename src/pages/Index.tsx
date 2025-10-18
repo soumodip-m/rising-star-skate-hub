@@ -172,10 +172,12 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sports.map((sport) => (
-              <SportCard key={sport.name} {...sport} />
-            ))}
+          <div className="flex justify-center">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
+              {sports.map((sport) => (
+                <SportCard key={sport.name} {...sport} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
