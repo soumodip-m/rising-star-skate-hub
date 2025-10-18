@@ -98,13 +98,13 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 text-primary">Location</h3>
             <a 
-              href="https://share.google.com/kIB9YOde1Vz5etqM8" 
+              href="https://www.google.com/maps/place/DPS+Skating+Rink/@23.0415442,72.4587389,17z/data=!3m1!4b1!4m6!3m5!1s0x395e9b0014a98971:0xa0362b0e0241daff!8m2!3d23.0415442!4d72.4587389!16s%2Fg%2F11zk25bsdj?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
               target="_blank" 
               rel="noopener noreferrer"
               className="block rounded-lg overflow-hidden border border-primary/20 hover:border-primary transition-colors"
             >
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.4830486777847!2d72.43977931495832!3d23.04506368492345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b4e5c5c5c5d%3A0x5c5c5c5c5c5c5c5c!2sDPS%20Bopal%20Skating%20Rink!5e0!3m2!1sen!2sin!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.511634288925!2d72.45613897596665!3d23.041544179152756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0014a98971%3A0xa0362b0e0241daff!2sDPS%20Skating%20Rink!5e0!3m2!1sen!2sin!4v1729281234567!5m2!1sen!2sin"
                 width="100%"
                 height="150"
                 style={{ border: 0 }}
