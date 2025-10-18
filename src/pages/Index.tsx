@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Award, Users, Target, Calendar, Trophy, Building2, Dumbbell, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import SportCard from "@/components/SportCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import SocialWall from "@/components/SocialWall";
 import heroImage from "@/assets/hero-roller-skating.jpg";
+import heroQuadImage from "@/assets/hero-quad-skating.jpg";
 import bgTexture from "@/assets/bg-texture.jpg";
 import bgWaves from "@/assets/bg-waves.png";
 import skatingImage from "@/assets/Racer.jpg";
@@ -23,17 +24,41 @@ import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
 import dpsLogo from "@/assets/wellwishers/dps-logo-color.png";
 export default function Index() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const heroSlides = [
+    {
+      image: heroImage,
+      title: "Rise Faster. ",
+      highlight: "Shine Brighter.",
+      description: "Ahmedabad's premier multi-sport academy with 31+ years of experience. Expert coaching, modern facilities, and a supportive culture.",
+    },
+    {
+      image: heroQuadImage,
+      title: "Every Star Deserves to ",
+      highlight: "Shine",
+      description: "Enroll today and let your child's inner star truly shine.",
+    },
+  ];
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://elfsightcdn.com/platform.js";
     script.async = true;
     document.body.appendChild(script);
+    
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
+      clearInterval(interval);
     };
   }, []);
+
   const sports = [
     {
       name: "Roller Skating",
@@ -69,18 +94,23 @@ export default function Index() {
             }}
           />
 
-          {/* Layer 2: Main hero image with gradient overlays */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: `url(${heroImage})`,
-            }}
-          >
-            {/* Middle gradient overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
-            {/* Dark gradient for text contrast */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-          </div>
+          {/* Layer 2: Hero images with crossfade */}
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+                currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
+              style={{
+                backgroundImage: `url(${slide.image})`,
+              }}
+            >
+              {/* Middle gradient overlay for depth */}
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
+              {/* Dark gradient for text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+            </div>
+          ))}
 
           {/* Layer 3: Top - Wave pattern for depth and motion */}
           <div
@@ -92,14 +122,25 @@ export default function Index() {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in">
-            Rise Faster. <span className="text-gradient">Shine Brighter.</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto animate-slide-up">
-            Ahmedabad's premier multi-sport academy with 31+ years of experience. Expert coaching, modern facilities,
-            and a supportive culture.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
+          {/* Hero text with crossfade */}
+          {heroSlides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-x-0 transition-opacity duration-1000 ${
+                currentSlide === index ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6">
+                {slide.title}
+                <span className="text-gradient">{slide.highlight}</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+                {slide.description}
+              </p>
+            </div>
+          ))}
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-[200px] md:mt-[180px]">
             <Link to="/admissions/trial">
               <Button variant="hero" size="lg" className="min-w-[200px]">
                 Book a Trial
