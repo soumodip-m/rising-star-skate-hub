@@ -31,46 +31,58 @@ export default function Index() {
     };
   }, []);
 
-  const sports = [{
-    name: "Roller Skating",
-    description: "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
-    image: skatingImage,
-    path: "/sports/roller-skating",
-    featured: true
-  }, {
-    name: "Cricket",
-    description: "Professional cricket coaching with focus on technique, fitness, and match strategy.",
-    image: trainingImage,
-    path: "/sports/cricket"
-  }, {
-    name: "Football",
-    description: "Comprehensive football training from grassroots to competitive level.",
-    image: trainingImage,
-    path: "/sports/football"
-  }, {
-    name: "Basketball",
-    description: "Develop fundamental skills, team play, and competitive edge in basketball.",
-    image: trainingImage,
-    path: "/sports/basketball"
-  }, {
-    name: "Tennis",
-    description: "Expert tennis coaching for beginners to advanced players.",
-    image: trainingImage,
-    path: "/sports/tennis"
-  }, {
-    name: "Badminton",
-    description: "Structured badminton training with certified coaches.",
-    image: trainingImage,
-    path: "/sports/badminton"
-  }];
-  return <div className="min-h-screen bg-background">
+  const sports = [
+    {
+      name: "Roller Skating",
+      description:
+        "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
+      image: skatingImage,
+      path: "/sports/roller-skating",
+      featured: true,
+    },
+    {
+      name: "Cricket",
+      description: "Professional cricket coaching with focus on technique, fitness, and match strategy.",
+      image: trainingImage,
+      path: "/sports/cricket",
+    },
+    {
+      name: "Football",
+      description: "Comprehensive football training from grassroots to competitive level.",
+      image: trainingImage,
+      path: "/sports/football",
+    },
+    {
+      name: "Basketball",
+      description: "Develop fundamental skills, team play, and competitive edge in basketball.",
+      image: trainingImage,
+      path: "/sports/basketball",
+    },
+    {
+      name: "Tennis",
+      description: "Expert tennis coaching for beginners to advanced players.",
+      image: trainingImage,
+      path: "/sports/tennis",
+    },
+    {
+      name: "Badminton",
+      description: "Structured badminton training with certified coaches.",
+      image: trainingImage,
+      path: "/sports/badminton",
+    },
+  ];
+  return (
+    <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url(${heroImage})`
-      }}>
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${heroImage})`,
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
         </div>
 
@@ -78,7 +90,10 @@ export default function Index() {
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in">
             Rise Faster. <span className="text-gradient">Shine Brighter.</span>
           </h1>
-          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto animate-slide-up">Ahmedabad's premier multi-sport academy with 20+ years of experience. Expert coaching, modern facilities, and a supportive culture.</p>
+          <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto animate-slide-up">
+            Ahmedabad's premier multi-sport academy with 20+ years of experience. Expert coaching, modern facilities,
+            and a supportive culture.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up">
             <Link to="/admissions/trial">
               <Button variant="hero" size="lg" className="min-w-[200px]">
@@ -86,7 +101,11 @@ export default function Index() {
               </Button>
             </Link>
             <Link to="/admissions">
-              <Button variant="outline" size="lg" className="min-w-[200px] bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground">
+              <Button
+                variant="outline"
+                size="lg"
+                className="min-w-[200px] bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground"
+              >
                 Join Now
               </Button>
             </Link>
@@ -102,13 +121,11 @@ export default function Index() {
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Building Champions, One Athlete at a Time
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Building Champions, One Athlete at a Time</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              RSA – Rising Stars Academy helps young athletes learn faster and compete smarter. From our flagship
-              Roller Skating program to multi-sport coaching, we blend certified training, modern facilities, and
-              a supportive culture—right here in Ahmedabad.
+              RSA – Rising Stars Academy helps young athletes learn faster and compete smarter. From our flagship Roller
+              Skating program to multi-sport coaching, we blend certified training, modern facilities, and a supportive
+              culture—right here in Ahmedabad.
             </p>
           </div>
 
@@ -149,7 +166,9 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sports.map(sport => <SportCard key={sport.name} {...sport} />)}
+            {sports.map((sport) => (
+              <SportCard key={sport.name} {...sport} />
+            ))}
           </div>
 
           <div className="text-center mt-10">
@@ -171,9 +190,23 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <TestimonialCard quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at state level!" name="Priya Sharma" role="Parent" achievement="State Medalist" />
-            <TestimonialCard quote="The coaches here are amazing. They pushed me to achieve more than I thought possible." name="Arjun Patel" role="Student (14)" achievement="National Qualifier" />
-            <TestimonialCard quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment." name="Rajesh Kumar" role="Parent" />
+            <TestimonialCard
+              quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
+              name="Soumodip Mukherjee"
+              role="Parent"
+              achievement="State Medalist"
+            />
+            <TestimonialCard
+              quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
+              name="Rudra Gol"
+              role="Student (16)"
+              achievement="National Qualifier"
+            />
+            <TestimonialCard
+              quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment."
+              name="Gourab Mitra"
+              role="Parent"
+            />
           </div>
 
           {/* Elfsight Google Reviews Widget */}
@@ -264,11 +297,9 @@ export default function Index() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Well Wishers</h2>
-            <p className="text-muted-foreground">
-              Proudly supported by leading organizations
-            </p>
+            <p className="text-muted-foreground">Proudly supported by leading organizations</p>
           </div>
-          
+
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee-right gap-16 items-center justify-center">
               <img src={srLogo} alt="Simmons Rama" className="h-24 object-contain" />
@@ -282,5 +313,6 @@ export default function Index() {
 
       <WhatsAppButton />
       <Footer />
-    </div>;
+    </div>
+  );
 }
