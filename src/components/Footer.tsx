@@ -114,9 +114,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="mailto:info@rsaacademy.com" className="hover:text-primary transition-colors">
-                  info@rsaacademy.com
-                </a>
+                <a href="mailto:info@rsaacademy.com" className="hover:text-primary transition-colors">rsa4sports@gmail.com</a>
               </li>
             </ul>
             <div className="mt-4">
