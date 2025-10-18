@@ -119,7 +119,7 @@ export default function Index() {
       {/* Quick Intro */}
       <section className="relative py-16 bg-muted/50 overflow-hidden">
         {/* Background Image Layer */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-40">
+        <div className="absolute inset-0 flex items-center justify-center opacity-60">
           <img 
             src={sportsSilhouettes} 
             alt="Sports silhouettes" 
