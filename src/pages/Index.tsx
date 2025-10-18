@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Award, Users, Target, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,19 @@ import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
 import dpsLogo from "@/assets/wellwishers/dps-logo-color.png";
 export default function Index() {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   const sports = [{
     name: "Roller Skating",
     description: "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
@@ -155,47 +169,16 @@ export default function Index() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
             <p className="text-lg text-muted-foreground">Hear from our athletes and parents</p>
           </div>
-{/* Widget Section Google Review */}
-import { useEffect } from "react";
 
-export default function HomePage() {
-  useEffect(() => {
-    // Dynamically load Elfsight script once component mounts
-    const script = document.createElement("script");
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
-
-    return () => {
-      // Cleanup when component unmounts
-      document.body.removeChild(script);
-    };
-  }, []);
-
-  return (
-    <section className="text-center py-10">
-      <div className="container mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
-        <p className="text-lg text-muted-foreground">
-          Hear from our athletes and parents
-        </p>
-
-        {/* Elfsight Google Reviews Widget */}
-        <div
-          className="elfsight-app-5bc3cfa8-a98a-48a0-af1b-af4b1a492fd5"
-          data-elfsight-app-lazy
-        ></div>
-      </div>
-    </section>
-  );
-}
-
-
-{/* End of Google Review */}
           <div className="grid md:grid-cols-3 gap-6">
             <TestimonialCard quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at state level!" name="Priya Sharma" role="Parent" achievement="State Medalist" />
             <TestimonialCard quote="The coaches here are amazing. They pushed me to achieve more than I thought possible." name="Arjun Patel" role="Student (14)" achievement="National Qualifier" />
             <TestimonialCard quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment." name="Rajesh Kumar" role="Parent" />
+          </div>
+
+          {/* Elfsight Google Reviews Widget */}
+          <div className="mt-12">
+            <div className="elfsight-app-5bc3cfa8-a98a-48a0-af1b-af4b1a492fd5" data-elfsight-app-lazy></div>
           </div>
         </div>
       </section>
