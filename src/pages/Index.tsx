@@ -11,6 +11,8 @@ import SportCard from "@/components/SportCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import SocialWall from "@/components/SocialWall";
 import heroImage from "@/assets/hero-roller-skating.jpg";
+import bgTexture from "@/assets/bg-texture.jpg";
+import bgWaves from "@/assets/bg-waves.png";
 import skatingImage from "@/assets/Racer.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
@@ -77,13 +79,36 @@ export default function Index() {
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+        {/* Multi-layered background */}
+        <div className="absolute inset-0">
+          {/* Layer 1: Bottom - Subtle texture */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-30"
+            style={{
+              backgroundImage: `url(${bgTexture})`,
+            }}
+          />
+          
+          {/* Layer 2: Main hero image with gradient overlays */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${heroImage})`,
+            }}
+          >
+            {/* Middle gradient overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
+            {/* Dark gradient for text contrast */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+          </div>
+          
+          {/* Layer 3: Top - Wave pattern for depth and motion */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-soft-light"
+            style={{
+              backgroundImage: `url(${bgWaves})`,
+            }}
+          />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
