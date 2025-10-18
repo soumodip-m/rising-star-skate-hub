@@ -49,6 +49,7 @@ export default function Index() {
       image: otherSportsImage,
       path: "/sports",
       featured: true,
+      showBadge: false,
     },
   ];
   return (

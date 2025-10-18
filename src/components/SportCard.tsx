@@ -8,9 +8,10 @@ interface SportCardProps {
   image: string;
   path: string;
   featured?: boolean;
+  showBadge?: boolean;
 }
 
-export default function SportCard({ name, description, image, path, featured }: SportCardProps) {
+export default function SportCard({ name, description, image, path, featured, showBadge = true }: SportCardProps) {
   return (
     <Link to={path} className="block group">
       <Card
@@ -24,7 +25,7 @@ export default function SportCard({ name, description, image, path, featured }: 
             alt={name}
             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           />
-          {featured && (
+          {featured && showBadge && (
             <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
               FLAGSHIP
             </div>
