@@ -17,22 +17,13 @@ const navItems: NavItem[] = [
     submenu: [
       { label: "Our Story", path: "/about" },
       { label: "Founder's Message", path: "/about/founder" },
-      { label: "Coaches & Trainers", path: "/about/coaches" },
       { label: "Achievements & Milestones", path: "/about/milestones" },
-      { label: "Infrastructure & Facilities", path: "/about/facilities" },
-      { label: "Well-Wishers", path: "/about/well-wishers" },
     ],
   },
   {
     label: "Sports & Coaching",
     submenu: [
       { label: "Roller Skating (Flagship)", path: "/sports/roller-skating" },
-      { label: "Cricket", path: "/sports/cricket" },
-      { label: "Football", path: "/sports/football" },
-      { label: "Basketball", path: "/sports/basketball" },
-      { label: "Tennis", path: "/sports/tennis" },
-      { label: "Badminton", path: "/sports/badminton" },
-      { label: "Athletics", path: "/sports/athletics" },
       { label: "Other Sports", path: "/sports" },
     ],
   },
@@ -40,7 +31,7 @@ const navItems: NavItem[] = [
     label: "Admissions",
     submenu: [
       { label: "How to Join", path: "/admissions" },
-      { label: "Fees & Packages", path: "/admissions/fees" },
+      { label: "Packages", path: "/admissions/fees" },
       { label: "Registration", path: "/admissions/register" },
       { label: "Book a Trial", path: "/admissions/trial" },
     ],
@@ -54,7 +45,7 @@ const navItems: NavItem[] = [
       { label: "Student Achievements", path: "/achievements" },
     ],
   },
-    {
+  {
     label: "Gallery",
     submenu: [
       { label: "Photos", path: "/gallery/photos" },
@@ -177,9 +168,7 @@ export default function Navbar() {
                       to={item.path}
                       onClick={() => setMobileMenuOpen(false)}
                       className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                        isActive(item.path)
-                          ? "text-primary bg-primary/10"
-                          : "text-foreground hover:bg-muted"
+                        isActive(item.path) ? "text-primary bg-primary/10" : "text-foreground hover:bg-muted"
                       }`}
                     >
                       {item.label}
@@ -187,9 +176,7 @@ export default function Navbar() {
                   ) : (
                     <>
                       <button
-                        onClick={() =>
-                          setActiveDropdown(activeDropdown === item.label ? null : item.label)
-                        }
+                        onClick={() => setActiveDropdown(activeDropdown === item.label ? null : item.label)}
                         className="w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-foreground hover:bg-muted rounded-md transition-colors"
                       >
                         {item.label}
