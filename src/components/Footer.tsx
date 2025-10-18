@@ -97,9 +97,9 @@ export default function Footer() {
           {/* Location Map */}
           <div>
             <h3 className="text-lg font-bold mb-4 text-primary">Location</h3>
-            <a 
-              href="https://www.google.com/maps/place/DPS+Skating+Rink/@23.0415442,72.4587389,17z/data=!3m1!4b1!4m6!3m5!1s0x395e9b0014a98971:0xa0362b0e0241daff!8m2!3d23.0415442!4d72.4587389!16s%2Fg%2F11zk25bsdj?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" 
-              target="_blank" 
+            <a
+              href="https://www.google.com/maps/place/DPS+Skating+Rink/@23.0415442,72.4587389,17z/data=!3m1!4b1!4m6!3m5!1s0x395e9b0014a98971:0xa0362b0e0241daff!8m2!3d23.0415442!4d72.4587389!16s%2Fg%2F11zk25bsdj?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D"
+              target="_blank"
               rel="noopener noreferrer"
               className="block rounded-lg overflow-hidden border border-primary/20 hover:border-primary transition-colors"
             >
@@ -133,7 +133,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0 text-primary" />
-                <a href="mailto:info@rsaacademy.com" className="hover:text-primary transition-colors">
+                <a href="mailto:rsa4sports@gmail.com" className="hover:text-primary transition-colors">
                   rsa4sports@gmail.com
                 </a>
               </li>
