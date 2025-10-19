@@ -7,9 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Trophy, Users, Clock, Award, ChevronRight } from "lucide-react";
 
 // Parallax background images
-import skatesCloseup from "@/assets/parallax/skates-closeup.jpg";
-import rinkAtmosphere from "@/assets/parallax/rink-atmosphere.jpg";
-import athleteAction from "@/assets/parallax/athlete-action.jpg";
+import heroRollerSkating from "@/assets/hero-roller-skating.jpg";
 import motionTrails from "@/assets/parallax/motion-trails.jpg";
 import abstractLights from "@/assets/parallax/abstract-lights.jpg";
 import rollerSkatingCollage from "@/assets/roller-skating-collage.jpg";
@@ -64,54 +62,36 @@ export default function RollerSkating() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Parallax Background Layers */}
         <div className="absolute inset-0">
-          {/* Layer 5 - Deepest - Abstract Lights */}
+          {/* Layer 3 - Deepest - Abstract Lights */}
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-20 transition-transform duration-300"
+            className="absolute inset-0 bg-cover bg-center opacity-15 transition-transform duration-300"
             style={{
               backgroundImage: `url(${abstractLights})`,
               transform: `translateY(${scrollY * 0.1}px) scale(${1 + scrollY * 0.0001})`,
             }}
           />
           
-          {/* Layer 4 - Motion Trails */}
+          {/* Layer 2 - Motion Trails */}
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-30 transition-transform duration-300"
+            className="absolute inset-0 bg-cover bg-center opacity-20 transition-transform duration-300"
             style={{
               backgroundImage: `url(${motionTrails})`,
-              transform: `translateY(${scrollY * 0.2}px) scale(${1 + scrollY * 0.00015})`,
+              transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.00015})`,
             }}
           />
           
-          {/* Layer 3 - Rink Atmosphere */}
+          {/* Layer 1 - Main Hero Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-300"
+            className="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-300"
             style={{
-              backgroundImage: `url(${rinkAtmosphere})`,
-              transform: `translateY(${scrollY * 0.35}px) scale(${1 + scrollY * 0.0002})`,
-            }}
-          />
-          
-          {/* Layer 2 - Athlete Action */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-50 transition-transform duration-300"
-            style={{
-              backgroundImage: `url(${athleteAction})`,
-              transform: `translateY(${scrollY * 0.5}px) scale(${1 + scrollY * 0.00025})`,
-            }}
-          />
-          
-          {/* Layer 1 - Front - Skates Closeup */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-60 transition-transform duration-300"
-            style={{
-              backgroundImage: `url(${skatesCloseup})`,
-              transform: `translateY(${scrollY * 0.7}px) scale(${1 + scrollY * 0.0003})`,
+              backgroundImage: `url(${heroRollerSkating})`,
+              transform: `translateY(${scrollY * 0.5}px) scale(${1 + scrollY * 0.0003})`,
             }}
           />
 
           {/* Gradient Overlays for Depth and Readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/20" />
         </div>
 
         {/* Hero Content */}
