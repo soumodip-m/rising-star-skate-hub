@@ -61,14 +61,10 @@ export default function RollerSkating() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link to="/admissions/trial">
-                <Button variant="hero" size="lg">
-                  Book Free Trial
-                </Button>
+                
               </Link>
               <Link to="/admissions">
-                <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground">
-                  Join Program
-                </Button>
+                
               </Link>
             </div>
           </div>
