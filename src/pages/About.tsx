@@ -13,7 +13,6 @@ export default function About() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroAboutRoad})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-background/40 to-background/60" />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About RSA-Rising Stars Academy</h1>
