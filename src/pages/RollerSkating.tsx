@@ -1,11 +1,29 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Trophy, Users, Clock, Award, ChevronRight } from "lucide-react";
-import heroImage from "@/assets/hero-roller-skating.jpg";
+
+// Parallax background images
+import skatesCloseup from "@/assets/parallax/skates-closeup.jpg";
+import rinkAtmosphere from "@/assets/parallax/rink-atmosphere.jpg";
+import athleteAction from "@/assets/parallax/athlete-action.jpg";
+import motionTrails from "@/assets/parallax/motion-trails.jpg";
+import abstractLights from "@/assets/parallax/abstract-lights.jpg";
 export default function RollerSkating() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const levels = [{
     name: "Beginner",
     duration: "3-6 months",
@@ -41,32 +59,112 @@ export default function RollerSkating() {
   return <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: `url(${heroImage})`
-      }}>
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
+      {/* Parallax Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Parallax Background Layers */}
+        <div className="absolute inset-0">
+          {/* Layer 5 - Deepest - Abstract Lights */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-20 transition-transform duration-300"
+            style={{
+              backgroundImage: `url(${abstractLights})`,
+              transform: `translateY(${scrollY * 0.1}px) scale(${1 + scrollY * 0.0001})`,
+            }}
+          />
+          
+          {/* Layer 4 - Motion Trails */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-30 transition-transform duration-300"
+            style={{
+              backgroundImage: `url(${motionTrails})`,
+              transform: `translateY(${scrollY * 0.2}px) scale(${1 + scrollY * 0.00015})`,
+            }}
+          />
+          
+          {/* Layer 3 - Rink Atmosphere */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-40 transition-transform duration-300"
+            style={{
+              backgroundImage: `url(${rinkAtmosphere})`,
+              transform: `translateY(${scrollY * 0.35}px) scale(${1 + scrollY * 0.0002})`,
+            }}
+          />
+          
+          {/* Layer 2 - Athlete Action */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-50 transition-transform duration-300"
+            style={{
+              backgroundImage: `url(${athleteAction})`,
+              transform: `translateY(${scrollY * 0.5}px) scale(${1 + scrollY * 0.00025})`,
+            }}
+          />
+          
+          {/* Layer 1 - Front - Skates Closeup */}
+          <div 
+            className="absolute inset-0 bg-cover bg-center opacity-60 transition-transform duration-300"
+            style={{
+              backgroundImage: `url(${skatesCloseup})`,
+              transform: `translateY(${scrollY * 0.7}px) scale(${1 + scrollY * 0.0003})`,
+            }}
+          />
+
+          {/* Gradient Overlays for Depth and Readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40" />
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 py-20">
-          <div className="max-w-3xl">
-            <div className="inline-block px-4 py-2 bg-primary text-primary-foreground font-bold rounded-full mb-6">
+        {/* Hero Content */}
+        <div className="relative z-10 container mx-auto px-4 py-32">
+          <div className="max-w-4xl mx-auto text-center">
+            <div 
+              className="inline-block px-6 py-3 bg-primary/90 backdrop-blur-sm text-primary-foreground font-bold rounded-full mb-8 shadow-lg shadow-primary/30 transition-all duration-300"
+              style={{
+                transform: `translateY(${scrollY * -0.15}px)`,
+              }}
+            >
               FLAGSHIP PROGRAM
             </div>
-            <h1 className="text-5xl md:text-6xl font-black text-white mb-6">Speed Skating</h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
+            <h1 
+              className="text-6xl md:text-8xl font-black text-white mb-8 drop-shadow-2xl tracking-tight transition-all duration-300"
+              style={{
+                transform: `translateY(${scrollY * -0.1}px)`,
+              }}
+            >
+              Speed Skating
+            </h1>
+            <p 
+              className="text-xl md:text-3xl text-white/95 mb-12 drop-shadow-lg leading-relaxed max-w-3xl mx-auto transition-all duration-300"
+              style={{
+                transform: `translateY(${scrollY * -0.05}px)`,
+              }}
+            >
               Master balance, speed, and race craft with certified coaches. Choose Inline or Quad and
               progress through comprehensive training levels with clear milestones.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div 
+              className="flex flex-wrap gap-6 justify-center transition-all duration-300"
+              style={{
+                transform: `translateY(${scrollY * -0.03}px)`,
+              }}
+            >
               <Link to="/admissions/trial">
-                
+                <Button variant="hero" size="lg" className="shadow-xl shadow-primary/40 backdrop-blur-sm">
+                  Book Free Trial
+                </Button>
               </Link>
               <Link to="/admissions">
-                
+                <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 shadow-xl">
+                  Learn More
+                </Button>
               </Link>
             </div>
+          </div>
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex items-start justify-center p-2">
+            <div className="w-1.5 h-3 bg-white/70 rounded-full" />
           </div>
         </div>
       </section>
