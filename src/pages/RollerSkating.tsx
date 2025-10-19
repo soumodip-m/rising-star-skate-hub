@@ -9,6 +9,8 @@ import { Trophy, Users, Clock, Award, ChevronRight } from "lucide-react";
 // Hero background image
 import heroRollerSkating from "@/assets/hero-roller-skating.jpg";
 import rollerSkatingCollage from "@/assets/roller-skating-collage.jpg";
+import inlineSkate from "@/assets/inline-skate.jpg";
+import quadSkate from "@/assets/quad-skate.jpg";
 export default function RollerSkating() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -138,7 +140,14 @@ export default function RollerSkating() {
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-card p-8 rounded-lg border hover-lift">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Inline Skating</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <h3 className="text-2xl font-bold text-primary">Inline Skating</h3>
+                <img 
+                  src={inlineSkate} 
+                  alt="Inline Skate" 
+                  className="w-16 h-16 rounded-full object-cover border-2 border-primary transition-transform duration-300 hover:scale-110 hover:rotate-12"
+                />
+              </div>
               <p className="text-muted-foreground mb-4">
                 Focus on velocity, endurance, and race performance. Perfect for competitive athletes
                 who want to participate in speed skating championships.
@@ -164,7 +173,14 @@ export default function RollerSkating() {
             </div>
 
             <div className="bg-card p-8 rounded-lg border hover-lift">
-              <h3 className="text-2xl font-bold mb-4 text-secondary">Quad Skating</h3>
+              <div className="flex items-center gap-4 mb-4">
+                <h3 className="text-2xl font-bold text-secondary">Quad Skating</h3>
+                <img 
+                  src={quadSkate} 
+                  alt="Quad Skate" 
+                  className="w-16 h-16 rounded-full object-cover border-2 border-secondary transition-transform duration-300 hover:scale-110 hover:rotate-12"
+                />
+              </div>
               <p className="text-muted-foreground mb-4">
                 Emphasizes balance, control, artistic expression, and creative skating. Ideal for
                 students interested in artistic skating and performances.
