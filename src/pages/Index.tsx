@@ -25,32 +25,25 @@ import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
 import dpsLogo from "@/assets/wellwishers/dps-logo-color.png";
 export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
-
-  const heroSlides = [
-    {
-      image: heroImage,
-      title: "Rise Faster. ",
-      highlight: "Shine Brighter.",
-      description: "Ahmedabad's premier multi-sport academy with 31+ years of experience. Expert coaching, modern facilities, and a supportive culture.",
-    },
-    {
-      image: heroQuadImage,
-      title: "Every Star Deserves to ",
-      highlight: "Shine",
-      description: "Enroll today and let your child's inner star truly shine.",
-    },
-  ];
-
+  const heroSlides = [{
+    image: heroImage,
+    title: "Rise Faster. ",
+    highlight: "Shine Brighter.",
+    description: "Ahmedabad's premier multi-sport academy with 31+ years of experience. Expert coaching, modern facilities, and a supportive culture."
+  }, {
+    image: heroQuadImage,
+    title: "Every Star Deserves to ",
+    highlight: "Shine",
+    description: "Enroll today and let your child's inner star truly shine."
+  }];
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://elfsightcdn.com/platform.js";
     script.async = true;
     document.body.appendChild(script);
-    
     const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+      setCurrentSlide(prev => (prev + 1) % heroSlides.length);
     }, 5000);
-
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
@@ -58,28 +51,21 @@ export default function Index() {
       clearInterval(interval);
     };
   }, []);
-
-  const sports = [
-    {
-      name: "Roller Skating",
-      description:
-        "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
-      image: skatingImage,
-      path: "/sports/roller-skating",
-      featured: true,
-    },
-    {
-      name: "Other Sports",
-      description:
-        "Explore our comprehensive range of sports including Cricket, Football, Basketball, Tennis, Badminton & more.",
-      image: otherSportsImage,
-      path: "/sports",
-      featured: true,
-      showBadge: false,
-    },
-  ];
-  return (
-    <div className="min-h-screen bg-background">
+  const sports = [{
+    name: "Roller Skating",
+    description: "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
+    image: skatingImage,
+    path: "/sports/roller-skating",
+    featured: true
+  }, {
+    name: "Other Sports",
+    description: "Explore our comprehensive range of sports including Cricket, Football, Basketball, Tennis, Badminton & more.",
+    image: otherSportsImage,
+    path: "/sports",
+    featured: true,
+    showBadge: false
+  }];
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
@@ -87,49 +73,29 @@ export default function Index() {
         {/* Multi-layered background */}
         <div className="absolute inset-0">
           {/* Layer 1: Bottom - Subtle texture */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{
-              backgroundImage: `url(${bgTexture})`,
-            }}
-          />
+          <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{
+          backgroundImage: `url(${bgTexture})`
+        }} />
 
           {/* Layer 2: Hero images with crossfade */}
-          {heroSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-                currentSlide === index ? "opacity-100" : "opacity-0"
-              }`}
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-            >
+          {heroSlides.map((slide, index) => <div key={index} className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${currentSlide === index ? "opacity-100" : "opacity-0"}`} style={{
+          backgroundImage: `url(${slide.image})`
+        }}>
               {/* Middle gradient overlay for depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
               {/* Dark gradient for text contrast */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-            </div>
-          ))}
+            </div>)}
 
           {/* Layer 3: Top - Wave pattern for depth and motion */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-soft-light"
-            style={{
-              backgroundImage: `url(${bgWaves})`,
-            }}
-          />
+          <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-soft-light" style={{
+          backgroundImage: `url(${bgWaves})`
+        }} />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
           {/* Hero text with crossfade */}
-          {heroSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-x-0 transition-opacity duration-1000 ${
-                currentSlide === index ? "opacity-100" : "opacity-0"
-              }`}
-            >
+          {heroSlides.map((slide, index) => <div key={index} className={`absolute inset-x-0 transition-opacity duration-1000 ${currentSlide === index ? "opacity-100" : "opacity-0"}`}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6">
                 {slide.title}
                 <span className="text-gradient">{slide.highlight}</span>
@@ -137,8 +103,7 @@ export default function Index() {
               <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
                 {slide.description}
               </p>
-            </div>
-          ))}
+            </div>)}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-[200px] md:mt-[180px]">
             <Link to="/admissions/trial">
@@ -147,11 +112,7 @@ export default function Index() {
               </Button>
             </Link>
             <Link to="/admissions">
-              <Button
-                variant="outline"
-                size="lg"
-                className="min-w-[200px] bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground"
-              >
+              <Button variant="outline" size="lg" className="min-w-[200px] bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground">
                 Join Now
               </Button>
             </Link>
@@ -218,9 +179,7 @@ export default function Index() {
 
           <div className="flex justify-center">
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-              {sports.map((sport) => (
-                <SportCard key={sport.name} {...sport} />
-              ))}
+              {sports.map(sport => <SportCard key={sport.name} {...sport} />)}
             </div>
           </div>
         </div>
@@ -236,11 +195,7 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Image */}
             <div className="order-2 lg:order-1">
-              <img
-                src={whyChooseImage}
-                alt="RSA Training Facility"
-                className="w-full h-full object-cover rounded-lg shadow-xl"
-              />
+              <img src={whyChooseImage} alt="RSA Training Facility" className="w-full h-full object-cover rounded-lg shadow-xl" />
             </div>
 
             {/* Features Grid */}
@@ -313,29 +268,14 @@ export default function Index() {
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Community Speaks</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Hear from our Students & Parents</h2>
             <p className="text-lg text-muted-foreground">Stories That Inspire Us Every Day</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <TestimonialCard
-              quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
-              name="Soumodip Mukherjee"
-              role="Parent"
-              achievement="Advanced Inline Skater"
-            />
-            <TestimonialCard
-              quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
-              name="Rudra Gol"
-              role="Student (16)"
-              achievement="National Medalist"
-            />
-            <TestimonialCard
-              quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment."
-              name="Gourab Mitra"
-              role="Parent"
-              achievement="National Qualifier"
-            />
+            <TestimonialCard quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!" name="Soumodip Mukherjee" role="Parent" achievement="Advanced Inline Skater" />
+            <TestimonialCard quote="The coaches here are amazing. They pushed me to achieve more than I thought possible." name="Rudra Gol" role="Student (16)" achievement="National Medalist" />
+            <TestimonialCard quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment." name="Gourab Mitra" role="Parent" achievement="National Qualifier" />
           </div>
 
           {/* Elfsight Google Reviews Widget */}
@@ -442,6 +382,5 @@ export default function Index() {
 
       <WhatsAppButton />
       <Footer />
-    </div>
-  );
+    </div>;
 }
