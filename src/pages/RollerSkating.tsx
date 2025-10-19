@@ -6,10 +6,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
 import { Trophy, Users, Clock, Award, ChevronRight } from "lucide-react";
 
-// Parallax background images
+// Hero background image
 import heroRollerSkating from "@/assets/hero-roller-skating.jpg";
-import motionTrails from "@/assets/parallax/motion-trails.jpg";
-import abstractLights from "@/assets/parallax/abstract-lights.jpg";
 import rollerSkatingCollage from "@/assets/roller-skating-collage.jpg";
 export default function RollerSkating() {
   const [scrollY, setScrollY] = useState(0);
@@ -60,36 +58,18 @@ export default function RollerSkating() {
 
       {/* Parallax Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Parallax Background Layers */}
+        {/* Hero Background */}
         <div className="absolute inset-0">
-          {/* Layer 3 - Deepest - Abstract Lights */}
+          {/* Main Hero Image */}
           <div 
-            className="absolute inset-0 bg-cover bg-center opacity-15 transition-transform duration-300"
-            style={{
-              backgroundImage: `url(${abstractLights})`,
-              transform: `translateY(${scrollY * 0.1}px) scale(${1 + scrollY * 0.0001})`,
-            }}
-          />
-          
-          {/* Layer 2 - Motion Trails */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-20 transition-transform duration-300"
-            style={{
-              backgroundImage: `url(${motionTrails})`,
-              transform: `translateY(${scrollY * 0.3}px) scale(${1 + scrollY * 0.00015})`,
-            }}
-          />
-          
-          {/* Layer 1 - Main Hero Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center opacity-90 transition-transform duration-300"
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-300"
             style={{
               backgroundImage: `url(${heroRollerSkating})`,
-              transform: `translateY(${scrollY * 0.5}px) scale(${1 + scrollY * 0.0003})`,
+              transform: `translateY(${scrollY * 0.5}px) scale(${1 + scrollY * 0.0002})`,
             }}
           />
 
-          {/* Gradient Overlays for Depth and Readability */}
+          {/* Gradient Overlays for Text Readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/20" />
         </div>
