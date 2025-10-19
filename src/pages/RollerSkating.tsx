@@ -12,6 +12,7 @@ import rinkAtmosphere from "@/assets/parallax/rink-atmosphere.jpg";
 import athleteAction from "@/assets/parallax/athlete-action.jpg";
 import motionTrails from "@/assets/parallax/motion-trails.jpg";
 import abstractLights from "@/assets/parallax/abstract-lights.jpg";
+import rollerSkatingCollage from "@/assets/roller-skating-collage.jpg";
 export default function RollerSkating() {
   const [scrollY, setScrollY] = useState(0);
 
@@ -302,23 +303,34 @@ export default function RollerSkating() {
       {/* CTA Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center bg-gradient-to-br from-primary/10 to-secondary/10 p-12 rounded-2xl border">
-            <Award className="h-16 w-16 text-primary mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Join RSA's flagship Roller Skating program and experience world-class training
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/admissions/trial">
-                <Button variant="hero" size="lg">
-                  Book Free Trial
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="outline" size="lg">
-                  Contact Us
-                </Button>
-              </Link>
+          <div className="max-w-6xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 p-12 rounded-2xl border">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="text-left">
+                <Award className="h-16 w-16 text-primary mb-6" />
+                <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
+                <p className="text-lg text-muted-foreground mb-8">
+                  Join RSA's flagship Roller Skating program and experience world-class training
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link to="/admissions/trial">
+                    <Button variant="hero" size="lg">
+                      Book Free Trial
+                    </Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button variant="outline" size="lg">
+                      Contact Us
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+              <div className="relative">
+                <img 
+                  src={rollerSkatingCollage} 
+                  alt="RSA Roller Skating Team and Athletes" 
+                  className="rounded-lg shadow-xl w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
