@@ -18,7 +18,7 @@ import skatingImage from "@/assets/Racer.jpg";
 import trainingImage from "@/assets/training-facility.jpg";
 import sportsSilhouettes from "@/assets/sports-silhouettes.png";
 import otherSportsImage from "@/assets/other-sports.png";
-import whyChooseImage from "@/assets/why-choose-rsa.jpg";
+import whyChooseImage from "@/assets/why-choose-rsa-enhanced.jpg";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
@@ -195,7 +195,7 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Image */}
             <div className="order-2 lg:order-1">
-              <img src={whyChooseImage} alt="RSA Training Facility" className="w-full h-full object-cover rounded-lg shadow-xl" />
+              <img src={whyChooseImage} alt="RSA Training Facility" className="w-full h-full object-cover rounded-lg shadow-xl border-4 border-primary transition-transform duration-300 hover:scale-105" />
             </div>
 
             {/* Features Grid */}
