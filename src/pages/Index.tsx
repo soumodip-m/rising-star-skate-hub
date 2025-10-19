@@ -142,21 +142,21 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-zinc-200">
               <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8 text-primary" />
               </div>
-              <h3 className="text-xl font-bold mb-2">Certified Coaches</h3>
+              <h3 className="text-xl font-bold mb-2">Experienced Coaches</h3>
               <p className="text-muted-foreground">Expert trainers with national-level experience</p>
             </div>
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-sky-50">
               <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Target className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-xl font-bold mb-2">Modern Facilities</h3>
               <p className="text-muted-foreground">Purpose-built rinks, courts, and training zones</p>
             </div>
-            <div className="text-center p-6">
+            <div className="text-center p-6 bg-slate-300">
               <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8 text-primary" />
               </div>
