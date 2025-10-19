@@ -176,11 +176,11 @@ All colors MUST be HSL.
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-50%);
+      transform: translateX(calc(-100% / 3));
     }
   }
 
   .animate-scroll-left {
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 40s linear infinite;
   }
 }

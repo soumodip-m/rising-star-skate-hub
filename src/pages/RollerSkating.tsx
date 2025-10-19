@@ -229,9 +229,9 @@ export default function RollerSkating() {
           </p>
 
           {/* Scrolling Training Images */}
-          <div className="mb-12 overflow-hidden">
-            <div className="flex gap-6 animate-scroll-left hover:[animation-play-state:paused]">
-              {[...trainingImages, ...trainingImages].map((img, index) => (
+          <div className="mb-12 overflow-hidden relative">
+            <div className="flex gap-6 animate-scroll-left hover:[animation-play-state:paused]" style={{ width: 'max-content' }}>
+              {[...trainingImages, ...trainingImages, ...trainingImages].map((img, index) => (
                 <div
                   key={index}
                   className="flex-shrink-0 w-64 h-48 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:z-10"
