@@ -19,12 +19,17 @@ import trainingImage from "@/assets/training-facility.jpg";
 import sportsSilhouettes from "@/assets/sports-silhouettes.png";
 import otherSportsImage from "@/assets/other-sports.png";
 import whyChooseImage from "@/assets/why-choose-rsa-enhanced.jpg";
+import whyChooseTeam from "@/assets/why-choose-team.jpg";
+import whyChooseTraining from "@/assets/why-choose-training.jpg";
+import whyChooseRink from "@/assets/why-choose-rink.jpg";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
 import dpsLogo from "@/assets/wellwishers/dps-logo-color.png";
 export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentWhyChooseSlide, setCurrentWhyChooseSlide] = useState(0);
+  
   const heroSlides = [{
     image: heroImage,
     title: "Rise Faster. ",
@@ -36,19 +41,33 @@ export default function Index() {
     highlight: "Shine",
     description: "Enroll today and let your child's inner star truly shine."
   }];
+  const whyChooseImages = [
+    whyChooseImage,
+    whyChooseTeam,
+    whyChooseTraining,
+    whyChooseRink
+  ];
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://elfsightcdn.com/platform.js";
     script.async = true;
     document.body.appendChild(script);
-    const interval = setInterval(() => {
+    
+    const heroInterval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % heroSlides.length);
     }, 5000);
+    
+    const whyChooseInterval = setInterval(() => {
+      setCurrentWhyChooseSlide(prev => (prev + 1) % whyChooseImages.length);
+    }, 4000);
+    
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
-      clearInterval(interval);
+      clearInterval(heroInterval);
+      clearInterval(whyChooseInterval);
     };
   }, []);
   const sports = [{
@@ -193,9 +212,20 @@ export default function Index() {
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            {/* Image */}
-            <div className="order-2 lg:order-1">
-              <img src={whyChooseImage} alt="RSA Training Facility" className="w-full h-full object-cover rounded-lg shadow-xl border-4 border-primary transition-transform duration-300 hover:scale-105" />
+            {/* Image Slideshow with Ripple Effect */}
+            <div className="order-2 lg:order-1 relative overflow-hidden rounded-lg">
+              {whyChooseImages.map((image, index) => (
+                <img 
+                  key={index}
+                  src={image} 
+                  alt={`RSA Training Facility ${index + 1}`} 
+                  className={`w-full h-full object-cover rounded-lg shadow-xl border-4 border-primary transition-transform duration-300 hover:scale-105 ${
+                    currentWhyChooseSlide === index 
+                      ? 'relative animate-ripple' 
+                      : 'absolute inset-0 opacity-0'
+                  }`}
+                />
+              ))}
             </div>
 
             {/* Features Grid */}
