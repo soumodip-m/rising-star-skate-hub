@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Trophy, Users, Clock, Award, ChevronRight } from "lucide-react";
 
 // Hero background image
@@ -11,8 +12,17 @@ import heroRollerSkating from "@/assets/hero-roller-skating.jpg";
 import rollerSkatingCollage from "@/assets/roller-skating-collage.jpg";
 import inlineSkate from "@/assets/inline-skate.jpg";
 import quadSkate from "@/assets/quad-skate.jpg";
+
+// Training images
+import training1 from "@/assets/training/training-1.jpg";
+import training2 from "@/assets/training/training-2.jpg";
+import training3 from "@/assets/training/training-3.jpg";
+import training4 from "@/assets/training/training-4.jpg";
+import training5 from "@/assets/training/training-5.jpg";
+import training6 from "@/assets/training/training-6.jpg";
 export default function RollerSkating() {
   const [scrollY, setScrollY] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,6 +32,8 @@ export default function RollerSkating() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const trainingImages = [training1, training2, training3, training4, training5, training6];
 
   const levels = [{
     name: "Beginner",
@@ -216,6 +228,25 @@ export default function RollerSkating() {
             Structured progression from beginner to competitive athlete
           </p>
 
+          {/* Scrolling Training Images */}
+          <div className="mb-12 overflow-hidden">
+            <div className="flex gap-6 animate-scroll-left hover:[animation-play-state:paused]">
+              {[...trainingImages, ...trainingImages].map((img, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-64 h-48 rounded-lg overflow-hidden cursor-pointer transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:z-10"
+                  onClick={() => setSelectedImage(img)}
+                >
+                  <img
+                    src={img}
+                    alt={`Training session ${(index % trainingImages.length) + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="space-y-6 max-w-4xl mx-auto">
             {levels.map((level, index) => <div key={level.name} className="bg-card p-8 rounded-lg border hover-lift">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
@@ -311,6 +342,17 @@ export default function RollerSkating() {
           </div>
         </div>
       </section>
+
+      {/* Image Magnify Dialog */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl">
+          <img
+            src={selectedImage || ""}
+            alt="Training session"
+            className="w-full h-auto rounded-lg"
+          />
+        </DialogContent>
+      </Dialog>
 
       <WhatsAppButton />
       <Footer />
