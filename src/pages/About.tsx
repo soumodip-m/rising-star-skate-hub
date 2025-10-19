@@ -48,20 +48,20 @@ export default function About() {
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div className="text-center p-8 bg-card rounded-lg border">
+            <div className="text-center p-8 rounded-lg border bg-amber-400">
               <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
                 <Eye className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-muted-foreground">To inspire and nurture young athletes to reach their fullest potential — building champions in sport and character for life.</p>
+              <p className="text-slate-950">To inspire and nurture young athletes to reach their fullest potential — building champions in sport and character for life.</p>
             </div>
 
-            <div className="text-center p-8 bg-card rounded-lg border">
+            <div className="text-center p-8 rounded-lg border bg-sky-950">
               <div className="h-16 w-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-6">
                 <Target className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-              <p className="text-muted-foreground">To provide world-class sports training, promote discipline and teamwork, and create an engaging environment where every child and youth can discover their passion, develop skills, and achieve excellence both on and off the field.</p>
+              <h3 className="text-2xl font-bold mb-4 text-orange-600">Our Mission</h3>
+              <p className="text-slate-50">To provide world-class sports training, promote discipline and teamwork, and create an engaging environment where every child and youth can discover their passion, develop skills, and achieve excellence both on and off the field.</p>
             </div>
           </div>
         </div>
