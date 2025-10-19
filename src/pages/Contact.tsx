@@ -5,7 +5,50 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
+import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: data,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+
+      e.currentTarget.reset();
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -92,22 +135,22 @@ export default function Contact() {
               <div className="bg-card p-8 rounded-lg border shadow-lg">
                 <h2 className="text-2xl font-bold mb-6">Send Us a Message</h2>
 
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">Your Name *</label>
-                      <Input placeholder="Full name" required />
+                      <Input name="name" placeholder="Full name" required />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Email Address *</label>
-                      <Input type="email" placeholder="email@example.com" required />
+                      <Input name="email" type="email" placeholder="email@example.com" required />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium mb-2">Phone Number *</label>
-                      <Input type="tel" placeholder="+91" required />
+                      <Input name="phone" type="tel" placeholder="+91" required />
                     </div>
                     <div>
                       <label className="block text-sm font-medium mb-2">Subject *</label>
@@ -140,7 +183,7 @@ export default function Contact() {
 
                   <div>
                     <label className="block text-sm font-medium mb-2">Your Message *</label>
-                    <Textarea placeholder="Tell us more about your inquiry..." rows={5} required />
+                    <Textarea name="message" placeholder="Tell us more about your inquiry..." rows={5} required />
                   </div>
 
                   <div className="flex items-start gap-2">
@@ -150,9 +193,9 @@ export default function Contact() {
                     </label>
                   </div>
 
-                  <Button variant="hero" size="lg" className="w-full" type="submit">
+                  <Button variant="hero" size="lg" className="w-full" type="submit" disabled={isLoading}>
                     <Send className="h-5 w-5 mr-2" />
-                    Send Message
+                    {isLoading ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </div>
