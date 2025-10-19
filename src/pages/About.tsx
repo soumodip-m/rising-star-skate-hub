@@ -9,14 +9,13 @@ export default function About() {
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroAboutRoad})` }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url(${heroAboutRoad})`
+      }} />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">About RSA-Rising Stars Academy</h1>
-            <p className="text-xl text-muted-foreground">Building the next generation of sporting excellence in Gujarat</p>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-50">About RSA-Rising Stars Academy</h1>
+            <p className="text-xl text-slate-50">Building the next generation of sporting excellence in Gujarat</p>
           </div>
         </div>
       </section>
