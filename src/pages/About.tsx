@@ -10,13 +10,11 @@ export default function About() {
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        {/* Background Image with Opacity */}
+        {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center opacity-30"
+          className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${heroAboutRoad})` }}
         />
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/70 to-background/80" />
         
         {/* Content */}
         <div className="container mx-auto px-4 relative z-10">
