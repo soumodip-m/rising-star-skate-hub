@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, Award, Users, Target, Calendar, Trophy, Building2, Dumbbell, Handshake } from "lucide-react";
+import { ChevronDown, Award, Users, Target, Calendar, Trophy, Building2, Dumbbell, Handshake, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -29,6 +29,8 @@ import dpsLogo from "@/assets/wellwishers/dps-logo-color.png";
 export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentWhyChooseSlide, setCurrentWhyChooseSlide] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState("");
   
   const heroSlides = [{
     image: heroImage,
@@ -84,6 +86,12 @@ export default function Index() {
     featured: true,
     showBadge: false
   }];
+
+  const handleImageClick = (image: string) => {
+    setLightboxImage(image);
+    setLightboxOpen(true);
+  };
+
   return <div className="min-h-screen bg-background">
       <Navbar />
 
@@ -213,13 +221,14 @@ export default function Index() {
 
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Image Slideshow with Ripple Effect */}
-            <div className="order-2 lg:order-1 relative overflow-hidden rounded-lg">
+            <div className="order-2 lg:order-1 relative overflow-hidden rounded-lg cursor-pointer group">
               {whyChooseImages.map((image, index) => (
                 <img 
                   key={index}
                   src={image} 
                   alt={`RSA Training Facility ${index + 1}`} 
-                  className={`w-full h-full object-cover rounded-lg shadow-xl border-4 border-primary transition-transform duration-300 hover:scale-105 ${
+                  onClick={() => handleImageClick(image)}
+                  className={`w-full h-full object-cover rounded-lg shadow-xl border-4 border-primary transition-all duration-500 group-hover:scale-110 ${
                     currentWhyChooseSlide === index 
                       ? 'relative animate-ripple' 
                       : 'absolute inset-0 opacity-0'
@@ -409,6 +418,28 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      {lightboxOpen && (
+        <div 
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in"
+          onClick={() => setLightboxOpen(false)}
+        >
+          <button
+            onClick={() => setLightboxOpen(false)}
+            className="absolute top-4 right-4 text-white hover:text-primary transition-colors"
+            aria-label="Close lightbox"
+          >
+            <X className="h-8 w-8" />
+          </button>
+          <img
+            src={lightboxImage}
+            alt="RSA Facility"
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
 
       <WhatsAppButton />
       <Footer />
