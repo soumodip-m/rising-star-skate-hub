@@ -120,7 +120,7 @@ export default function About() {
       </section>
 
       {/* Founder's Message */}
-      <section className="py-16 bg-muted/50">
+      <section id="founders-message" className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Founder's Message</h2>

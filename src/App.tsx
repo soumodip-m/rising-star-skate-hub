@@ -9,7 +9,6 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 // About pages
-import Founder from "./pages/about/Founder";
 import Coaches from "./pages/about/Coaches";
 import Milestones from "./pages/about/Milestones";
 import Facilities from "./pages/about/Facilities";
@@ -65,7 +64,6 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           
           {/* About Routes */}
-          <Route path="/about/founder" element={<Founder />} />
           <Route path="/about/coaches" element={<Coaches />} />
           <Route path="/about/milestones" element={<Milestones />} />
           <Route path="/about/facilities" element={<Facilities />} />
