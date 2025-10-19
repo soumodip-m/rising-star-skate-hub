@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Play } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 const videos = [
   {
@@ -38,15 +39,48 @@ const videos = [
 ];
 
 export default function Videos() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (videoRef.current) {
+        const scrollPosition = window.scrollY;
+        const videoHeight = videoRef.current.offsetHeight;
+        
+        if (scrollPosition > videoHeight * 0.5) {
+          videoRef.current.pause();
+        } else {
+          videoRef.current.play();
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="gradient-hero text-white py-20">
-          <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Video Gallery</h1>
-            <p className="text-xl">Watch our athletes in action</p>
+        {/* Hero Video Section */}
+        <section className="relative w-full h-[70vh] overflow-hidden">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="/videos/hero-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+            <div className="text-center text-white">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">Video Gallery</h1>
+              <p className="text-xl">Watch our athletes in action</p>
+            </div>
           </div>
         </section>
 
