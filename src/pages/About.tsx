@@ -24,7 +24,7 @@ export default function About() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-[#ddf6f1]">
-            <h2 className="text-3xl font-bold mb-6 text-center text-purple-50">Our Story</h2>
+            <h2 className="text-3xl font-bold mb-6 text-center text-orange-600">Our Story</h2>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
                 Rising Stars Academy (RSA) was founded with a singular vision: to create a world-class
