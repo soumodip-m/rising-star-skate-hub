@@ -1,9 +1,22 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Target, Eye, Heart, Award, Users } from "lucide-react";
 import heroAboutRoad from "@/assets/hero-about-road.jpg";
+
 export default function About() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, [location]);
   return <div className="min-h-screen bg-background">
       <Navbar />
 
