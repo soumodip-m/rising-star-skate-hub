@@ -199,7 +199,7 @@ export default function Photos() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute left-4 z-50 text-white hover:bg-white/20"
+              className="absolute left-4 z-50 text-white bg-black/50 hover:bg-black/70 w-12 h-12 rounded-full backdrop-blur-sm transition-all"
               onClick={handlePrevious}
               aria-label="Previous image"
             >
@@ -209,7 +209,7 @@ export default function Photos() {
             <Button
               variant="ghost"
               size="icon"
-              className="absolute right-4 z-50 text-white hover:bg-white/20"
+              className="absolute right-4 z-50 text-white bg-black/50 hover:bg-black/70 w-12 h-12 rounded-full backdrop-blur-sm transition-all"
               onClick={handleNext}
               aria-label="Next image"
             >
