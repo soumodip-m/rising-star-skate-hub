@@ -29,45 +29,55 @@ export default function RollerSkating() {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const trainingImages = [training1, training2, training3, training4, training5, training6];
 
-  const levels = [{
-    name: "Beginner",
-    duration: "3-6 months",
-    sessions: "3 sessions/week",
-    goals: "Basic balance, forward/backward skating, safe stops, fundamental posture",
-    outcomes: "Build confidence, master basic techniques, develop proper form"
-  }, {
-    name: "Intermediate",
-    duration: "6-12 months",
-    sessions: "4 sessions/week",
-    goals: "Speed development, cornering, crossovers, endurance building, race fundamentals",
-    outcomes: "District-level competition readiness, improved stamina, advanced techniques"
-  }, {
-    name: "Advanced",
-    duration: "Ongoing",
-    sessions: "5-6 sessions/week",
-    goals: "Race strategy, timing, starts & finishes, mental preparation, peak performance",
-    outcomes: "State/National competition readiness, podium potential, elite athlete mindset"
-  }];
-  const achievements = [{
-    title: "State Championships",
-    count: "200+ Medals"
-  }, {
-    title: "National Qualifiers",
-    count: "15+ Students"
-  }, {
-    title: "Best Timings",
-    count: "Multiple Records"
-  }, {
-    title: "Years of Excellence",
-    count: "15+ Years"
-  }];
-  return <div className="min-h-screen bg-background">
+  const levels = [
+    {
+      name: "Beginner",
+      duration: "3-6 months",
+      sessions: "3 sessions/week",
+      goals: "Basic balance, forward/backward skating, safe stops, fundamental posture",
+      outcomes: "Build confidence, master basic techniques, develop proper form",
+    },
+    {
+      name: "Intermediate",
+      duration: "6-12 months",
+      sessions: "4 sessions/week",
+      goals: "Speed development, cornering, crossovers, endurance building, race fundamentals",
+      outcomes: "District-level competition readiness, improved stamina, advanced techniques",
+    },
+    {
+      name: "Advanced",
+      duration: "Ongoing",
+      sessions: "5-6 sessions/week",
+      goals: "Race strategy, timing, starts & finishes, mental preparation, peak performance",
+      outcomes: "State/National competition readiness, podium potential, elite athlete mindset",
+    },
+  ];
+  const achievements = [
+    {
+      title: "State Championships",
+      count: "250+ Medals",
+    },
+    {
+      title: "National Qualifiers",
+      count: "30+ Students",
+    },
+    {
+      title: "Best Timings",
+      count: "Multiple Records",
+    },
+    {
+      title: "Years of Excellence",
+      count: "25+ Years",
+    },
+  ];
+  return (
+    <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Parallax Hero Section */}
@@ -75,7 +85,7 @@ export default function RollerSkating() {
         {/* Hero Background */}
         <div className="absolute inset-0">
           {/* Main Hero Image */}
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center transition-transform duration-300"
             style={{
               backgroundImage: `url(${heroRollerSkating})`,
@@ -91,7 +101,7 @@ export default function RollerSkating() {
         {/* Hero Content */}
         <div className="relative z-10 container mx-auto px-4 py-32">
           <div className="max-w-4xl mx-auto text-center">
-            <div 
+            <div
               className="inline-block px-6 py-3 bg-primary/90 backdrop-blur-sm text-primary-foreground font-bold rounded-full mb-8 shadow-lg shadow-primary/30 transition-all duration-300"
               style={{
                 transform: `translateY(${scrollY * -0.15}px)`,
@@ -99,7 +109,7 @@ export default function RollerSkating() {
             >
               FLAGSHIP PROGRAM
             </div>
-            <h1 
+            <h1
               className="text-6xl md:text-8xl font-black text-white mb-8 drop-shadow-2xl tracking-tight transition-all duration-300"
               style={{
                 transform: `translateY(${scrollY * -0.1}px)`,
@@ -107,16 +117,16 @@ export default function RollerSkating() {
             >
               Speed Skating
             </h1>
-            <p 
+            <p
               className="text-xl md:text-3xl text-white/95 mb-12 drop-shadow-lg leading-relaxed max-w-3xl mx-auto transition-all duration-300"
               style={{
                 transform: `translateY(${scrollY * -0.05}px)`,
               }}
             >
-              Master balance, speed, and race craft with certified coaches. Choose Inline or Quad and
-              progress through comprehensive training levels with clear milestones.
+              Master balance, speed, and race craft with certified coaches. Choose Inline or Quad and progress through
+              comprehensive training levels with clear milestones.
             </p>
-            <div 
+            <div
               className="flex flex-wrap gap-6 justify-center transition-all duration-300"
               style={{
                 transform: `translateY(${scrollY * -0.03}px)`,
@@ -125,6 +135,15 @@ export default function RollerSkating() {
               <Link to="/admissions/trial">
                 <Button variant="hero" size="lg" className="shadow-xl shadow-primary/40 backdrop-blur-sm">
                   Book Free Trial
+                </Button>
+              </Link>
+              <Link to="/admissions">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 shadow-xl"
+                >
+                  Learn More
                 </Button>
               </Link>
             </div>
@@ -143,21 +162,23 @@ export default function RollerSkating() {
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Choose Your Path</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">We offer both Inline and Quad skating programs</p>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            We offer both Inline and Quad skating programs
+          </p>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-card p-8 rounded-lg border hover-lift">
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-2xl font-bold text-primary">Inline Skating</h3>
-                <img 
-                  src={inlineSkate} 
-                  alt="Inline Skate" 
+                <img
+                  src={inlineSkate}
+                  alt="Inline Skate"
                   className="w-16 h-16 rounded-full object-cover border-2 border-primary transition-transform duration-300 hover:scale-110 hover:rotate-12"
                 />
               </div>
               <p className="text-muted-foreground mb-4">
-                Focus on velocity, endurance, and race performance. Perfect for competitive athletes
-                who want to participate in speed skating championships.
+                Focus on velocity, endurance, and race performance. Perfect for competitive athletes who want to
+                participate in speed skating championships.
               </p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
@@ -182,15 +203,15 @@ export default function RollerSkating() {
             <div className="bg-card p-8 rounded-lg border hover-lift">
               <div className="flex items-center gap-4 mb-4">
                 <h3 className="text-2xl font-bold text-secondary">Quad Skating</h3>
-                <img 
-                  src={quadSkate} 
-                  alt="Quad Skate" 
+                <img
+                  src={quadSkate}
+                  alt="Quad Skate"
                   className="w-16 h-16 rounded-full object-cover border-2 border-secondary transition-transform duration-300 hover:scale-110 hover:rotate-12"
                 />
               </div>
               <p className="text-muted-foreground mb-4">
-                Emphasizes balance, control, artistic expression, and creative skating. Ideal for
-                students interested in artistic skating and performances.
+                Emphasizes balance, control, artistic expression, and creative skating. Ideal for students interested in
+                artistic skating and performances.
               </p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-start gap-2">
@@ -225,7 +246,10 @@ export default function RollerSkating() {
 
           {/* Scrolling Training Images */}
           <div className="mb-12 overflow-hidden relative">
-            <div className="flex gap-6 animate-scroll-left hover:[animation-play-state:paused]" style={{ width: 'max-content' }}>
+            <div
+              className="flex gap-6 animate-scroll-left hover:[animation-play-state:paused]"
+              style={{ width: "max-content" }}
+            >
               {[...trainingImages, ...trainingImages, ...trainingImages].map((img, index) => (
                 <div
                   key={index}
@@ -243,7 +267,8 @@ export default function RollerSkating() {
           </div>
 
           <div className="space-y-6 max-w-4xl mx-auto">
-            {levels.map((level, index) => <div key={level.name} className="bg-card p-8 rounded-lg border hover-lift">
+            {levels.map((level, index) => (
+              <div key={level.name} className="bg-card p-8 rounded-lg border hover-lift">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div className="flex items-center gap-4 mb-4 md:mb-0">
                     <div className="h-12 w-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-xl font-bold">
@@ -268,19 +293,16 @@ export default function RollerSkating() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold mb-2 text-sm uppercase text-muted-foreground">
-                      Training Goals
-                    </h4>
+                    <h4 className="font-semibold mb-2 text-sm uppercase text-muted-foreground">Training Goals</h4>
                     <p className="text-sm">{level.goals}</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2 text-sm uppercase text-muted-foreground">
-                      Expected Outcomes
-                    </h4>
+                    <h4 className="font-semibold mb-2 text-sm uppercase text-muted-foreground">Expected Outcomes</h4>
                     <p className="text-sm">{level.outcomes}</p>
                   </div>
                 </div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -288,16 +310,16 @@ export default function RollerSkating() {
       {/* Achievements */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Our Roller Skating Achievements
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Roller Skating Achievements</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {achievements.map(item => <div key={item.title} className="text-center p-6 bg-card rounded-lg border hover-lift">
+            {achievements.map((item) => (
+              <div key={item.title} className="text-center p-6 bg-card rounded-lg border hover-lift">
                 <Trophy className="h-10 w-10 text-primary mx-auto mb-4" />
                 <div className="text-3xl font-bold text-primary mb-2">{item.count}</div>
                 <div className="text-sm text-muted-foreground">{item.title}</div>
-              </div>)}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -305,9 +327,9 @@ export default function RollerSkating() {
       {/* CTA Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-7xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 p-12 rounded-2xl border">
-            <div className="grid md:grid-cols-5 gap-8 items-center">
-              <div className="md:col-span-2 text-left">
+          <div className="max-w-6xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 p-12 rounded-2xl border">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="text-left">
                 <Award className="h-16 w-16 text-primary mb-6" />
                 <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
                 <p className="text-lg text-muted-foreground mb-8">
@@ -326,10 +348,10 @@ export default function RollerSkating() {
                   </Link>
                 </div>
               </div>
-              <div className="md:col-span-3 relative">
-                <img 
-                  src={rollerSkatingCollage} 
-                  alt="RSA Roller Skating Team and Athletes" 
+              <div className="relative">
+                <img
+                  src={rollerSkatingCollage}
+                  alt="RSA Roller Skating Team and Athletes"
                   className="rounded-lg shadow-xl w-full h-auto"
                 />
               </div>
@@ -341,15 +363,12 @@ export default function RollerSkating() {
       {/* Image Magnify Dialog */}
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
         <DialogContent className="max-w-4xl">
-          <img
-            src={selectedImage || ""}
-            alt="Training session"
-            className="w-full h-auto rounded-lg"
-          />
+          <img src={selectedImage || ""} alt="Training session" className="w-full h-auto rounded-lg" />
         </DialogContent>
       </Dialog>
 
       <WhatsAppButton />
       <Footer />
-    </div>;
+    </div>
+  );
 }
