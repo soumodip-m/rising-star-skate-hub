@@ -16,7 +16,7 @@ import achievementsTeam1 from "@/assets/achievements-team-1.jpg";
 import achievementsTeam2 from "@/assets/achievements-team-2.jpg";
 
 // Training images
-import training1 from "@/assets/training/training-1.jpg";
+import training1 from "@/assets/training/training-drills.png";
 import training2 from "@/assets/training/training-2.jpg";
 import training3 from "@/assets/training/training-3.jpg";
 import training4 from "@/assets/training/training-4.jpg";
