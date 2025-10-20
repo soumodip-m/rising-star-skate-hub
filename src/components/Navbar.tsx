@@ -32,7 +32,7 @@ const navItems: NavItem[] = [
     submenu: [{ label: "Join Us", path: "/admissions/trial" }],
   },
   {
-    label: "Events & Achievements",
+    label: "Achievements",
     submenu: [
       { label: "Achievements", path: "/achievements" },
       { label: "Media Coverage", path: "/events/past" },
