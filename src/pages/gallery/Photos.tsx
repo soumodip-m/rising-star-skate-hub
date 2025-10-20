@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -63,6 +63,19 @@ const photoGallery = [
 export default function Photos() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
 
   // Handle keyboard navigation
   useEffect(() => {
@@ -129,7 +142,29 @@ export default function Photos() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-8">Photo Gallery</h2>
             <div className="relative max-w-7xl mx-auto">
-              <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary scrollbar-track-muted">
+              {/* Scroll Left Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg w-10 h-10 rounded-full"
+                onClick={handleScrollLeft}
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+
+              {/* Scroll Right Button */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-lg w-10 h-10 rounded-full"
+                onClick={handleScrollRight}
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
+
+              <div ref={scrollContainerRef} className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary scrollbar-track-muted">
                 <div className="flex gap-4 px-2">
                   {photoGallery.map((photo, index) => (
                     <div
