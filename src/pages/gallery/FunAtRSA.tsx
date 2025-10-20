@@ -96,12 +96,8 @@ export default function FunAtRSA() {
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Why should you miss all the fun ? Join Us today</h2>
                 
                 <div className="flex gap-6 justify-center mt-6">
-                  <a href="https://www.instagram.com/rsa4sports" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl">
-                    📸 Instagram
-                  </a>
-                  <a href="https://www.facebook.com/RSA4U/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-primary text-primary-foreground font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-xl">
-                    👍 Facebook
-                  </a>
+                  
+                  
                 </div>
               </div>
             </div>
