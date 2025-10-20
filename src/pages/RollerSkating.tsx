@@ -278,7 +278,7 @@ export default function RollerSkating() {
           </div>
           
           <div className="text-center">
-            <Link to="/achievements">
+            <Link to="/achievements" onClick={() => window.scrollTo(0, 0)}>
               <Button variant="default" size="lg" className="shadow-lg">
                 Learn More
               </Button>
