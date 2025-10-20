@@ -57,11 +57,11 @@ export default function Index() {
 
     const heroInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 5000);
+    }, 3000);
 
     const whyChooseInterval = setInterval(() => {
       setCurrentWhyChooseSlide((prev) => (prev + 1) % whyChooseImages.length);
-    }, 4000);
+    }, 2000);
 
     return () => {
       if (document.body.contains(script)) {
