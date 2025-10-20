@@ -43,6 +43,7 @@ const navItems: NavItem[] = [
     submenu: [
       { label: "Photos", path: "/gallery/photos" },
       { label: "Videos", path: "/gallery/videos" },
+      { label: "Fun@RSA", path: "/gallery/fun-at-rsa" },
     ],
   },
   {
