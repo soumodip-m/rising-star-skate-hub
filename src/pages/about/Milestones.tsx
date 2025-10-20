@@ -3,43 +3,35 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Users, Award, Target } from "lucide-react";
-
-const milestones = [
-  {
-    year: "2015",
-    title: "Academy Founded",
-    description: "Started with 10 students and a dream to create champions",
-    icon: Target
-  },
-  {
-    year: "2017",
-    title: "First National Medal",
-    description: "Our roller skating team won gold at national championships",
-    icon: Trophy
-  },
-  {
-    year: "2019",
-    title: "500+ Students",
-    description: "Reached a milestone of training over 500 young athletes",
-    icon: Users
-  },
-  {
-    year: "2023",
-    title: "International Recognition",
-    description: "Students represented India at international competitions",
-    icon: Award
-  }
-];
-
+const milestones = [{
+  year: "2015",
+  title: "Academy Founded",
+  description: "Started with 10 students and a dream to create champions",
+  icon: Target
+}, {
+  year: "2017",
+  title: "First National Medal",
+  description: "Our roller skating team won gold at national championships",
+  icon: Trophy
+}, {
+  year: "2019",
+  title: "500+ Students",
+  description: "Reached a milestone of training over 500 young athletes",
+  icon: Users
+}, {
+  year: "2023",
+  title: "International Recognition",
+  description: "Students represented India at international competitions",
+  icon: Award
+}];
 export default function Milestones() {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="gradient-hero text-white py-20">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Achievements & Milestones</h1>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">RSA Milestones</h1>
             <p className="text-xl">Our journey of excellence and growth</p>
           </div>
         </section>
@@ -49,9 +41,8 @@ export default function Milestones() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {milestones.map((milestone, index) => {
-                const Icon = milestone.icon;
-                return (
-                  <Card key={index} className="hover-lift">
+              const Icon = milestone.icon;
+              return <Card key={index} className="hover-lift">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
                         <div className="bg-primary/10 p-3 rounded-lg">
@@ -64,15 +55,13 @@ export default function Milestones() {
                         </div>
                       </div>
                     </CardContent>
-                  </Card>
-                );
-              })}
+                  </Card>;
+            })}
             </div>
           </div>
         </section>
       </main>
       <Footer />
       <WhatsAppButton />
-    </div>
-  );
+    </div>;
 }
