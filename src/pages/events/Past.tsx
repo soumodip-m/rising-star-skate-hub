@@ -11,6 +11,12 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
+import {
+  Dialog,
+  DialogContent,
+  DialogClose,
+} from "@/components/ui/dialog";
+import { X } from "lucide-react";
 
 // Placeholder newspaper cutting images - replace with actual newspaper images
 const newspaperCuttings = [
@@ -28,11 +34,12 @@ const newspaperCuttings = [
   { id: 12, image: "/images/coach-team.jpg", alt: "Team Building Success" },
 ];
 
-const ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 9;
 
 export default function Past() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{ image: string; alt: string } | null>(null);
 
   const totalPages = Math.ceil(newspaperCuttings.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
@@ -102,7 +109,8 @@ export default function Past() {
               {currentItems.map((cutting) => (
                 <div
                   key={cutting.id}
-                  className="group relative overflow-hidden rounded-lg shadow-lg hover-lift bg-card"
+                  className="group relative overflow-hidden rounded-lg shadow-lg hover-lift bg-card cursor-pointer"
+                  onClick={() => setSelectedImage({ image: cutting.image, alt: cutting.alt })}
                 >
                   <div className="aspect-[3/4] overflow-hidden">
                     <img
@@ -145,6 +153,27 @@ export default function Past() {
       </main>
       <Footer />
       <WhatsAppButton />
+      
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-4xl p-0 overflow-hidden">
+          <DialogClose className="absolute right-4 top-4 z-10 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground bg-background/80 backdrop-blur-sm p-2">
+            <X className="h-4 w-4" />
+            <span className="sr-only">Close</span>
+          </DialogClose>
+          {selectedImage && (
+            <div className="relative">
+              <img
+                src={selectedImage.image}
+                alt={selectedImage.alt}
+                className="w-full h-auto"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
+                <p className="text-foreground font-semibold">{selectedImage.alt}</p>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
