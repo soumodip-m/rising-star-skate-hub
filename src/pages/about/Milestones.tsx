@@ -1,10 +1,8 @@
-import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Users, Award, Target } from "lucide-react";
-import teamSunset from "@/assets/team-sunset.jpg";
 const milestones = [{
   year: "2015",
   title: "Academy Founded",
@@ -27,33 +25,14 @@ const milestones = [{
   icon: Award
 }];
 export default function Milestones() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative gradient-hero text-white py-12 overflow-hidden">
+        <section className="gradient-hero text-white py-20">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="z-10">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">RSA Milestones</h1>
-                <p className="text-xl">Our journey of excellence and growth</p>
-              </div>
-              <div className="relative z-10">
-                <img 
-                  src={teamSunset} 
-                  alt="RSA Team at sunset" 
-                  className="rounded-lg shadow-2xl w-full h-auto object-cover"
-                  style={{
-                    maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)'
-                  }}
-                />
-              </div>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 mx-0 px-[50px]">RSA Milestones</h1>
+            <p className="text-xl px-[28px]">Our journey of excellence and growth</p>
           </div>
         </section>
 
