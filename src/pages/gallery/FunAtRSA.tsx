@@ -10,19 +10,16 @@ import {
 import { X } from "lucide-react";
 
 const funImages = [
-  { src: "/images/hero-roller.jpg", alt: "Team fun on the rink", rotation: "rotate-2" },
-  { src: "/images/coach-team.jpg", alt: "Coaches and students bonding", rotation: "-rotate-1" },
-  { src: "/images/events-medals.jpg", alt: "Celebrating victories together", rotation: "rotate-1" },
-  { src: "/images/facilities-gym.jpg", alt: "Training with energy", rotation: "-rotate-2" },
-  { src: "/images/pool-cross-training.jpg", alt: "Splash time", rotation: "rotate-3" },
-  { src: "/images/hero-roller.jpg", alt: "Rolling with joy", rotation: "-rotate-1" },
-  { src: "/images/coach-team.jpg", alt: "Team spirit", rotation: "rotate-2" },
-  { src: "/images/events-medals.jpg", alt: "Victory moments", rotation: "-rotate-3" },
-  { src: "/images/facilities-gym.jpg", alt: "Workout fun", rotation: "rotate-1" },
-  { src: "/images/pool-cross-training.jpg", alt: "Cool down moments", rotation: "-rotate-2" },
-  { src: "/images/hero-roller.jpg", alt: "Speed and smiles", rotation: "rotate-2" },
-  { src: "/images/coach-team.jpg", alt: "RSA family", rotation: "-rotate-1" },
-  { src: "/images/events-medals.jpg", alt: "Achievement celebration", rotation: "rotate-3" },
+  { src: "/images/fun/diwali-02.jpg", alt: "Diwali celebrations", rotation: "rotate-2" },
+  { src: "/images/fun/diwali-03.jpg", alt: "Sparkling fun", rotation: "-rotate-1" },
+  { src: "/images/fun/diwali-01.jpg", alt: "Festival of lights", rotation: "rotate-1" },
+  { src: "/images/fun/holi-02.jpg", alt: "Holi colors", rotation: "-rotate-2" },
+  { src: "/images/fun/holi-03.jpg", alt: "Color splash", rotation: "rotate-3" },
+  { src: "/images/fun/holi-05.jpg", alt: "Water fun", rotation: "-rotate-1" },
+  { src: "/images/fun/holi-01.jpg", alt: "Team celebration", rotation: "rotate-2" },
+  { src: "/images/fun/rain-practice-01.jpg", alt: "Rain practice", rotation: "-rotate-3" },
+  { src: "/images/fun/rain-practice-02.jpg", alt: "Dedication in rain", rotation: "rotate-1" },
+  { src: "/images/fun/holi-group.jpg", alt: "Group celebration", rotation: "-rotate-2" },
 ];
 
 export default function FunAtRSA() {
@@ -43,7 +40,7 @@ export default function FunAtRSA() {
         {/* Funky Collage Grid */}
         <section className="py-16 bg-gradient-to-br from-background via-accent/5 to-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto">
+              <div className="max-w-7xl mx-auto">
               {/* Masonry-style grid with varied sizes */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]">
                 {funImages.map((image, index) => {
@@ -66,13 +63,8 @@ export default function FunAtRSA() {
                       <img
                         src={image.src}
                         alt={image.alt}
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 brightness-110"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end z-20">
-                        <p className="text-foreground font-bold text-sm md:text-base p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                          {image.alt}
-                        </p>
-                      </div>
                       {/* Funky colored border effect */}
                       <div className="absolute inset-0 border-4 border-primary/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" 
                            style={{
