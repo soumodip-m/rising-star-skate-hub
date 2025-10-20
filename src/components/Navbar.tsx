@@ -92,6 +92,7 @@ export default function Navbar() {
                 {item.path ? (
                   <Link
                     to={item.path}
+                    onClick={() => window.scrollTo(0, 0)}
                     className={`px-4 py-2 text-sm font-medium transition-colors rounded-md flex items-center justify-center ${
                       isActive(item.path)
                         ? "text-primary bg-primary/10"
@@ -115,6 +116,7 @@ export default function Navbar() {
                         <Link
                           key={subitem.path}
                           to={subitem.path}
+                          onClick={() => window.scrollTo(0, 0)}
                           className={`block px-4 py-3 text-sm transition-colors ${
                             isActive(subitem.path)
                               ? "bg-primary text-primary-foreground font-medium"
@@ -164,7 +166,10 @@ export default function Navbar() {
                   {item.path ? (
                     <Link
                       to={item.path}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => {
+                        setMobileMenuOpen(false);
+                        window.scrollTo(0, 0);
+                      }}
                       className={`block px-4 py-3 text-sm font-medium rounded-md transition-colors ${
                         isActive(item.path) ? "text-primary bg-primary/10" : "text-foreground hover:bg-muted"
                       }`}
@@ -190,7 +195,10 @@ export default function Navbar() {
                             <Link
                               key={subitem.path}
                               to={subitem.path}
-                              onClick={() => setMobileMenuOpen(false)}
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                window.scrollTo(0, 0);
+                              }}
                               className={`block px-4 py-2 text-sm rounded-md transition-colors ${
                                 isActive(subitem.path)
                                   ? "text-primary bg-primary/10"
