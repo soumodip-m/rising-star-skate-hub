@@ -93,7 +93,7 @@ export default function FunAtRSA() {
 
               {/* Fun message */}
               <div className="text-center mt-16 space-y-4">
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-blue-900">Why should you miss all the fun ? Join Us today</h2>
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-blue-900">Why should you miss all the fun ? Join us today</h2>
                 
                 <div className="flex gap-6 justify-center mt-6">
                   
