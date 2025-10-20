@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -26,6 +27,10 @@ const milestones = [{
   icon: Award
 }];
 export default function Milestones() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
