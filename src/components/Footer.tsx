@@ -120,16 +120,12 @@ export default function Footer() {
         <div className="pt-6 border-t border-background/20">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-background/60">
             <p>© {currentYear} Rising Stars Academy. All rights reserved.</p>
+            <p className="text-sm text-yellow-500">Designed & developed with gratitude by a RSA student's parent</p>
             <div className="flex gap-6">
-              
-              
               <Link to="/sitemap" className="hover:text-primary transition-colors">
                 Sitemap
               </Link>
             </div>
-          </div>
-          <div className="text-center mt-4">
-            <p className="text-sm text-yellow-500">Designed & developed with gratitude by a RSA student's parent</p>
           </div>
         </div>
       </div>
