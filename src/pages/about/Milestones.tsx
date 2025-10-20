@@ -3,6 +3,8 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Users, Award, Target } from "lucide-react";
+import { useEffect } from "react";
+import teamSunset from "@/assets/team-sunset.jpg";
 const milestones = [{
   year: "2015",
   title: "Academy Founded",
@@ -25,12 +27,23 @@ const milestones = [{
   icon: Award
 }];
 export default function Milestones() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="gradient-hero text-white py-20">
-          <div className="container mx-auto px-4">
+        <section 
+          className="relative text-white py-12 overflow-hidden"
+          style={{
+            backgroundImage: `linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--primary)) 40%, transparent 70%), url(${teamSunset})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center right'
+          }}
+        >
+          <div className="container mx-auto px-4 relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 mx-0 px-[50px]">RSA Milestones</h1>
             <p className="text-xl px-[28px]">Our journey of excellence and growth</p>
           </div>
