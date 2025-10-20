@@ -17,7 +17,7 @@ const navItems: NavItem[] = [
     submenu: [
       { label: "Our Story", path: "/about" },
       { label: "Founder's Message", path: "/about#founders-message" },
-      { label: "Achievements & Milestones", path: "/about/milestones" },
+      { label: "Milestones", path: "/about/milestones" },
     ],
   },
   {
