@@ -127,8 +127,6 @@ export default function RollerSkating() {
                   Book Free Trial
                 </Button>
               </Link>
-              
-              </Link>
             </div>
           </div>
         </div>
