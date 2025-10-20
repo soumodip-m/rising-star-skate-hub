@@ -39,7 +39,7 @@ export default function FunAtRSA() {
 
         {/* Funky Collage Grid */}
         <section className="py-16 relative" style={{ backgroundImage: 'url(/images/fun/doodle-background.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-          <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-background/10" />
           <div className="container mx-auto px-4 relative z-10">
               <div className="max-w-7xl mx-auto">
               {/* Masonry-style grid with varied sizes */}
