@@ -128,6 +128,9 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+          <div className="text-center mt-4">
+            <p className="text-sm text-primary">Designed & developed with gratitude by a RSA student's parent</p>
+          </div>
         </div>
       </div>
     </footer>;
