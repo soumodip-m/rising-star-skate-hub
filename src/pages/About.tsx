@@ -45,27 +45,20 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-6 text-center text-orange-600">Our Story</h2>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
-                Rising Stars Academy (RSA) was founded in 1998 with just 9 passionate young skaters and a dream — to
-                create a world-class multi-sport training environment that nurtures talent and builds champions. What
-                began as a small Roller Skating coaching center has now grown into one of Gujarat’s leading sports
-                academies, recognized as the No. 1 team in the state and among the top in India.
+                Rising Stars Academy (RSA) was founded with a singular vision: to create a world-class multi-sport
+                training environment that nurtures young talent and builds champions. Located in the heart of Ahmedabad,
+                Gujarat, we have become a beacon for aspiring athletes seeking excellence.
               </p>
               <p>
-                Located in the heart of Ahmedabad, Gujarat, RSA has become a beacon for aspiring athletes seeking
-                excellence. Our flagship Roller Skating program has produced numerous state and national-level
-                champions, inspiring hundreds of young athletes every year. Over the years, we have expanded beyond
-                skating to offer professional training in multiple sports disciplines, helping students develop their
-                full athletic potential.
+                What began as a specialized Roller Skating coaching center has evolved into a comprehensive sports
+                academy offering training in multiple disciplines. Our flagship Roller Skating program continues to
+                produce state and national-level competitors, while our expanding portfolio of sports programs serves
+                hundreds of young athletes every year.
               </p>
               <p>
-                At RSA, we believe that true sports education extends beyond physical skill. Our philosophy emphasizes
-                character building, discipline, teamwork, and the relentless pursuit of personal excellence. Every
-                student who joins RSA becomes part of a passionate family committed to pushing boundaries, achieving
-                dreams, and representing our academy with pride and integrity.
-              </p>
-              <p>
-                From humble beginnings in 1998 to becoming Gujarat’s top-performing team today — our journey is a
-                testament to dedication, unity, and an unshakable belief in the power of sport.
+                At RSA, we believe that sports education goes beyond physical training. We focus on character building,
+                discipline, teamwork, and the relentless pursuit of personal excellence. Every student who walks through
+                our doors becomes part of the RSA family.
               </p>
             </div>
           </div>
@@ -173,7 +166,7 @@ export default function About() {
                   <p className="text-lg text-muted-foreground italic mb-4">
                     "Every day, watching our students improve, win medals, and most importantly, develop confidence and
                     character, reminds us why we do this. RSA is more than an academy—it's a family committed to
-                    excellence."
+                    excellence, passion, and perseverance."
                   </p>
                   <div className="mt-6">
                     <p className="font-bold text-foreground">Indrajeet Sinh Gol</p>
