@@ -12,6 +12,8 @@ import heroRollerSkating from "@/assets/hero-roller-skating.jpg";
 import rollerSkatingCollage from "@/assets/roller-skating-collage.jpg";
 import inlineSkate from "@/assets/inline-skate.jpg";
 import quadSkate from "@/assets/quad-skate.jpg";
+import achievementsTeam1 from "@/assets/achievements-team-1.jpg";
+import achievementsTeam2 from "@/assets/achievements-team-2.jpg";
 
 // Training images
 import training1 from "@/assets/training/training-1.jpg";
@@ -308,13 +310,23 @@ export default function RollerSkating() {
       </section>
 
       {/* Achievements */}
-      <section className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
+      <section className="py-16 bg-muted/50 relative overflow-hidden">
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: `url(${achievementsTeam1}), url(${achievementsTeam2})`,
+            backgroundSize: '50% 100%, 50% 100%',
+            backgroundPosition: 'left center, right center',
+            backgroundRepeat: 'no-repeat, no-repeat',
+          }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-muted/70 to-muted/50" />
+        <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Our Roller Skating Achievements</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {achievements.map((item) => (
-              <div key={item.title} className="text-center p-6 bg-card rounded-lg border hover-lift">
+              <div key={item.title} className="text-center p-6 bg-card/90 backdrop-blur-sm rounded-lg border hover-lift">
                 <Trophy className="h-10 w-10 text-primary mx-auto mb-4" />
                 <div className="text-3xl font-bold text-primary mb-2">{item.count}</div>
                 <div className="text-sm text-muted-foreground">{item.title}</div>
