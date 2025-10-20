@@ -358,7 +358,7 @@ export default function Index() {
 
           {/* Elfsight Google Reviews Widget */}
           <div className="mt-12">
-            <div className="elfsight-app-5bc3cfa8-a98a-48a0-af1b-af4b1a492fd5" data-elfsight-app-lazy></div>
+            <div className="elfsight-app-efb1cfae-5194-4704-a5c9-7715b85f5cc0" data-elfsight-app-lazy></div>
           </div>
         </div>
       </section>
