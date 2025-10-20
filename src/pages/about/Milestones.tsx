@@ -1,9 +1,9 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Card, CardContent } from "@/components/ui/card";
 import { Trophy, Users, Award, Target } from "lucide-react";
-import { useEffect } from "react";
 import teamSunset from "@/assets/team-sunset.jpg";
 const milestones = [{
   year: "2015",
@@ -35,17 +35,25 @@ export default function Milestones() {
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
-        <section 
-          className="relative text-white py-12 overflow-hidden"
-          style={{
-            backgroundImage: `linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--primary)) 40%, transparent 70%), url(${teamSunset})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center right'
-          }}
-        >
-          <div className="container mx-auto px-4 relative z-10">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 mx-0 px-[50px]">RSA Milestones</h1>
-            <p className="text-xl px-[28px]">Our journey of excellence and growth</p>
+        <section className="relative gradient-hero text-white py-12 overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="z-10">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">RSA Milestones</h1>
+                <p className="text-xl">Our journey of excellence and growth</p>
+              </div>
+              <div className="relative z-10">
+                <img 
+                  src={teamSunset} 
+                  alt="RSA Team at sunset" 
+                  className="rounded-lg shadow-2xl w-full h-auto object-cover"
+                  style={{
+                    maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)'
+                  }}
+                />
+              </div>
+            </div>
           </div>
         </section>
 
