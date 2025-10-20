@@ -127,10 +127,7 @@ export default function RollerSkating() {
                   Book Free Trial
                 </Button>
               </Link>
-              <Link to="/admissions">
-                <Button variant="outline" size="lg" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 shadow-xl">
-                  Learn More
-                </Button>
+              
               </Link>
             </div>
           </div>
