@@ -34,10 +34,8 @@ const navItems: NavItem[] = [
   {
     label: "Events & Achievements",
     submenu: [
-      { label: "Upcoming Events", path: "/events/upcoming" },
       { label: "Past Highlights", path: "/events/past" },
-      { label: "Competition Schedule", path: "/events/schedule" },
-      { label: "Student Achievements", path: "/achievements" },
+      { label: "Achievements", path: "/achievements" },
     ],
   },
   {
