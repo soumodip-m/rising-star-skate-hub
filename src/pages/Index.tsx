@@ -38,7 +38,7 @@ export default function Index() {
       title: "Rise Faster. ",
       highlight: "Shine Brighter.",
       description:
-        "Ahmedabad's premier multi-sport academy with 31+ years of experience. Expert coaching, modern facilities, and a supportive culture.",
+        "Ahmedabad's premier multi-sport academy with 25+ years of experience. Expert coaching, modern facilities, and a supportive culture.",
     },
     {
       image: heroQuadImage,
@@ -57,11 +57,11 @@ export default function Index() {
 
     const heroInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 3000);
+    }, 5000);
 
     const whyChooseInterval = setInterval(() => {
       setCurrentWhyChooseSlide((prev) => (prev + 1) % whyChooseImages.length);
-    }, 2000);
+    }, 4000);
 
     return () => {
       if (document.body.contains(script)) {
