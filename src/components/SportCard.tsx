@@ -20,7 +20,7 @@ export default function SportCard({
   return <Link to={path} className="block group">
       <Card className={`overflow-hidden hover-lift transition-all duration-300 ${featured ? "border-2 border-primary shadow-glow" : ""}`}>
         <div className="relative h-48 overflow-hidden">
-          <img src={image} alt={name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          
           {featured && showBadge && <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
               FLAGSHIP
             </div>}
