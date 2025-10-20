@@ -32,8 +32,13 @@ const navItems: NavItem[] = [
     submenu: [{ label: "Join Us", path: "/admissions/trial" }],
   },
   {
-    label: "Achievements",
-    submenu: [{ label: "Student Achievements", path: "/achievements" }],
+    label: "Events & Achievements",
+    submenu: [
+      { label: "Upcoming Events", path: "/events/upcoming" },
+      { label: "Past Highlights", path: "/events/past" },
+      { label: "Competition Schedule", path: "/events/schedule" },
+      { label: "Student Achievements", path: "/achievements" },
+    ],
   },
   {
     label: "Gallery",
