@@ -137,8 +137,8 @@ export default function About() {
                     a family committed to excellence."
                   </p>
                   <div className="mt-6">
-                    <p className="font-bold text-foreground">Founder Name</p>
-                    <p className="text-sm text-muted-foreground">Founder & Director, RSA -Rising Stars Academy</p>
+                    <p className="font-bold text-foreground">Indrajeet Sinh Gol</p>
+                    <p className="text-sm text-muted-foreground">Founder & Head Coach RSA -Rising Stars Academy</p>
                   </div>
                 </div>
               </div>
