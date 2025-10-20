@@ -19,16 +19,7 @@ export default function SportCard({
 }: SportCardProps) {
   return <Link to={path} className="block group">
       <Card className={`overflow-hidden hover-lift transition-all duration-300 ${featured ? "border-2 border-primary shadow-glow" : ""}`}>
-        <div className="relative h-48 overflow-hidden">
-          
-          {featured && showBadge && <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">
-              FLAGSHIP
-            </div>}
-          
-          <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white">
-            {name}
-          </h3>
-        </div>
+        
         <div className="p-5">
           <p className="text-muted-foreground text-sm mb-4">{description}</p>
           <div className="flex items-center text-primary font-medium text-sm group-hover:gap-2 transition-all">
