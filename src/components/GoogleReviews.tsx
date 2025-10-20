@@ -1,6 +1,20 @@
-import { useState } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Star, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
+
+interface GoogleReview {
+  author_name: string;
+  author_url?: string;
+  language?: string;
+  profile_photo_url?: string;
+  rating: number;
+  relative_time_description: string;
+  text: string;
+  time: number;
+}
 
 interface Review {
   name: string;
@@ -9,64 +23,66 @@ interface Review {
   text: string;
   timeAgo: string;
   verified: boolean;
+  fullText: string;
 }
-
-const reviews: Review[] = [
-  {
-    name: "Prajakta Mishra",
-    avatar: "https://ui-avatars.com/api/?name=Prajakta+Mishra&background=4285f4&color=fff",
-    rating: 5,
-    text: "Rising star academy (RSA) is a really good place for children to take out their hidden talents. The coaches are very supportive and friendly. They teach kids in a very good manner with patience.",
-    timeAgo: "3 days ago",
-    verified: true,
-  },
-  {
-    name: "Vandita Chona",
-    avatar: "https://ui-avatars.com/api/?name=Vandita+Chona&background=0f9d58&color=fff",
-    rating: 5,
-    text: "Thank you sir for your continuous guidance to your student and us as parents to motivate our child. The way you teach is amazing and the progress we see in our child is remarkable.",
-    timeAgo: "3 days ago",
-    verified: true,
-  },
-  {
-    name: "Priyen Solanki",
-    avatar: "https://ui-avatars.com/api/?name=Priyen+Solanki&background=f4b400&color=fff",
-    rating: 5,
-    text: "My son has been training at RSA for a while now, and I'm truly impressed with the quality of coaching and the positive environment. The coaches are dedicated, patient, and skilled.",
-    timeAgo: "3 days ago",
-    verified: true,
-  },
-  {
-    name: "Soumodip Mukherjee",
-    avatar: "https://ui-avatars.com/api/?name=Soumodip+Mukherjee&background=db4437&color=fff",
-    rating: 5,
-    text: "RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level! The coaches here are exceptional.",
-    timeAgo: "1 week ago",
-    verified: true,
-  },
-  {
-    name: "Rudra Gol",
-    avatar: "https://ui-avatars.com/api/?name=Rudra+Gol&background=4285f4&color=fff",
-    rating: 5,
-    text: "The coaches here are amazing. They pushed me to achieve more than I thought possible. Best sports academy in Ahmedabad!",
-    timeAgo: "2 weeks ago",
-    verified: true,
-  },
-  {
-    name: "Gourab Mitra",
-    avatar: "https://ui-avatars.com/api/?name=Gourab+Mitra&background=0f9d58&color=fff",
-    rating: 5,
-    text: "Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment. Highly recommended for all parents!",
-    timeAgo: "2 weeks ago",
-    verified: true,
-  },
-];
 
 export default function GoogleReviews() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [selectedReview, setSelectedReview] = useState<Review | null>(null);
   const reviewsPerPage = 3;
-  const totalReviews = 28;
-  const averageRating = 5.0;
+  const [totalReviews, setTotalReviews] = useState(0);
+  const [averageRating, setAverageRating] = useState(5.0);
+  const { toast } = useToast();
+
+  useEffect(() => {
+    fetchGoogleReviews();
+  }, []);
+
+  const fetchGoogleReviews = async () => {
+    try {
+      console.log('Fetching Google reviews...');
+      const { data, error } = await supabase.functions.invoke('fetch-google-reviews');
+
+      if (error) {
+        console.error('Error fetching reviews:', error);
+        toast({
+          title: "Error",
+          description: "Failed to load Google reviews",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      if (data && data.reviews) {
+        console.log('Received reviews:', data.reviews.length);
+        setAverageRating(data.rating || 5.0);
+        setTotalReviews(data.totalReviews || 0);
+
+        const formattedReviews: Review[] = data.reviews.map((review: GoogleReview) => ({
+          name: review.author_name,
+          avatar: review.profile_photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(review.author_name)}&background=4285f4&color=fff`,
+          rating: review.rating,
+          text: review.text.length > 150 ? review.text.substring(0, 150) + '...' : review.text,
+          fullText: review.text,
+          timeAgo: review.relative_time_description,
+          verified: true,
+        }));
+
+        setReviews(formattedReviews);
+      }
+    } catch (error) {
+      console.error('Error in fetchGoogleReviews:', error);
+      toast({
+        title: "Error",
+        description: "Failed to load Google reviews",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + reviewsPerPage >= reviews.length ? 0 : prev + reviewsPerPage));
@@ -77,6 +93,14 @@ export default function GoogleReviews() {
   };
 
   const visibleReviews = reviews.slice(currentIndex, currentIndex + reviewsPerPage);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center py-12">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full">
@@ -162,9 +186,14 @@ export default function GoogleReviews() {
 
               {/* Review Text */}
               <p className="text-sm leading-relaxed mb-2">{review.text}</p>
-              <button className="text-[#4285f4] text-sm font-medium hover:underline">
-                Read more
-              </button>
+              {review.text.length < review.fullText.length && (
+                <button 
+                  onClick={() => setSelectedReview(review)}
+                  className="text-[#4285f4] text-sm font-medium hover:underline"
+                >
+                  Read more
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -203,6 +232,43 @@ export default function GoogleReviews() {
           ))}
         </div>
       </div>
+
+      {/* Full Review Dialog */}
+      <Dialog open={!!selectedReview} onOpenChange={() => setSelectedReview(null)}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-3">
+              <img
+                src={selectedReview?.avatar}
+                alt={selectedReview?.name}
+                className="w-12 h-12 rounded-full"
+              />
+              <div>
+                <div className="flex items-center gap-2">
+                  <span>{selectedReview?.name}</span>
+                  <svg className="w-4 h-4 text-[#4285f4]" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                  </svg>
+                </div>
+                <p className="text-sm text-muted-foreground">{selectedReview?.timeAgo}</p>
+              </div>
+            </DialogTitle>
+          </DialogHeader>
+          <div className="mt-4">
+            <div className="flex items-center gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star
+                  key={i}
+                  className={`w-5 h-5 ${
+                    i < (selectedReview?.rating || 0) ? "fill-[#fbbc04] text-[#fbbc04]" : "text-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+            <p className="text-sm leading-relaxed whitespace-pre-wrap">{selectedReview?.fullText}</p>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
