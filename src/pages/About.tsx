@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Target, Eye, Heart, Award, Users } from "lucide-react";
 import heroAboutRoad from "@/assets/hero-about-road.jpg";
+import founderPhoto from "@/assets/founder-photo.jpg";
 
 export default function About() {
   const location = useLocation();
@@ -139,8 +140,12 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-8 text-center">Founder's Message</h2>
             <div className="bg-card p-8 md:p-12 rounded-lg border shadow-lg">
               <div className="flex flex-col md:flex-row gap-8 items-center">
-                <div className="flex-shrink-0">
-                  <div className="h-32 w-32 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-4xl font-bold text-white">RSA</div>
+              <div className="flex-shrink-0">
+                  <img 
+                    src={founderPhoto} 
+                    alt="Indrajeet Sinh Gol, Founder of RSA" 
+                    className="h-32 w-32 rounded-full object-cover border-4 border-orange-500"
+                  />
                 </div>
                 <div>
                   <p className="text-lg text-muted-foreground italic mb-4">"When we started RSA -Rising Stars Academy, our dream was simple: to create a place where young athletes could train with the best coaches, in the best facilities, and be part of a community that truly cares about their growth—not just as athletes, but as individuals."</p>
