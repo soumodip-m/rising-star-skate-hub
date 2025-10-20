@@ -119,13 +119,7 @@ export default function FAQ() {
             <p className="text-muted-foreground mb-4">
               Still have questions? We're here to help! Call us at <a href="tel:+919824234663" className="text-primary font-semibold hover:underline">+91 98242 34663</a>
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <a 
-                href="/contact" 
-                className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors font-semibold"
-              >
-                Contact Us
-              </a>
+            <div className="flex justify-center">
               <a 
                 href="/admissions/trial" 
                 className="inline-flex items-center px-6 py-3 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-semibold"
