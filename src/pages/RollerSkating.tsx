@@ -269,12 +269,20 @@ export default function RollerSkating() {
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-amber-700">Achievements at a Glance</h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto mb-8">
             {achievements.map(item => <div key={item.title} className="text-center p-6 bg-card/40 backdrop-blur-sm rounded-lg border hover-lift">
                 <Trophy className="h-10 w-10 text-primary mx-auto mb-4" />
                 <div className="text-3xl font-bold text-primary mb-2">{item.count}</div>
                 <div className="text-sm text-muted-foreground">{item.title}</div>
               </div>)}
+          </div>
+          
+          <div className="text-center">
+            <Link to="/achievements">
+              <Button variant="default" size="lg" className="shadow-lg">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
