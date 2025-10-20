@@ -88,7 +88,7 @@ export default function FunAtRSA() {
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
                       <img src={image.src} alt={image.alt} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 brightness-110" />
                       {/* Funky colored border effect */}
-                      <div className="absolute inset-0 border-4 border-primary/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" style={{
+                      <div className="absolute top-0 bottom-0 left-2 right-0 border-4 border-primary/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" style={{
                     borderColor: `hsl(var(--primary) / ${0.2 + index % 5 * 0.15})`
                   }} />
                     </div>;
