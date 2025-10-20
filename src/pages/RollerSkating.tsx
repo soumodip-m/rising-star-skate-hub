@@ -312,11 +312,11 @@ export default function RollerSkating() {
       {/* Achievements */}
       <section className="py-16 bg-muted/50 relative overflow-hidden">
         <div 
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `url(${achievementsTeam1}), url(${achievementsTeam2})`,
-            backgroundSize: '60% auto, 60% auto',
-            backgroundPosition: '20% center, 80% center',
+            backgroundSize: '50% 100%, 50% 100%',
+            backgroundPosition: 'left center, right center',
             backgroundRepeat: 'no-repeat, no-repeat',
           }}
         />
