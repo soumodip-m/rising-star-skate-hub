@@ -34,8 +34,8 @@ const navItems: NavItem[] = [
   {
     label: "Events & Achievements",
     submenu: [
-      { label: "Past Highlights", path: "/events/past" },
       { label: "Achievements", path: "/achievements" },
+      { label: "Media Coverage", path: "/events/past" },
     ],
   },
   {
