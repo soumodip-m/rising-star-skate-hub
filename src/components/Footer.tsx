@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Facebook, Youtube, Instagram, Mail, Phone, MapPin } from "lucide-react";
-import rsaLogo from "@/assets/rsa-logo.png";
+import rsaLogo from "@/assets/rsa-white-logo.png";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   return <footer className="bg-foreground text-background pt-12 pb-6">
@@ -9,7 +9,7 @@ export default function Footer() {
           {/* Academy Info */}
           <div>
             <div className="flex items-center space-x-3 mb-4">
-              <img src={rsaLogo} alt="RSA Logo" className="h-12 w-auto" />
+              <img src={rsaLogo} alt="RSA Logo" className="h-16 w-auto" />
               <div>
                 <div className="text-lg font-bold text-primary">RSA</div>
                 <div className="text-xs text-background/70">Rising Stars Academy</div>
