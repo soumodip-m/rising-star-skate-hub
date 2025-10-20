@@ -60,11 +60,11 @@ export default function About() {
               <p className="text-slate-950">To inspire and nurture young athletes to reach their fullest potential — building champions in sport and character for life.</p>
             </div>
 
-            <div className="text-center p-8 rounded-lg border bg-sky-950">
+            <div className="text-center p-8 rounded-lg border bg-orange-400">
               <div className="h-16 w-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto mb-6">
                 <Target className="h-8 w-8 text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-orange-600">Our Mission</h3>
+              <h3 className="text-2xl font-bold mb-4 text-slate-900">Our Mission</h3>
               <p className="text-slate-50">To provide world-class sports training, promote discipline and teamwork, and create an engaging environment where every child and youth can discover their passion, develop skills, and achieve excellence both on and off the field.</p>
             </div>
           </div>
