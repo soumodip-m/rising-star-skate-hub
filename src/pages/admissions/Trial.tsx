@@ -200,10 +200,6 @@ export default function Trial() {
                   )}
                   <CardHeader>
                     <CardTitle className="text-2xl">{pkg.name}</CardTitle>
-                    <div className="mt-4">
-                      <span className="text-4xl font-bold">{pkg.price}</span>
-                      <span className="text-muted-foreground ml-2">{pkg.period}</span>
-                    </div>
                   </CardHeader>
                   <CardContent>
                     <ul className="space-y-3">
