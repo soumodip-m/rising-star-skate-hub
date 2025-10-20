@@ -81,7 +81,7 @@ export default function Contact() {
                   <div>
                     <h3 className="font-semibold mb-1">Location</h3>
                     <p className="text-sm text-muted-foreground">
-                      DPS Skating Rink, DPS Bopal
+                      RSA Sports Complex
                       <br />
                       Ahmedabad, Gujarat 380001
                       <br />
@@ -106,7 +106,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground"></p>
+                    <p className="text-sm text-muted-foreground">
+                      info@rsaacademy.com
+                      <br />
+                      admissions@rsaacademy.com
+                    </p>
                   </div>
                 </div>
 
