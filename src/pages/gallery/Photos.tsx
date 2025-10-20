@@ -195,7 +195,7 @@ export default function Photos() {
                 </div>
               </div>
               <p className="text-center text-muted-foreground text-sm mt-4">
-                Scroll horizontally to browse all {photoGallery.length} photos
+                Scroll horizontally to browse all photos
               </p>
             </div>
 
