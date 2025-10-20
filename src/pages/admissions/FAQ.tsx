@@ -117,7 +117,7 @@ export default function FAQ() {
           {/* Call to Action */}
           <div className="text-center mt-12">
             <p className="text-muted-foreground mb-4">
-              Still have questions? We're here to help!
+              Still have questions? We're here to help! Call us at <a href="tel:+919824234663" className="text-primary font-semibold hover:underline">+91 98242 34663</a>
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <a 
