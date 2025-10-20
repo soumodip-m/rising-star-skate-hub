@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown, Award, Users, Target, Calendar, Trophy, Building2, Dumbbell, Handshake, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,6 +31,8 @@ export default function Index() {
   const [currentWhyChooseSlide, setCurrentWhyChooseSlide] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState("");
+  const [isPaused, setIsPaused] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const heroSlides = [
     {
@@ -63,14 +65,30 @@ export default function Index() {
       setCurrentWhyChooseSlide((prev) => (prev + 1) % whyChooseImages.length);
     }, 2000);
 
+    // Auto-scroll testimonials
+    const testimonialInterval = setInterval(() => {
+      if (!isPaused && scrollContainerRef.current) {
+        const container = scrollContainerRef.current;
+        const scrollAmount = 2; // pixels per frame
+        
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+          // Reset to start
+          container.scrollLeft = 0;
+        } else {
+          container.scrollLeft += scrollAmount;
+        }
+      }
+    }, 30);
+
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
       clearInterval(heroInterval);
       clearInterval(whyChooseInterval);
+      clearInterval(testimonialInterval);
     };
-  }, []);
+  }, [isPaused]);
   const sports = [
     {
       name: "Roller Skating",
@@ -335,25 +353,47 @@ export default function Index() {
             <p className="text-lg text-muted-foreground">Stories That Inspire Us Every Day</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <TestimonialCard
-              quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
-              name="Soumodip Mukherjee"
-              role="Parent"
-              achievement="Advanced Inline Skater"
-            />
-            <TestimonialCard
-              quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
-              name="Rudra Gol"
-              role="Student (16)"
-              achievement="National Medalist"
-            />
-            <TestimonialCard
-              quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment."
-              name="Gourab Mitra"
-              role="Parent"
-              achievement="National Qualifier"
-            />
+          <div 
+            ref={scrollContainerRef}
+            className="overflow-x-auto scrollbar-hide"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            <div className="flex gap-6 min-w-max pb-4">
+              <div className="w-80 flex-shrink-0">
+                <TestimonialCard
+                  quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
+                  name="Soumodip Mukherjee"
+                  role="Parent"
+                  achievement="Advanced Inline Skater"
+                />
+              </div>
+              <div className="w-80 flex-shrink-0">
+                <TestimonialCard
+                  quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
+                  name="Rudra Gol"
+                  role="Student (16)"
+                  achievement="National Medalist"
+                />
+              </div>
+              <div className="w-80 flex-shrink-0">
+                <TestimonialCard
+                  quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment."
+                  name="Gourab Mitra"
+                  role="Parent"
+                  achievement="National Qualifier"
+                />
+              </div>
+              <div className="w-80 flex-shrink-0">
+                <TestimonialCard
+                  quote="My son loves the inclusive atmosphere at RSA. The coaches are patient and truly care about every child's progress."
+                  name="Priya Sharma"
+                  role="Parent"
+                  achievement="State Champion"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Elfsight Google Reviews Widget */}
