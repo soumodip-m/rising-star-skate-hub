@@ -144,7 +144,7 @@ export default function About() {
                   <img 
                     src={founderPhoto} 
                     alt="Indrajeet Sinh Gol, Founder of RSA" 
-                    className="h-40 w-40 rounded-full object-cover border-4 border-orange-500"
+                    className="h-40 w-40 rounded-full object-cover"
                   />
                 </div>
                 <div>
