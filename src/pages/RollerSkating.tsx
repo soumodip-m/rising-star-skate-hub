@@ -267,7 +267,7 @@ export default function RollerSkating() {
       }} />
         <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-muted/70 to-muted/50" />
         <div className="container mx-auto px-4 relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-amber-700">Our Roller Skating Achievements</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-amber-700">Achievements at a Glance</h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {achievements.map(item => <div key={item.title} className="text-center p-6 bg-card/40 backdrop-blur-sm rounded-lg border hover-lift">
