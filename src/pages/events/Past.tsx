@@ -31,14 +31,13 @@ const newspaperCuttings = [
   { id: 9, image: "/images/news-cuttings/cutting-9.jpg", alt: "Roller Skating Federation of India Championship" },
   { id: 10, image: "/images/news-cuttings/cutting-11.jpg", alt: "Roller Skating Championship - Two Gold and Two Silver Medals" },
   { id: 11, image: "/images/news-cuttings/cutting-12.jpg", alt: "Skating Championship Medal Winners" },
-  { id: 12, image: "/images/news-cuttings/cutting-13.jpg", alt: "Roller Skating Championship Gold Medal Achievement" },
-  { id: 13, image: "/images/news-cuttings/cutting-14.jpg", alt: "67th National Roller Skating Championship - 1000m Race Gold Medal" },
-  { id: 14, image: "/images/news-cuttings/cutting-15.jpg", alt: "No Cutting Corners in Sports - World Champion Joey Mantia Feature" },
-  { id: 15, image: "/images/news-cuttings/cutting-16.jpg", alt: "Skating Speed Race - One Gold and Two Silver Medals" },
-  { id: 16, image: "/images/news-cuttings/cutting-17.jpg", alt: "Speed Skater Khwab Clinches Gold in Nationals" },
-  { id: 17, image: "/images/news-cuttings/cutting-18.jpg", alt: "State and National Skating Championships - Gold and Bronze Medals" },
-  { id: 18, image: "/images/news-cuttings/cutting-19.jpg", alt: "City Skater Wins Bronze at National School Games" },
-  { id: 19, image: "/images/news-cuttings/cutting-20.jpg", alt: "National Roller Skating Championship - Six Medals Won" },
+  { id: 12, image: "/images/news-cuttings/cutting-14.jpg", alt: "67th National Roller Skating Championship - 1000m Race Gold Medal" },
+  { id: 13, image: "/images/news-cuttings/cutting-15.jpg", alt: "No Cutting Corners in Sports - World Champion Joey Mantia Feature" },
+  { id: 14, image: "/images/news-cuttings/cutting-16.jpg", alt: "Skating Speed Race - One Gold and Two Silver Medals" },
+  { id: 15, image: "/images/news-cuttings/cutting-17.jpg", alt: "Speed Skater Khwab Clinches Gold in Nationals" },
+  { id: 16, image: "/images/news-cuttings/cutting-18.jpg", alt: "State and National Skating Championships - Gold and Bronze Medals" },
+  { id: 17, image: "/images/news-cuttings/cutting-19.jpg", alt: "City Skater Wins Bronze at National School Games" },
+  { id: 18, image: "/images/news-cuttings/cutting-20.jpg", alt: "National Roller Skating Championship - Six Medals Won" },
 ];
 
 const ITEMS_PER_PAGE = 9;
