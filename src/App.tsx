@@ -39,6 +39,7 @@ import EventsSchedule from "./pages/events/Schedule";
 import Achievements from "./pages/Achievements";
 import Photos from "./pages/gallery/Photos";
 import Videos from "./pages/gallery/Videos";
+import FunAtRSA from "./pages/gallery/FunAtRSA";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
 
@@ -94,6 +95,7 @@ const App = () => (
           <Route path="/achievements" element={<Achievements />} />
           <Route path="/gallery/photos" element={<Photos />} />
           <Route path="/gallery/videos" element={<Videos />} />
+          <Route path="/gallery/fun-at-rsa" element={<FunAtRSA />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/shop" element={<Shop />} />
 
