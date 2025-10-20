@@ -116,17 +116,9 @@ export default function FAQ() {
 
           {/* Call to Action */}
           <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground">
               Still have questions? We're here to help! Call us at <a href="tel:+919824234663" className="text-primary font-semibold hover:underline">+91 98242 34663</a>
             </p>
-            <div className="flex justify-center">
-              <a 
-                href="/admissions/trial" 
-                className="inline-flex items-center px-6 py-3 bg-accent text-accent-foreground rounded-lg hover:bg-accent/90 transition-colors font-semibold"
-              >
-                Book Free Trial
-              </a>
-            </div>
           </div>
         </main>
 
