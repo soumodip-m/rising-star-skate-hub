@@ -29,12 +29,7 @@ const navItems: NavItem[] = [
   },
   {
     label: "Admissions",
-    submenu: [
-      { label: "How to Join", path: "/admissions" },
-      { label: "Packages", path: "/admissions/fees" },
-      { label: "Registration", path: "/admissions/register" },
-      { label: "Book a Trial", path: "/admissions/trial" },
-    ],
+    submenu: [{ label: "Book a Trial", path: "/admissions/trial" }],
   },
   {
     label: "Events & Achievements",
