@@ -104,19 +104,19 @@ export default function Trial() {
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative gradient-hero text-white py-20 overflow-hidden">
+        <section className="relative gradient-hero text-white py-12 overflow-hidden">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="grid md:grid-cols-2 gap-6 items-center max-w-5xl mx-auto">
               <div className="relative z-10">
                 <img 
                   src={trialHeroImage} 
                   alt="Children learning roller skating" 
-                  className="rounded-lg shadow-2xl w-full h-auto"
+                  className="rounded-lg shadow-2xl w-full h-auto max-h-[300px] object-cover"
                 />
               </div>
               <div className="relative z-10">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">Book a Trial Session</h1>
-                <p className="text-xl">Experience our world-class coaching for FREE</p>
+                <h1 className="text-3xl md:text-4xl font-bold mb-3">Book a Trial Session</h1>
+                <p className="text-lg">Experience our world-class coaching for FREE</p>
               </div>
             </div>
           </div>
