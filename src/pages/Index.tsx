@@ -10,6 +10,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import SportCard from "@/components/SportCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import SocialWall from "@/components/SocialWall";
+import GoogleReviews from "@/components/GoogleReviews";
 import heroImage from "@/assets/hero-roller-skating.jpg";
 import heroQuadImage from "@/assets/hero-quad-skating.jpg";
 import bgTexture from "@/assets/bg-texture.jpg";
@@ -50,11 +51,6 @@ export default function Index() {
   const whyChooseImages = [whyChooseImage, whyChooseTeam, whyChooseTraining, whyChooseRink];
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
-
     const heroInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
     }, 5000);
@@ -64,9 +60,6 @@ export default function Index() {
     }, 4000);
 
     return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
       clearInterval(heroInterval);
       clearInterval(whyChooseInterval);
     };
@@ -327,39 +320,14 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Google Reviews Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Hear from our Students & Parents</h2>
-            <p className="text-lg text-muted-foreground">Stories That Inspire Us Every Day</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Community Speaks</h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <TestimonialCard
-              quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
-              name="Soumodip Mukherjee"
-              role="Parent"
-              achievement="Advanced Inline Skater"
-            />
-            <TestimonialCard
-              quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
-              name="Rudra Gol"
-              role="Student (16)"
-              achievement="National Medalist"
-            />
-            <TestimonialCard
-              quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment."
-              name="Gourab Mitra"
-              role="Parent"
-              achievement="National Qualifier"
-            />
-          </div>
-
-          {/* Elfsight Google Reviews Widget */}
-          <div className="mt-12">
-            <div className="elfsight-app-5bc3cfa8-a98a-48a0-af1b-af4b1a492fd5" data-elfsight-app-lazy></div>
-          </div>
+          <GoogleReviews />
         </div>
       </section>
 
