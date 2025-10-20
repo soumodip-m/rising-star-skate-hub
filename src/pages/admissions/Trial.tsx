@@ -10,6 +10,7 @@ import { useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Check } from "lucide-react";
+import trialHeroImage from "@/assets/trial-hero.png";
 
 const packages = [
   {
@@ -103,10 +104,21 @@ export default function Trial() {
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="gradient-hero text-white py-20">
+        <section className="relative gradient-hero text-white py-20 overflow-hidden">
           <div className="container mx-auto px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Book a Trial Session</h1>
-            <p className="text-xl">Experience our world-class coaching for FREE</p>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="relative z-10">
+                <img 
+                  src={trialHeroImage} 
+                  alt="Children learning roller skating" 
+                  className="rounded-lg shadow-2xl w-full h-auto"
+                />
+              </div>
+              <div className="relative z-10">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4">Book a Trial Session</h1>
+                <p className="text-xl">Experience our world-class coaching for FREE</p>
+              </div>
+            </div>
           </div>
         </section>
 
