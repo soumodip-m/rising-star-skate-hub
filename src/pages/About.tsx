@@ -18,14 +18,18 @@ export default function About() {
       }
     }
   }, [location]);
-  return <div className="min-h-screen bg-background">
+  return (
+    <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative py-40 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-        backgroundImage: `url(${heroAboutRoad})`
-      }} />
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url(${heroAboutRoad})`,
+          }}
+        />
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 text-slate-50">About RSA-Rising Stars Academy</h1>
@@ -41,21 +45,27 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-6 text-center text-orange-600">Our Story</h2>
             <div className="space-y-4 text-lg text-muted-foreground">
               <p>
-                Rising Stars Academy (RSA) was founded with a singular vision: to create a world-class
-                multi-sport training environment that nurtures young talent and builds champions. Located
-                in the heart of Ahmedabad, Gujarat, we have become a beacon for aspiring athletes seeking
-                excellence.
+                Rising Stars Academy (RSA) was founded in 1998 with just 9 passionate young skaters and a dream — to
+                create a world-class multi-sport training environment that nurtures talent and builds champions. What
+                began as a small Roller Skating coaching center has now grown into one of Gujarat’s leading sports
+                academies, recognized as the No. 1 team in the state and among the top in India.
               </p>
               <p>
-                What began as a specialized Roller Skating coaching center has evolved into a comprehensive
-                sports academy offering training in multiple disciplines. Our flagship Roller Skating program
-                continues to produce state and national-level competitors, while our expanding portfolio of
-                sports programs serves hundreds of young athletes every year.
+                Located in the heart of Ahmedabad, Gujarat, RSA has become a beacon for aspiring athletes seeking
+                excellence. Our flagship Roller Skating program has produced numerous state and national-level
+                champions, inspiring hundreds of young athletes every year. Over the years, we have expanded beyond
+                skating to offer professional training in multiple sports disciplines, helping students develop their
+                full athletic potential.
               </p>
               <p>
-                At RSA, we believe that sports education goes beyond physical training. We focus on character
-                building, discipline, teamwork, and the relentless pursuit of personal excellence. Every
-                student who walks through our doors becomes part of the RSA family.
+                At RSA, we believe that true sports education extends beyond physical skill. Our philosophy emphasizes
+                character building, discipline, teamwork, and the relentless pursuit of personal excellence. Every
+                student who joins RSA becomes part of a passionate family committed to pushing boundaries, achieving
+                dreams, and representing our academy with pride and integrity.
+              </p>
+              <p>
+                From humble beginnings in 1998 to becoming Gujarat’s top-performing team today — our journey is a
+                testament to dedication, unity, and an unshakable belief in the power of sport.
               </p>
             </div>
           </div>
@@ -71,7 +81,10 @@ export default function About() {
                 <Eye className="h-8 w-8 text-primary" />
               </div>
               <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
-              <p className="text-slate-950">To inspire and nurture young athletes to reach their fullest potential — building champions in sport and character for life.</p>
+              <p className="text-slate-950">
+                To inspire and nurture young athletes to reach their fullest potential — building champions in sport and
+                character for life.
+              </p>
             </div>
 
             <div className="text-center p-8 rounded-lg border bg-orange-400">
@@ -79,7 +92,11 @@ export default function About() {
                 <Target className="h-8 w-8 text-secondary" />
               </div>
               <h3 className="text-2xl font-bold mb-4 text-slate-900">Our Mission</h3>
-              <p className="text-slate-50">To provide world-class sports training, promote discipline and teamwork, and create an engaging environment where every child and youth can discover their passion, develop skills, and achieve excellence both on and off the field.</p>
+              <p className="text-slate-50">
+                To provide world-class sports training, promote discipline and teamwork, and create an engaging
+                environment where every child and youth can discover their passion, develop skills, and achieve
+                excellence both on and off the field.
+              </p>
             </div>
           </div>
         </div>
@@ -140,19 +157,23 @@ export default function About() {
             <h2 className="text-3xl font-bold mb-8 text-center">Founder's Message</h2>
             <div className="bg-card p-8 md:p-12 rounded-lg border shadow-lg">
               <div className="flex flex-col md:flex-row gap-8 items-center">
-              <div className="flex-shrink-0">
-                  <img 
-                    src={founderPhoto} 
-                    alt="Indrajeet Sinh Gol, Founder of RSA" 
+                <div className="flex-shrink-0">
+                  <img
+                    src={founderPhoto}
+                    alt="Indrajeet Sinh Gol, Founder of RSA"
                     className="h-40 w-40 rounded-full object-cover"
                   />
                 </div>
                 <div>
-                  <p className="text-lg text-muted-foreground italic mb-4">"When we started RSA -Rising Stars Academy, our dream was simple: to create a place where young athletes could train with the best coaches, in the best facilities, and be part of a community that truly cares about their growth—not just as athletes, but as individuals."</p>
                   <p className="text-lg text-muted-foreground italic mb-4">
-                    "Every day, watching our students improve, win medals, and most importantly, develop
-                    confidence and character, reminds us why we do this. RSA is more than an academy—it's
-                    a family committed to excellence."
+                    "When we started RSA -Rising Stars Academy, our dream was simple: to create a place where young
+                    athletes could train with the best coaches, in the best facilities, and be part of a community that
+                    truly cares about their growth—not just as athletes, but as individuals."
+                  </p>
+                  <p className="text-lg text-muted-foreground italic mb-4">
+                    "Every day, watching our students improve, win medals, and most importantly, develop confidence and
+                    character, reminds us why we do this. RSA is more than an academy—it's a family committed to
+                    excellence."
                   </p>
                   <div className="mt-6">
                     <p className="font-bold text-foreground">Indrajeet Sinh Gol</p>
@@ -167,5 +188,6 @@ export default function About() {
 
       <WhatsAppButton />
       <Footer />
-    </div>;
+    </div>
+  );
 }
