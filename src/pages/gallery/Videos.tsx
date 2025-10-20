@@ -66,15 +66,7 @@ export default function Videos() {
         {/* Video Grid */}
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {videos.map((video, index) => <Card key={index} className="hover-lift overflow-hidden group cursor-pointer">
-                  
-                  <CardContent className="p-4">
-                    <h3 className="font-bold mb-2">{video.title}</h3>
-                    <p className="text-sm text-muted-foreground">{video.description}</p>
-                  </CardContent>
-                </Card>)}
-            </div>
+            
 
             <div className="text-center mt-12 bg-muted/50 p-8 rounded-lg max-w-4xl mx-auto">
               <h3 className="text-2xl font-bold mb-4">Subscribe to Our YouTube Channel</h3>
