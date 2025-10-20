@@ -305,9 +305,9 @@ export default function RollerSkating() {
       {/* CTA Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 p-12 rounded-2xl border">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="text-left">
+          <div className="max-w-7xl mx-auto bg-gradient-to-br from-primary/10 to-secondary/10 p-12 rounded-2xl border">
+            <div className="grid md:grid-cols-5 gap-8 items-center">
+              <div className="md:col-span-2 text-left">
                 <Award className="h-16 w-16 text-primary mb-6" />
                 <h2 className="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
                 <p className="text-lg text-muted-foreground mb-8">
@@ -326,7 +326,7 @@ export default function RollerSkating() {
                   </Link>
                 </div>
               </div>
-              <div className="relative">
+              <div className="md:col-span-3 relative">
                 <img 
                   src={rollerSkatingCollage} 
                   alt="RSA Roller Skating Team and Athletes" 
