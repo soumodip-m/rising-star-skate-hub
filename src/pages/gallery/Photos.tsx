@@ -124,43 +124,44 @@ export default function Photos() {
           </div>
         </section>
 
-        {/* Masonry Photo Grid */}
+        {/* Horizontal Scrolling Thumbnails */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 max-w-7xl mx-auto">
-              {photoGallery.map((photo, index) => (
-                <div
-                  key={index}
-                  data-index={index}
-                  className="lazy-image break-inside-avoid mb-4 relative group overflow-hidden rounded-lg shadow-lg hover-lift cursor-pointer"
-                  onClick={() => setSelectedImage(index)}
-                  role="button"
-                  tabIndex={0}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault();
-                      setSelectedImage(index);
-                    }
-                  }}
-                  aria-label={`View ${photo.alt}`}
-                >
-                  {loadedImages.has(index) ? (
-                    <>
+            <h2 className="text-3xl font-bold text-center mb-8">Photo Gallery</h2>
+            <div className="relative max-w-7xl mx-auto">
+              <div className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary scrollbar-track-muted">
+                <div className="flex gap-4 px-2">
+                  {photoGallery.map((photo, index) => (
+                    <div
+                      key={index}
+                      className="flex-shrink-0 w-64 h-48 relative group overflow-hidden rounded-lg shadow-lg hover-lift cursor-pointer"
+                      onClick={() => setSelectedImage(index)}
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setSelectedImage(index);
+                        }
+                      }}
+                      aria-label={`View ${photo.alt}`}
+                    >
                       <img
                         src={photo.src}
                         alt={photo.alt}
-                        className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                        <p className="text-white font-semibold text-center px-4">{photo.alt}</p>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <p className="text-white font-semibold text-sm p-4 w-full">{photo.alt}</p>
                       </div>
-                    </>
-                  ) : (
-                    <div className="w-full h-64 bg-muted animate-pulse" />
-                  )}
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+              <p className="text-center text-muted-foreground text-sm mt-4">
+                Scroll horizontally to browse all {photoGallery.length} photos
+              </p>
             </div>
 
             <div className="text-center mt-12">
