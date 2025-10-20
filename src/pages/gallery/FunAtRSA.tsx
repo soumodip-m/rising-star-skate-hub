@@ -48,6 +48,10 @@ const funImages = [{
   src: "/images/fun/kite-flying.jpg",
   alt: "Kite flying fun",
   rotation: "rotate-1"
+}, {
+  src: "/images/fun/bonfire-skating.jpg",
+  alt: "Bonfire celebration with skating",
+  rotation: "-rotate-1"
 }];
 export default function FunAtRSA() {
   const [selectedImage, setSelectedImage] = useState<{
