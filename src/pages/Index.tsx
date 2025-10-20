@@ -70,7 +70,7 @@ export default function Index() {
       if (!isPaused && scrollContainerRef.current) {
         const container = scrollContainerRef.current;
         const scrollAmount = 2; // pixels per frame
-        
+
         if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
           // Reset to start
           container.scrollLeft = 0;
@@ -353,12 +353,12 @@ export default function Index() {
             <p className="text-lg text-muted-foreground">Stories That Inspire Us Every Day</p>
           </div>
 
-          <div 
+          <div
             ref={scrollContainerRef}
             className="overflow-x-auto scrollbar-hide"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
           >
             <div className="flex gap-6 min-w-max pb-4">
               <div className="w-80 flex-shrink-0">
@@ -390,7 +390,7 @@ export default function Index() {
                   quote="My son loves the inclusive atmosphere at RSA. The coaches are patient and truly care about every child's progress."
                   name="Priya Sharma"
                   role="Parent"
-                  achievement="State Champion"
+                  achievement="Beginner Skater"
                 />
               </div>
             </div>
