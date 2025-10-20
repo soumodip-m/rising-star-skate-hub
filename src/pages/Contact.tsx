@@ -106,11 +106,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold mb-1">Email</h3>
-                    <p className="text-sm text-muted-foreground">
-                      info@rsaacademy.com
-                      <br />
-                      admissions@rsaacademy.com
-                    </p>
+                    <p className="text-sm text-muted-foreground">rsa4u@gmail.com.com</p>
                   </div>
                 </div>
 
