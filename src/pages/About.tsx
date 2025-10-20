@@ -138,7 +138,7 @@ export default function About() {
                   </p>
                   <div className="mt-6">
                     <p className="font-bold text-foreground">Indrajeet Sinh Gol</p>
-                    <p className="text-sm text-muted-foreground">Founder & Head Coach RSA -Rising Stars Academy</p>
+                    <p className="text-sm text-muted-foreground">Founder & Head Coach, RSA -Rising Stars Academy</p>
                   </div>
                 </div>
               </div>
