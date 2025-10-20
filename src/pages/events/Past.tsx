@@ -20,16 +20,16 @@ import { X } from "lucide-react";
 
 // Placeholder newspaper cutting images - replace with actual newspaper images
 const newspaperCuttings = [
-  { id: 1, image: "/images/events-medals.jpg", alt: "RSA National Championship Coverage" },
-  { id: 2, image: "/images/coach-team.jpg", alt: "Team Victory Announcement" },
-  { id: 3, image: "/images/facilities-gym.jpg", alt: "Training Facility Feature" },
-  { id: 4, image: "/images/pool-cross-training.jpg", alt: "Cross Training Program" },
-  { id: 5, image: "/images/hero-roller.jpg", alt: "Roller Skating Championship" },
-  { id: 6, image: "/images/events-medals.jpg", alt: "Medal Ceremony Coverage" },
-  { id: 7, image: "/images/coach-team.jpg", alt: "Coaching Excellence" },
-  { id: 8, image: "/images/facilities-gym.jpg", alt: "State-of-art Facilities" },
-  { id: 9, image: "/images/pool-cross-training.jpg", alt: "Youth Development Program" },
-  { id: 10, image: "/images/hero-roller.jpg", alt: "Community Sports Initiative" },
+  { id: 1, image: "/images/news-cuttings/cutting-1.jpg", alt: "Skating Championship Team Medals" },
+  { id: 2, image: "/images/news-cuttings/cutting-2.jpg", alt: "DPS Student Wins Bronze Medal in CBSE West Zone Championship" },
+  { id: 3, image: "/images/news-cuttings/cutting-3.jpg", alt: "Class 3 Student Bronze Medal Achievement" },
+  { id: 4, image: "/images/news-cuttings/cutting-4.jpg", alt: "CBSE West Zone Skating Championship Results" },
+  { id: 5, image: "/images/news-cuttings/cutting-5.jpg", alt: "CBC West Zone Skating Event Coverage" },
+  { id: 6, image: "/images/news-cuttings/cutting-6.jpg", alt: "Mount Litera School West Zone Skating Competition" },
+  { id: 7, image: "/images/news-cuttings/cutting-7.jpg", alt: "CBSE Zone Skating Championship Winners" },
+  { id: 8, image: "/images/news-cuttings/cutting-8.jpg", alt: "National Roller Skating Championship Silver Medal" },
+  { id: 9, image: "/images/news-cuttings/cutting-9.jpg", alt: "Roller Skating Federation of India Championship" },
+  { id: 10, image: "/images/news-cuttings/cutting-10.jpg", alt: "Roller Skating Competition Medal Ceremony" },
   { id: 11, image: "/images/events-medals.jpg", alt: "Regional Tournament Results" },
   { id: 12, image: "/images/coach-team.jpg", alt: "Team Building Success" },
 ];
