@@ -29,7 +29,7 @@ const navItems: NavItem[] = [
   },
   {
     label: "Admissions",
-    submenu: [{ label: "Book a Trial", path: "/admissions/trial" }],
+    submenu: [{ label: "Join Us", path: "/admissions/trial" }],
   },
   {
     label: "Events & Achievements",
