@@ -68,14 +68,7 @@ export default function Videos() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {videos.map((video, index) => <Card key={index} className="hover-lift overflow-hidden group cursor-pointer">
-                  <div className="relative">
-                    <img src={video.thumbnail} alt={video.title} className="w-full h-48 object-cover" />
-                    <div className="absolute inset-0 bg-black/40 group-hover:bg-black/60 transition-colors flex items-center justify-center">
-                      <div className="bg-white/90 rounded-full p-4 group-hover:scale-110 transition-transform">
-                        <Play className="h-8 w-8 text-primary" fill="currentColor" />
-                      </div>
-                    </div>
-                  </div>
+                  
                   <CardContent className="p-4">
                     <h3 className="font-bold mb-2">{video.title}</h3>
                     <p className="text-sm text-muted-foreground">{video.description}</p>
