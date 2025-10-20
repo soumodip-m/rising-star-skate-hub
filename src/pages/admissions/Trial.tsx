@@ -111,7 +111,7 @@ export default function Trial() {
                 <img 
                   src={trialHeroImage} 
                   alt="Children learning roller skating" 
-                  className="rounded-lg shadow-2xl w-full h-auto max-h-[300px] object-cover"
+                  className="rounded-lg shadow-2xl w-full h-auto max-h-[300px] object-cover opacity-90"
                 />
               </div>
               <div className="relative z-10">
