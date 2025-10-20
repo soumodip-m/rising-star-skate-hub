@@ -29,6 +29,7 @@ import Admissions from "./pages/admissions/Admissions";
 import Fees from "./pages/admissions/Fees";
 import Register from "./pages/admissions/Register";
 import Trial from "./pages/admissions/Trial";
+import FAQ from "./pages/admissions/FAQ";
 
 // Events pages
 import UpcomingEvents from "./pages/events/Upcoming";
@@ -85,6 +86,7 @@ const App = () => (
           <Route path="/admissions/fees" element={<Fees />} />
           <Route path="/admissions/register" element={<Register />} />
           <Route path="/admissions/trial" element={<Trial />} />
+          <Route path="/admissions/faq" element={<FAQ />} />
 
           {/* Events Routes */}
           <Route path="/events/upcoming" element={<UpcomingEvents />} />
