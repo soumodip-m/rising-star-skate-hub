@@ -129,7 +129,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="text-center mt-4">
-            <p className="text-sm text-primary">Designed & developed with gratitude by a RSA student's parent</p>
+            <p className="text-sm text-yellow-500">Designed & developed with gratitude by a RSA student's parent</p>
           </div>
         </div>
       </div>
