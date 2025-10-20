@@ -36,7 +36,7 @@ export default function FunAtRSA() {
         <section className="gradient-hero text-white py-20">
           <div className="container mx-auto px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Fun@RSA 🎉</h1>
-            <p className="text-xl">Capturing the joy, laughter, and unforgettable moments of Team RSA</p>
+            <p className="text-xl">At RSA, sports build strength - and the fun builds smiles</p>
           </div>
         </section>
 
