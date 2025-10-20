@@ -30,7 +30,7 @@ export default function Milestones() {
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative gradient-hero text-white py-20 overflow-hidden">
+        <section className="relative gradient-hero text-white py-12 overflow-hidden">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="z-10">
