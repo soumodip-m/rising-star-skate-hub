@@ -12,8 +12,8 @@ const achievements = [
       "15 National Gold Medals (2020-2024)",
       "State Champions - 4 consecutive years",
       "3 students selected for National Team",
-      "25+ International competition participants"
-    ]
+      "25+ International competition participants",
+    ],
   },
   {
     category: "Cricket",
@@ -22,8 +22,8 @@ const achievements = [
       "District Champions - U-16 Category",
       "5 students in State-level teams",
       "Tournament Winners - Inter-Academy Cup 2024",
-      "Best Academy Award 2023"
-    ]
+      "Best Academy Award 2023",
+    ],
   },
   {
     category: "Football",
@@ -32,8 +32,8 @@ const achievements = [
       "State Tournament Runners-Up 2024",
       "City League Champions - U-14",
       "10+ students in district selection trials",
-      "Best Coached Team Award 2023"
-    ]
+      "Best Coached Team Award 2023",
+    ],
   },
   {
     category: "Basketball",
@@ -42,30 +42,30 @@ const achievements = [
       "Inter-School Championship Winners",
       "Regional Tournament Semi-Finalists",
       "3 students in State Basketball Academy",
-      "Most Improved Team 2024"
-    ]
-  }
+      "Most Improved Team 2024",
+    ],
+  },
 ];
 
 const studentHighlights = [
   {
-    name: "Rajesh Kumar",
+    name: "Angelina Mary Poussin",
     sport: "Roller Skating",
-    achievement: "National Gold Medalist - 500m Sprint",
-    image: "/images/events-medals.jpg"
+    achievement: "Special Olympics, World Summer Games, Berlin 2023",
+    image: "/images/events-medals.jpg",
   },
   {
     name: "Priya Sharma",
     sport: "Cricket",
     achievement: "State Team Player - Best All-Rounder Award",
-    image: "/images/coach-team.jpg"
+    image: "/images/coach-team.jpg",
   },
   {
     name: "Amit Patel",
     sport: "Football",
     achievement: "District Selection - Top Scorer",
-    image: "/images/facilities-gym.jpg"
-  }
+    image: "/images/facilities-gym.jpg",
+  },
 ];
 
 export default function Achievements() {
@@ -120,11 +120,7 @@ export default function Achievements() {
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {studentHighlights.map((student, index) => (
                 <Card key={index} className="hover-lift overflow-hidden">
-                  <img
-                    src={student.image}
-                    alt={student.name}
-                    className="w-full h-48 object-cover"
-                  />
+                  <img src={student.image} alt={student.name} className="w-full h-48 object-cover" />
                   <CardContent className="p-6">
                     <h3 className="text-xl font-bold mb-2">{student.name}</h3>
                     <p className="text-primary font-semibold mb-2">{student.sport}</p>
