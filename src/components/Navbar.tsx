@@ -136,9 +136,9 @@ export default function Navbar() {
           {/* Utility Items */}
           <div className="hidden lg:flex items-center gap-3">
             <Link to="/shop">
-              <Button variant="ghost" size="sm">
-                Shop
-              </Button>
+              //<Button variant="ghost" size="sm To be updated later
+               // Shop
+              //</Button>
             </Link>
             <Link to="/admissions/trial">
               <Button size="sm" className="gradient-primary shadow-glow">
@@ -216,9 +216,9 @@ export default function Navbar() {
               ))}
               <div className="pt-4 space-y-2">
                 <Link to="/shop" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="ghost" className="w-full">
-                    Shop
-                  </Button>
+                  //<Button variant="ghost" className="w-full">
+                   // Shop
+                  //</Button>
                 </Link>
                 <Link to="/admissions/trial" onClick={() => setMobileMenuOpen(false)}>
                   <Button className="w-full gradient-primary">Book a Trial</Button>
