@@ -2,18 +2,18 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import gradientBg from "@/assets/contact-gradient-bg.jpg";
+import doodleBg from "@/assets/contact-doodle-bg.png";
 
 export default function Contact() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Contact Info Section with Gradient Background */}
+      {/* Contact Info Section with Doodle Background */}
       <section 
         className="py-32 relative overflow-hidden"
         style={{
-          backgroundImage: `url(${gradientBg})`,
+          backgroundImage: `url(${doodleBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
@@ -24,7 +24,7 @@ export default function Contact() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-2xl mx-auto">
             <div className="bg-background/80 backdrop-blur-md p-12 rounded-2xl border border-primary/20 shadow-2xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center">Get in Touch</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-12 text-center opacity-90">Get in Touch</h1>
 
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
