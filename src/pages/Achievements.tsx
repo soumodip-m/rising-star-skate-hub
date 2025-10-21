@@ -10,13 +10,32 @@ import shouryaImg from "@/assets/achievements/shourya.jpg";
 import sreyanshImg from "@/assets/achievements/sreyansh.jpg";
 import team1Img from "@/assets/achievements/team-1.jpg";
 import team2Img from "@/assets/achievements/team-2.jpg";
+import teamTrophiesImg from "@/assets/achievements/team-trophies.jpg";
+import newspaperCuttingImg from "@/assets/achievements/newspaper-cutting.jpg";
+import certificate72MedalsImg from "@/assets/achievements/certificate-72medals.jpg";
+import coachAthleteMedalImg from "@/assets/achievements/coach-athlete-medal.jpg";
+import largeTeamGroupImg from "@/assets/achievements/large-team-group.jpg";
+import podiumCeremonyImg from "@/assets/achievements/podium-ceremony.jpg";
+import cisceTournamentImg from "@/assets/achievements/cisce-tournament.jpg";
+import podiumThreeAthletesImg from "@/assets/achievements/podium-three-athletes.jpg";
+import teamMedalStatsImg from "@/assets/achievements/team-medal-stats.jpg";
+
 const galleryImages = [
+  { src: teamTrophiesImg, alt: "Team RSA with coach and medals - Warrior State Level Tournament" },
   { src: aryaImg, alt: "Arya with coach holding medal and trophy" },
   { src: rudyImg, alt: "Rudy with coach after winning competition" },
   { src: shouryaImg, alt: "Shourya with coach displaying medal" },
   { src: sreyanshImg, alt: "Sreyansh with teammates holding trophy" },
   { src: team1Img, alt: "Team RSA champions with medals and trophies" },
   { src: team2Img, alt: "Rising Stars Academy team celebration" },
+  { src: newspaperCuttingImg, alt: "Newspaper article - Skaters triumph at Skating Championship" },
+  { src: certificate72MedalsImg, alt: "Certificate of Achievement - 72 Total Medals at Nov 2022 Tournament" },
+  { src: coachAthleteMedalImg, alt: "Coach and athlete celebrating medal victory" },
+  { src: largeTeamGroupImg, alt: "Large team group photo with medals and coach" },
+  { src: podiumCeremonyImg, alt: "Podium ceremony - Athletes on winner's podium with medals" },
+  { src: cisceTournamentImg, alt: "CISCE Regional Skating Tournament 2025 - Multiple podium finishes" },
+  { src: podiumThreeAthletesImg, alt: "Three RSA athletes on podium at state championship" },
+  { src: teamMedalStatsImg, alt: "Team RSA group photos with detailed medal statistics" },
 ];
 export default function Achievements() {
   const [selectedImage, setSelectedImage] = useState(0);
