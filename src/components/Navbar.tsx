@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ShoppingBag, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import rsaLogo from "@/assets/rsa-logo.png";
 
 interface NavItem {
@@ -63,6 +64,7 @@ const navItems: NavItem[] = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [shopDialogOpen, setShopDialogOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
@@ -135,11 +137,9 @@ export default function Navbar() {
 
           {/* Utility Items */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link to="/shop">
-              <Button variant="ghost" size="sm">
-                Shop
-              </Button>
-            </Link>
+            <Button variant="ghost" size="sm" onClick={() => setShopDialogOpen(true)}>
+              Shop
+            </Button>
             <Link to="/admissions/trial">
               <Button size="sm" className="gradient-primary shadow-glow">
                 Book a Trial
@@ -215,11 +215,16 @@ export default function Navbar() {
                 </div>
               ))}
               <div className="pt-4 space-y-2">
-                <Link to="/shop" onClick={() => setMobileMenuOpen(false)}>
-                  <Button variant="ghost" className="w-full">
-                    Shop
-                  </Button>
-                </Link>
+                <Button 
+                  variant="ghost" 
+                  className="w-full" 
+                  onClick={() => {
+                    setShopDialogOpen(true);
+                    setMobileMenuOpen(false);
+                  }}
+                >
+                  Shop
+                </Button>
                 <Link to="/admissions/trial" onClick={() => setMobileMenuOpen(false)}>
                   <Button className="w-full gradient-primary">Book a Trial</Button>
                 </Link>
@@ -228,6 +233,42 @@ export default function Navbar() {
           </div>
         )}
       </div>
+
+      {/* Shop Dialog */}
+      <Dialog open={shopDialogOpen} onOpenChange={setShopDialogOpen}>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <div className="flex justify-center mb-4">
+              <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center">
+                <ShoppingBag className="h-8 w-8 text-primary" />
+              </div>
+            </div>
+            <DialogTitle className="text-2xl font-bold text-center">RSA Shop Coming Soon!</DialogTitle>
+            <DialogDescription className="text-center pt-4 space-y-4">
+              <p className="text-base">
+                We're working on bringing you the best skating gear and RSA merchandise.
+              </p>
+              <p className="text-base font-medium">
+                For immediate equipment needs, please contact us:
+              </p>
+              <div className="flex items-center justify-center gap-2 text-primary pt-2">
+                <Phone className="h-5 w-5" />
+                <a href="tel:+919825042321" className="text-lg font-semibold hover:underline">
+                  +91 98250 42321
+                </a>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                or reach out via WhatsApp for quick assistance
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center pt-2">
+            <Button onClick={() => setShopDialogOpen(false)} className="min-w-[120px]">
+              Got it!
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </nav>
   );
 }
