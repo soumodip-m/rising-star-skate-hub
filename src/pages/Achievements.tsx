@@ -21,12 +21,12 @@ import podiumThreeAthletesImg from "@/assets/achievements/podium-three-athletes.
 import teamMedalStatsImg from "@/assets/achievements/team-medal-stats.jpg";
 
 const galleryImages = [
+  { src: team1Img, alt: "Team RSA champions with medals and trophies" },
   { src: teamTrophiesImg, alt: "Team RSA with coach and medals - Warrior State Level Tournament" },
   { src: aryaImg, alt: "Arya with coach holding medal and trophy" },
   { src: rudyImg, alt: "Rudy with coach after winning competition" },
   { src: shouryaImg, alt: "Shourya with coach displaying medal" },
   { src: sreyanshImg, alt: "Sreyansh with teammates holding trophy" },
-  { src: team1Img, alt: "Team RSA champions with medals and trophies" },
   { src: team2Img, alt: "Rising Stars Academy team celebration" },
   { src: newspaperCuttingImg, alt: "Newspaper article - Skaters triumph at Skating Championship" },
   { src: certificate72MedalsImg, alt: "Certificate of Achievement - 72 Total Medals at Nov 2022 Tournament" },
