@@ -58,8 +58,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/events" className="hover:text-primary transition-colors">
-                  Events
+                <Link to="/achievements" className="hover:text-primary transition-colors">
+                  Achievements
                 </Link>
               </li>
               <li>
