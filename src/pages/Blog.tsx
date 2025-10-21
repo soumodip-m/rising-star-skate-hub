@@ -6,51 +6,40 @@ import { Book, Zap, Trophy, Users, Globe, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-
-const features = [
-  {
-    icon: Book,
-    title: "Rich History",
-    description: "Explore the fascinating evolution of roller skating from 1760 to modern speed skating.",
-    link: "/blog/history",
-  },
-  {
-    icon: Zap,
-    title: "Types & Techniques",
-    description: "Master both inline and quad skating with expert guidance and practice tips.",
-    link: "/blog/types",
-  },
-  {
-    icon: Trophy,
-    title: "Global Competitions",
-    description: "Stay updated with international championships and competitions worldwide.",
-    link: "/blog/competitions",
-  },
-  {
-    icon: Users,
-    title: "Training Programs",
-    description: "Structured programs from beginner to advanced with exercise routines.",
-    link: "/blog/training",
-  },
-];
-
-const quickLinks = [
-  "Complete equipment buying and maintenance guide",
-  "SGFI National and RSFI information for India",
-  "International competition calendar",
-  "Expert training tips and exercise routines",
-  "Global skating community blogs and insights",
-];
-
-const stats = [
-  { number: "100+", label: "Years of Skating History" },
-  { number: "50+", label: "Countries Competing" },
-  { number: "1M+", label: "Active Skaters Worldwide" },
-];
-
+const features = [{
+  icon: Book,
+  title: "Rich History",
+  description: "Explore the fascinating evolution of roller skating from 1760 to modern speed skating.",
+  link: "/blog/history"
+}, {
+  icon: Zap,
+  title: "Types & Techniques",
+  description: "Master both inline and quad skating with expert guidance and practice tips.",
+  link: "/blog/types"
+}, {
+  icon: Trophy,
+  title: "Global Competitions",
+  description: "Stay updated with international championships and competitions worldwide.",
+  link: "/blog/competitions"
+}, {
+  icon: Users,
+  title: "Training Programs",
+  description: "Structured programs from beginner to advanced with exercise routines.",
+  link: "/blog/training"
+}];
+const quickLinks = ["Complete equipment buying and maintenance guide", "SGFI National and RSFI information for India", "International competition calendar", "Expert training tips and exercise routines", "Global skating community blogs and insights"];
+const stats = [{
+  number: "260+",
+  label: "Years of Skating History"
+}, {
+  number: "50+",
+  label: "Countries Competing"
+}, {
+  number: "1000+",
+  label: "Active Skaters Worldwide"
+}];
 export default function Blog() {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
@@ -81,8 +70,7 @@ export default function Blog() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-              {features.map((feature, index) => (
-                <Card key={index} className="hover-lift">
+              {features.map((feature, index) => <Card key={index} className="hover-lift">
                   <CardContent className="p-6">
                     <feature.icon className="h-12 w-12 text-primary mb-4" />
                     <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
@@ -94,8 +82,7 @@ export default function Blog() {
                       </Link>
                     </Button>
                   </CardContent>
-                </Card>
-              ))}
+                </Card>)}
             </div>
           </div>
         </section>
@@ -112,12 +99,10 @@ export default function Blog() {
                 </div>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
-                {quickLinks.map((link, index) => (
-                  <div key={index} className="flex items-start gap-3 p-4 bg-background rounded-lg hover-lift">
+                {quickLinks.map((link, index) => <div key={index} className="flex items-start gap-3 p-4 bg-background rounded-lg hover-lift">
                     <div className="h-2 w-2 rounded-full bg-primary mt-2"></div>
                     <p>{link}</p>
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
           </div>
@@ -127,12 +112,10 @@ export default function Blog() {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto text-center">
-              {stats.map((stat, index) => (
-                <div key={index} className="p-6">
+              {stats.map((stat, index) => <div key={index} className="p-6">
                   <div className="text-4xl md:text-5xl font-bold text-primary mb-2">{stat.number}</div>
                   <div className="text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </section>
@@ -147,7 +130,7 @@ export default function Blog() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-                <Link to="/blog/training">Start Training</Link>
+                <Link to="/blog/training">Click Here to Know More</Link>
               </Button>
             </div>
           </div>
@@ -155,6 +138,5 @@ export default function Blog() {
       </main>
       <Footer />
       <WhatsAppButton />
-    </div>
-  );
+    </div>;
 }
