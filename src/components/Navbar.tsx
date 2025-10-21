@@ -136,8 +136,8 @@ export default function Navbar() {
           {/* Utility Items */}
           <div className="hidden lg:flex items-center gap-3">
             <Link to="/shop">
-              <Button variant="ghost" size="sm
-               Shop
+              <Button variant="ghost" size="sm">
+                Shop
               </Button>
             </Link>
             <Link to="/admissions/trial">
