@@ -4,6 +4,7 @@ import { ChevronDown, Award, Users, Target, Calendar, Trophy, Building2, Dumbbel
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -32,6 +33,7 @@ export default function Index() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState("");
   const [isPaused, setIsPaused] = useState(false);
+  const [otherSportsDialogOpen, setOtherSportsDialogOpen] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const heroSlides = [
@@ -249,7 +251,13 @@ export default function Index() {
           <div className="flex justify-center">
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
               {sports.map((sport) => (
-                <SportCard key={sport.name} {...sport} />
+                sport.name === "Other Sports" ? (
+                  <div key={sport.name} onClick={() => setOtherSportsDialogOpen(true)} className="cursor-pointer">
+                    <SportCard {...sport} path="#" />
+                  </div>
+                ) : (
+                  <SportCard key={sport.name} {...sport} />
+                )
               ))}
             </div>
           </div>
@@ -519,6 +527,23 @@ export default function Index() {
           />
         </div>
       )}
+
+      {/* Other Sports Dialog */}
+      <Dialog open={otherSportsDialogOpen} onOpenChange={setOtherSportsDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center">Coming Soon!</DialogTitle>
+            <DialogDescription className="text-center pt-4 text-base">
+              Exciting updates coming soon — contact us via phone or WhatsApp for details.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center pt-4">
+            <Button onClick={() => setOtherSportsDialogOpen(false)}>
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
 
       <WhatsAppButton />
       <Footer />
