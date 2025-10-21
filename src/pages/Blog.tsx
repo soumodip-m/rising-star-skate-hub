@@ -43,9 +43,9 @@ const quickLinks = [
 ];
 
 const stats = [
-  { number: "260+", label: "Years of Skating History" },
+  { number: "100+", label: "Years of Skating History" },
   { number: "50+", label: "Countries Competing" },
-  { number: "1000+", label: "Active Skaters Worldwide" },
+  { number: "1M+", label: "Active Skaters Worldwide" },
 ];
 
 export default function Blog() {
