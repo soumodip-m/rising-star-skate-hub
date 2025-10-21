@@ -1,42 +1,37 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { Card, CardContent } from "@/components/ui/card";
-import { Award, Medal, Trophy, Star } from "lucide-react";
-const achievements = [{
-  category: "Roller Skating",
-  icon: Trophy,
-  accomplishments: ["15 National Gold Medals (2020-2024)", "State Champions - 4 consecutive years", "3 students selected for National Team", "25+ International competition participants"]
-}, {
-  category: "Cricket",
-  icon: Medal,
-  accomplishments: ["District Champions - U-16 Category", "5 students in State-level teams", "Tournament Winners - Inter-Academy Cup 2024", "Best Academy Award 2023"]
-}, {
-  category: "Football",
-  icon: Award,
-  accomplishments: ["State Tournament Runners-Up 2024", "City League Champions - U-14", "10+ students in district selection trials", "Best Coached Team Award 2023"]
-}, {
-  category: "Basketball",
-  icon: Star,
-  accomplishments: ["Inter-School Championship Winners", "Regional Tournament Semi-Finalists", "3 students in State Basketball Academy", "Most Improved Team 2024"]
-}];
-const studentHighlights = [{
-  name: "Angelina Mary Poussin",
-  sport: "Roller Skating",
-  achievement: "Special Olympics, World Summer Games, Berlin 2023",
-  image: "/images/events-medals.jpg"
-}, {
-  name: "Priya Sharma",
-  sport: "Cricket",
-  achievement: "State Team Player - Best All-Rounder Award",
-  image: "/images/coach-team.jpg"
-}, {
-  name: "Amit Patel",
-  sport: "Football",
-  achievement: "District Selection - Top Scorer",
-  image: "/images/facilities-gym.jpg"
-}];
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+import aryaImg from "@/assets/achievements/arya.jpg";
+import rudyImg from "@/assets/achievements/rudy.jpg";
+import shouryaImg from "@/assets/achievements/shourya.jpg";
+import sreyanshImg from "@/assets/achievements/sreyansh.jpg";
+import team1Img from "@/assets/achievements/team-1.jpg";
+import team2Img from "@/assets/achievements/team-2.jpg";
+const galleryImages = [
+  { src: aryaImg, alt: "Arya with coach holding medal and trophy" },
+  { src: rudyImg, alt: "Rudy with coach after winning competition" },
+  { src: shouryaImg, alt: "Shourya with coach displaying medal" },
+  { src: sreyanshImg, alt: "Sreyansh with teammates holding trophy" },
+  { src: team1Img, alt: "Team RSA champions with medals and trophies" },
+  { src: team2Img, alt: "Rising Stars Academy team celebration" },
+];
 export default function Achievements() {
+  const [selectedImage, setSelectedImage] = useState(0);
+
+  const scrollThumbnails = (direction: 'left' | 'right') => {
+    const container = document.getElementById('thumbnail-container');
+    if (container) {
+      const scrollAmount = 200;
+      container.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
@@ -48,47 +43,64 @@ export default function Achievements() {
           </div>
         </section>
 
-        {/* Sports Achievements */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Achievements by Team RSA</h2>
-            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {achievements.map((item, index) => {
-              const Icon = item.icon;
-              return <Card key={index} className="hover-lift">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-4 mb-6">
-                        <div className="bg-primary/10 p-4 rounded-lg">
-                          <Icon className="h-8 w-8 text-primary" />
-                        </div>
-                        <h3 className="text-2xl font-bold">{item.category}</h3>
-                      </div>
-                      <ul className="space-y-3">
-                        {item.accomplishments.map((accomplishment, i) => <li key={i} className="flex items-start gap-2">
-                            <span className="text-primary mt-1">✓</span>
-                            <span>{accomplishment}</span>
-                          </li>)}
-                      </ul>
-                    </CardContent>
-                  </Card>;
-            })}
+        {/* Image Gallery Section */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl font-bold text-center mb-12">Our Champions Gallery</h2>
+            
+            {/* Main Preview Image */}
+            <div className="mb-8 bg-white rounded-2xl shadow-lg overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <img 
+                  src={galleryImages[selectedImage].src} 
+                  alt={galleryImages[selectedImage].alt}
+                  className="w-full h-full object-cover animate-fade-in"
+                  key={selectedImage}
+                />
+              </div>
             </div>
-          </div>
-        </section>
 
-        {/* Student Spotlights */}
-        <section className="py-16 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Student Spotlights</h2>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {studentHighlights.map((student, index) => <Card key={index} className="hover-lift overflow-hidden">
-                  <img src={student.image} alt={student.name} className="w-full h-48 object-cover" />
-                  <CardContent className="p-6">
-                    <h3 className="text-xl font-bold mb-2">{student.name}</h3>
-                    <p className="text-primary font-semibold mb-2">{student.sport}</p>
-                    <p className="text-muted-foreground">{student.achievement}</p>
-                  </CardContent>
-                </Card>)}
+            {/* Thumbnail Navigation */}
+            <div className="relative">
+              <button
+                onClick={() => scrollThumbnails('left')}
+                className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-primary hover:text-white transition-colors"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </button>
+
+              <div 
+                id="thumbnail-container"
+                className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {galleryImages.map((image, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedImage(index)}
+                    className={`flex-shrink-0 bg-white rounded-lg overflow-hidden transition-all duration-300 ${
+                      selectedImage === index 
+                        ? 'ring-4 ring-primary shadow-xl scale-105' 
+                        : 'ring-2 ring-border hover:ring-primary/50 hover:scale-105 shadow-md'
+                    }`}
+                  >
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      className="w-32 h-20 object-cover"
+                    />
+                  </button>
+                ))}
+              </div>
+
+              <button
+                onClick={() => scrollThumbnails('right')}
+                className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 bg-white rounded-full p-2 shadow-lg hover:bg-primary hover:text-white transition-colors"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="h-6 w-6" />
+              </button>
             </div>
           </div>
         </section>
