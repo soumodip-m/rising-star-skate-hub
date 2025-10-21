@@ -6,6 +6,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import { Target, Eye, Heart, Award, Users } from "lucide-react";
 import heroAboutRoad from "@/assets/hero-about-road.jpg";
 import founderPhoto from "@/assets/founder-photo.jpg";
+import founderGradientBg from "@/assets/founder-gradient-bg.jpg";
 
 export default function About() {
   const location = useLocation();
@@ -144,8 +145,17 @@ export default function About() {
       </section>
 
       {/* Founder's Message */}
-      <section id="founders-message" className="py-16 bg-muted/50">
-        <div className="container mx-auto px-4">
+      <section 
+        id="founders-message" 
+        className="py-16 relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${founderGradientBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-background/10"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">Founder's Message</h2>
             <div className="bg-card p-8 md:p-12 rounded-lg border shadow-lg">
