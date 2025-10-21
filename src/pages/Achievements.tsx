@@ -49,9 +49,9 @@ const achievements = [
 
 const studentHighlights = [
   {
-    name: "Angelina Mary Poussin",
-    sport: "Roller Skating",
-    achievement: "Special Olympics, World Summer Games, Berlin 2023",
+    name: "Rajesh Kumar",
+    sport: "Speed Skating",
+    achievement: "National Gold Medalist - 500m Sprint",
     image: "/images/events-medals.jpg",
   },
   {
