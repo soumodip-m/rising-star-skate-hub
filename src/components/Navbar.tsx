@@ -24,7 +24,7 @@ const navItems: NavItem[] = [
     label: "Sports & Coaching",
     submenu: [
       { label: "Roller Skating (Flagship)", path: "/sports/roller-skating" },
-      { label: "Other Sports", path: "/sports" },
+      //{ label: "Other Sports", path: "/sports" },
     ],
   },
   {
