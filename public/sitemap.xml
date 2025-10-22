@@ -1,21 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://rsaindia.co.in/admissions/</loc></url>
-  <url><loc>https://rsaindia.co.in/admissions/trial/</loc></url>
-  <url><loc>https://rsaindia.co.in/blog/</loc></url>
-  <url><loc>https://rsaindia.co.in/careers/</loc></url>
-  <url><loc>https://rsaindia.co.in/contact/</loc></url>
-  <url><loc>https://rsaindia.co.in/downloads/</loc></url>
-  <url><loc>https://rsaindia.co.in/events/</loc></url>
-  <url><loc>https://rsaindia.co.in/faq/</loc></url>
-  <url><loc>https://rsaindia.co.in/membership/</loc></url>
-  <url><loc>https://rsaindia.co.in/privacy/</loc></url>
-  <url><loc>https://rsaindia.co.in/shop/</loc></url>
-  <url><loc>https://rsaindia.co.in/sitemap/</loc></url>
-  <url><loc>https://rsaindia.co.in/sports/basketball/</loc></url>
-  <url><loc>https://rsaindia.co.in/sports/cricket/</loc></url>
-  <url><loc>https://rsaindia.co.in/sports/football/</loc></url>
-  <url><loc>https://rsaindia.co.in/sports/</loc></url>
-  <url><loc>https://rsaindia.co.in/sports/roller-skating/</loc></url>
-  <url><loc>https://rsaindia.co.in/terms/</loc></url>
+  <!-- Main Pages -->
+  <url>
+    <loc>https://rsaindia.co.in/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/about</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/contact</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- About Pages -->
+  <url>
+    <loc>https://rsaindia.co.in/about/coaches</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/about/milestones</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/about/facilities</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/about/well-wishers</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- Sports Pages -->
+  <url>
+    <loc>https://rsaindia.co.in/sports/roller-skating</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/sports/cricket</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/sports/football</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/sports/basketball</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/sports/tennis</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/sports/badminton</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/sports/athletics</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- Admissions Pages -->
+  <url>
+    <loc>https://rsaindia.co.in/admissions/trial</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/admissions/fees</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/admissions/register</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/admissions/faq</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  
+  <!-- Events Pages -->
+  <url>
+    <loc>https://rsaindia.co.in/events/upcoming</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/events/past</loc>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/events/schedule</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Gallery Pages -->
+  <url>
+    <loc>https://rsaindia.co.in/gallery/photos</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/gallery/videos</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/gallery/fun-at-rsa</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Achievements -->
+  <url>
+    <loc>https://rsaindia.co.in/achievements</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://rsaindia.co.in/blog</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/blog/history</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/blog/types</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/blog/competitions</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/blog/training</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/blog/equipment</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://rsaindia.co.in/blog/community</loc>
+    <priority>0.7</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  
+  <!-- Shop -->
+  <url>
+    <loc>https://rsaindia.co.in/shop</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 </urlset>
