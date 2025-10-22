@@ -1,20 +1,11 @@
 import { Link } from "react-router-dom";
 import { Facebook, Youtube, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { useState } from "react";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import rsaLogo from "@/assets/rsa-white-logo.png";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const [showSportsDialog, setShowSportsDialog] = useState(false);
-  
   return <>
     <AlertDialog open={showSportsDialog} onOpenChange={setShowSportsDialog}>
       <AlertDialogContent className="max-w-md">
@@ -83,12 +74,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => setShowSportsDialog(true)}
-                  className="hover:text-primary transition-colors text-left"
-                >
-                  All Sports
-                </button>
+                <button onClick={() => setShowSportsDialog(true)} className="hover:text-primary transition-colors text-left">Other Sports</button>
               </li>
             </ul>
           </div>
@@ -125,8 +111,8 @@ export default function Footer() {
             <h3 className="text-lg font-bold mb-4 text-primary">Location</h3>
             <a href="https://www.google.com/maps/place/DPS+Skating+Rink/@23.0415442,72.4587389,17z/data=!3m1!4b1!4m6!3m5!1s0x395e9b0014a98971:0xa0362b0e0241daff!8m2!3d23.0415442!4d72.4587389!16s%2Fg%2F11zk25bsdj?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="block rounded-lg overflow-hidden border border-primary/20 hover:border-primary transition-colors">
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.511634288925!2d72.45613897596665!3d23.041544179152756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9b0014a98971%3A0xa0362b0e0241daff!2sDPS%20Skating%20Rink!5e0!3m2!1sen!2sin!4v1729281234567!5m2!1sen!2sin" width="100%" height="150" style={{
-              border: 0
-            }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="pointer-events-none" title="DPS Bopal Skating Rink Location" />
+                border: 0
+              }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="pointer-events-none" title="DPS Bopal Skating Rink Location" />
             </a>
           </div>
 
