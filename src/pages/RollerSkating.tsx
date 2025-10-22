@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -68,6 +69,36 @@ export default function RollerSkating() {
     count: "25+ Years"
   }];
   return <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Roller Skating Training - Inline & Quad Speed Skating | RSA Ahmedabad</title>
+        <meta name="description" content="Professional roller skating training in Ahmedabad. Master inline & quad speed skating with certified coaches. Beginner to advanced levels. 250+ state medals, 30+ national qualifiers. Book free trial today!" />
+        <meta name="keywords" content="roller skating ahmedabad, speed skating training, inline skating classes, quad skating lessons, roller skating academy, skating coaching ahmedabad, competitive skating training" />
+        <link rel="canonical" href="https://rsaindia.co.in/sports/roller-skating" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Roller Skating Training - Inline & Quad Speed Skating | RSA" />
+        <meta property="og:description" content="Professional roller skating training in Ahmedabad. 250+ medals, 30+ national qualifiers. Book free trial!" />
+        <meta property="og:url" content="https://rsaindia.co.in/sports/roller-skating" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Roller Skating Training - Inline & Quad Speed Skating" />
+        <meta name="twitter:description" content="Professional roller skating training in Ahmedabad. 250+ medals, 30+ national qualifiers." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SportsEvent",
+            "name": "Roller Skating Training Program",
+            "description": "Comprehensive roller skating training program offering inline and quad skating for beginners to advanced competitive athletes",
+            "sport": "Roller Skating",
+            "offers": {
+              "@type": "Offer",
+              "name": "Free Trial Class",
+              "url": "https://rsaindia.co.in/admissions/trial"
+            }
+          })}
+        </script>
+      </Helmet>
       <Navbar />
 
       {/* Parallax Hero Section */}

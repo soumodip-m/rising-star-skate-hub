@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Home, Info, Trophy, Calendar, Image, BookOpen, ShoppingBag, GraduationCap, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -90,6 +91,12 @@ export default function Sitemap() {
 
   return (
     <>
+      <Helmet>
+        <title>Sitemap - All Pages | Rising Stars Academy</title>
+        <meta name="description" content="Complete sitemap of Rising Stars Academy website. Browse all pages including sports programs, admissions, events, gallery, blog, and more." />
+        <link rel="canonical" href="https://rsaindia.co.in/sitemap" />
+        <meta name="robots" content="index, follow" />
+      </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background py-16">
         <div className="container mx-auto px-4">

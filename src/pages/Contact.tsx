@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -7,6 +8,43 @@ import doodleBg from "@/assets/contact-doodle-bg.png";
 export default function Contact() {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Contact Us - Rising Stars Academy Ahmedabad | Get in Touch</title>
+        <meta name="description" content="Contact Rising Stars Academy in Ahmedabad. Visit us at DPS Skating Rink, Bopal or call +91 98242 34663. Email: rsa4sports@gmail.com. Open Mon-Sat 8AM-10PM, Sun 8AM-6PM." />
+        <meta name="keywords" content="contact rising stars academy, sports academy ahmedabad contact, dps skating rink bopal, rsa phone number, sports academy location" />
+        <link rel="canonical" href="https://rsaindia.co.in/contact" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Rising Stars Academy Ahmedabad" />
+        <meta property="og:description" content="Get in touch with RSA. Located at DPS Skating Rink, Bopal. Call +91 98242 34663" />
+        <meta property="og:url" content="https://rsaindia.co.in/contact" />
+        
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Contact Rising Stars Academy Ahmedabad" />
+        <meta name="twitter:description" content="Get in touch with RSA. Located at DPS Skating Rink, Bopal." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "url": "https://rsaindia.co.in/contact",
+            "mainEntity": {
+              "@type": "SportsActivityLocation",
+              "name": "Rising Stars Academy",
+              "telephone": "+91 98242 34663",
+              "email": "rsa4sports@gmail.com",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "DPS Skating Rink, Bopal",
+                "addressLocality": "Ahmedabad",
+                "addressRegion": "Gujarat",
+                "postalCode": "380058",
+                "addressCountry": "IN"
+              }
+            }
+          })}
+        </script>
+      </Helmet>
       <Navbar />
 
       {/* Contact Info Section with Doodle Background */}

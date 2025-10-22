@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { ChevronDown, Award, Users, Target, Calendar, Trophy, Building2, Dumbbell, Handshake, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -121,6 +122,69 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad | RSA</title>
+        <meta name="description" content="RSA - Rising Stars Academy: Ahmedabad's premier multi-sport academy with 25+ years of experience in Roller Skating, Cricket, Football, Basketball, and more. Expert coaching, modern facilities, and proven results." />
+        <meta name="keywords" content="sports academy ahmedabad, roller skating academy, multi-sport training, cricket coaching, football academy, basketball training, tennis lessons, badminton coaching, athletics training, rising stars academy" />
+        <link rel="canonical" href="https://rsaindia.co.in/" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
+        <meta property="og:description" content="25+ years of excellence in sports training. Expert coaching in Roller Skating, Cricket, Football, Basketball, Tennis, Badminton & Athletics." />
+        <meta property="og:url" content="https://rsaindia.co.in/" />
+        <meta property="og:image" content="https://rsaindia.co.in/images/hero-roller.jpg" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
+        <meta name="twitter:description" content="25+ years of excellence in sports training. Expert coaching in Roller Skating, Cricket, Football & more." />
+        <meta name="twitter:image" content="https://rsaindia.co.in/images/hero-roller.jpg" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SportsActivityLocation",
+            "name": "Rising Stars Academy",
+            "description": "Premier multi-sport academy offering professional training in Roller Skating, Cricket, Football, Basketball, Tennis, Badminton, and Athletics",
+            "url": "https://rsaindia.co.in",
+            "telephone": "+91 98242 34663",
+            "email": "rsa4sports@gmail.com",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "DPS Skating Rink, Bopal",
+              "addressLocality": "Ahmedabad",
+              "addressRegion": "Gujarat",
+              "postalCode": "380058",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "23.041544",
+              "longitude": "72.456138"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "08:00",
+                "closes": "22:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "08:00",
+                "closes": "18:00"
+              }
+            ],
+            "sameAs": [
+              "https://www.instagram.com/rising_stars_academy_",
+              "https://www.facebook.com/people/Rising-Stars-Academy/100083315095392/"
+            ]
+          })}
+        </script>
+      </Helmet>
       <Navbar />
 
       {/* Hero Section */}

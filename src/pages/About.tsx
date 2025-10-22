@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -21,6 +22,36 @@ export default function About() {
   }, [location]);
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>About RSA - 30+ Years of Sports Excellence in Ahmedabad | Rising Stars Academy</title>
+        <meta name="description" content="Learn about Rising Stars Academy's 30+ year legacy of building champions in Gujarat. Meet our founder, discover our mission, values, and world-class facilities that have produced state and national champions." />
+        <meta name="keywords" content="about rising stars academy, sports academy ahmedabad history, founder indrajeet sinh gol, sports training gujarat, multi-sport academy, roller skating coach" />
+        <link rel="canonical" href="https://rsaindia.co.in/about" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="About RSA - 30+ Years of Sports Excellence in Ahmedabad" />
+        <meta property="og:description" content="Discover Rising Stars Academy's legacy of building champions with world-class coaching and facilities." />
+        <meta property="og:url" content="https://rsaindia.co.in/about" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About RSA - 30+ Years of Sports Excellence" />
+        <meta name="twitter:description" content="Discover Rising Stars Academy's legacy of building champions with world-class coaching and facilities." />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Rising Stars Academy",
+            "foundingDate": "1994",
+            "founder": {
+              "@type": "Person",
+              "name": "Indrajeet Sinh Gol"
+            },
+            "description": "Rising Stars Academy (RSA) is a world-class multi-sport training academy in Ahmedabad with over 30 years of experience in building champions",
+            "url": "https://rsaindia.co.in/about"
+          })}
+        </script>
+      </Helmet>
       <Navbar />
 
       {/* Hero Section */}
