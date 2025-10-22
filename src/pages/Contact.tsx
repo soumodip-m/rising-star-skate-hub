@@ -18,10 +18,12 @@ export default function Contact() {
         <meta property="og:title" content="Contact Rising Stars Academy Ahmedabad" />
         <meta property="og:description" content="Get in touch with RSA. Located at DPS Skating Rink, Bopal. Call +91 98242 34663" />
         <meta property="og:url" content="https://rsaindia.co.in/contact" />
+        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
         
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact Rising Stars Academy Ahmedabad" />
         <meta name="twitter:description" content="Get in touch with RSA. Located at DPS Skating Rink, Bopal." />
+        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
         
         <script type="application/ld+json">
           {JSON.stringify({

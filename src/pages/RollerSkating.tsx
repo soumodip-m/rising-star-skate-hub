@@ -79,10 +79,12 @@ export default function RollerSkating() {
         <meta property="og:title" content="Roller Skating Training - Inline & Quad Speed Skating | RSA" />
         <meta property="og:description" content="Professional roller skating training in Ahmedabad. 250+ medals, 30+ national qualifiers. Book free trial!" />
         <meta property="og:url" content="https://rsaindia.co.in/sports/roller-skating" />
+        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Roller Skating Training - Inline & Quad Speed Skating" />
         <meta name="twitter:description" content="Professional roller skating training in Ahmedabad. 250+ medals, 30+ national qualifiers." />
+        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
         
         <script type="application/ld+json">
           {JSON.stringify({

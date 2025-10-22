@@ -133,12 +133,13 @@ export default function Index() {
         <meta property="og:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
         <meta property="og:description" content="25+ years of excellence in sports training. Expert coaching in Roller Skating, Cricket, Football, Basketball, Tennis, Badminton & Athletics." />
         <meta property="og:url" content="https://rsaindia.co.in/" />
-        <meta property="og:image" content="https://rsaindia.co.in/images/hero-roller.jpg" />
+        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
         <meta name="twitter:description" content="25+ years of excellence in sports training. Expert coaching in Roller Skating, Cricket, Football & more." />
+        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
         <meta name="twitter:image" content="https://rsaindia.co.in/images/hero-roller.jpg" />
         
         {/* Structured Data */}

@@ -96,6 +96,17 @@ export default function Sitemap() {
         <meta name="description" content="Complete sitemap of Rising Stars Academy website. Browse all pages including sports programs, admissions, events, gallery, blog, and more." />
         <link rel="canonical" href="https://rsaindia.co.in/sitemap" />
         <meta name="robots" content="index, follow" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Sitemap - Rising Stars Academy Ahmedabad" />
+        <meta property="og:description" content="Complete sitemap of Rising Stars Academy website. Browse all pages including sports programs, admissions, events, gallery, and more." />
+        <meta property="og:url" content="https://rsaindia.co.in/sitemap" />
+        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Sitemap - Rising Stars Academy" />
+        <meta name="twitter:description" content="Complete sitemap of Rising Stars Academy website with all pages and sections." />
+        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
       </Helmet>
       <Navbar />
       <main className="min-h-screen bg-background py-16">

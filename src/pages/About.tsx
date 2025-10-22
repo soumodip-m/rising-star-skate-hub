@@ -32,10 +32,12 @@ export default function About() {
         <meta property="og:title" content="About RSA - 30+ Years of Sports Excellence in Ahmedabad" />
         <meta property="og:description" content="Discover Rising Stars Academy's legacy of building champions with world-class coaching and facilities." />
         <meta property="og:url" content="https://rsaindia.co.in/about" />
+        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About RSA - 30+ Years of Sports Excellence" />
         <meta name="twitter:description" content="Discover Rising Stars Academy's legacy of building champions with world-class coaching and facilities." />
+        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
         
         <script type="application/ld+json">
           {JSON.stringify({
