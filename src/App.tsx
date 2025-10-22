@@ -42,6 +42,7 @@ import Videos from "./pages/gallery/Videos";
 import FunAtRSA from "./pages/gallery/FunAtRSA";
 import Blog from "./pages/Blog";
 import Shop from "./pages/Shop";
+import Sitemap from "./pages/Sitemap";
 
 // Blog pages
 import BlogHistory from "./pages/blog/History";
@@ -106,6 +107,7 @@ const App = () => (
           <Route path="/blog/training" element={<BlogTraining />} />
           <Route path="/blog/equipment" element={<BlogEquipment />} />
           <Route path="/blog/community" element={<BlogCommunity />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
