@@ -1,9 +1,51 @@
 import { Link } from "react-router-dom";
 import { Facebook, Youtube, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { useState } from "react";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import rsaLogo from "@/assets/rsa-white-logo.png";
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  return <footer className="bg-foreground text-background pt-12 pb-6">
+  const [showSportsDialog, setShowSportsDialog] = useState(false);
+  
+  return <>
+    <AlertDialog open={showSportsDialog} onOpenChange={setShowSportsDialog}>
+      <AlertDialogContent className="max-w-md">
+        <AlertDialogHeader>
+          <AlertDialogTitle className="text-2xl font-bold text-primary">Interested in Other Sports?</AlertDialogTitle>
+          <AlertDialogDescription className="text-base pt-4 space-y-3">
+            <p>We'd love to help you explore other sports programs at Rising Stars Academy!</p>
+            <p className="font-semibold text-foreground">Contact us to learn more:</p>
+            <div className="space-y-2 text-foreground">
+              <div className="flex items-center gap-2">
+                <Phone className="h-4 w-4 text-primary" />
+                <a href="tel:+919824234663" className="hover:text-primary transition-colors">
+                  +91 98242 34663
+                </a>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail className="h-4 w-4 text-primary" />
+                <a href="mailto:rsa4sports@gmail.com" className="hover:text-primary transition-colors">
+                  rsa4sports@gmail.com
+                </a>
+              </div>
+            </div>
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogAction className="bg-primary hover:bg-primary/90">Got it!</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+    
+    <footer className="bg-foreground text-background pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           {/* Academy Info */}
@@ -41,9 +83,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/sports" className="hover:text-primary transition-colors">
+                <button 
+                  onClick={() => setShowSportsDialog(true)}
+                  className="hover:text-primary transition-colors text-left"
+                >
                   All Sports
-                </Link>
+                </button>
               </li>
             </ul>
           </div>
@@ -127,5 +172,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </footer>;
+    </footer>
+  </>;
 }

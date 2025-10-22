@@ -22,7 +22,6 @@ import Basketball from "./pages/sports/Basketball";
 import Tennis from "./pages/sports/Tennis";
 import Badminton from "./pages/sports/Badminton";
 import Athletics from "./pages/sports/Athletics";
-import AllSports from "./pages/sports/AllSports";
 
 // Admissions pages
 import Admissions from "./pages/admissions/Admissions";
@@ -72,7 +71,6 @@ const App = () => (
           <Route path="/about/well-wishers" element={<WellWishers />} />
           
           {/* Sports Routes */}
-          <Route path="/sports" element={<AllSports />} />
           <Route path="/sports/roller-skating" element={<RollerSkating />} />
           <Route path="/sports/cricket" element={<Cricket />} />
           <Route path="/sports/football" element={<Football />} />
