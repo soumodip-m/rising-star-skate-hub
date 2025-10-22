@@ -23,6 +23,9 @@ import whyChooseImage from "@/assets/why-choose-rsa-enhanced.jpg";
 import whyChooseTeam from "@/assets/why-choose-team.jpg";
 import whyChooseTraining from "@/assets/why-choose-training.jpg";
 import whyChooseRink from "@/assets/why-choose-rink.jpg";
+import whyChooseAngelina from "@/assets/why-choose-angelina.jpg";
+import whyChooseTeamMedals from "@/assets/why-choose-team-medals.jpg";
+import whyChooseCoachAthletes from "@/assets/why-choose-coach-athletes.png";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
@@ -51,7 +54,7 @@ export default function Index() {
       description: "Enroll today and let your child's inner star truly shine.",
     },
   ];
-  const whyChooseImages = [whyChooseImage, whyChooseTeam, whyChooseTraining, whyChooseRink];
+  const whyChooseImages = [whyChooseImage, whyChooseTeam, whyChooseTraining, whyChooseRink, whyChooseAngelina, whyChooseTeamMedals, whyChooseCoachAthletes];
 
   useEffect(() => {
     const script = document.createElement("script");
