@@ -126,21 +126,21 @@ export default function Index() {
         <title>Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad | RSA</title>
         <meta name="description" content="RSA - Rising Stars Academy: Ahmedabad's premier multi-sport academy with 25+ years of experience in Roller Skating, Cricket, Football, Basketball, and more. Expert coaching, modern facilities, and proven results." />
         <meta name="keywords" content="sports academy ahmedabad, roller skating academy, multi-sport training, cricket coaching, football academy, basketball training, tennis lessons, badminton coaching, athletics training, rising stars academy" />
-        <link rel="canonical" href="https://rsaindia.co.in/" />
+        <link rel="canonical" href="https://rsa.india.co.in/" />
+        <meta name="robots" content="index, follow" />
         
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
         <meta property="og:description" content="25+ years of excellence in sports training. Expert coaching in Roller Skating, Cricket, Football, Basketball, Tennis, Badminton & Athletics." />
-        <meta property="og:url" content="https://rsaindia.co.in/" />
-        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
+        <meta property="og:url" content="https://rsa.india.co.in/" />
+        <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
         <meta name="twitter:description" content="25+ years of excellence in sports training. Expert coaching in Roller Skating, Cricket, Football & more." />
-        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
-        <meta name="twitter:image" content="https://rsaindia.co.in/images/hero-roller.jpg" />
+        <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
         
         {/* Structured Data */}
         <script type="application/ld+json">
@@ -149,7 +149,7 @@ export default function Index() {
             "@type": "SportsActivityLocation",
             "name": "Rising Stars Academy",
             "description": "Premier multi-sport academy offering professional training in Roller Skating, Cricket, Football, Basketball, Tennis, Badminton, and Athletics",
-            "url": "https://rsaindia.co.in",
+            "url": "https://rsa.india.co.in",
             "telephone": "+91 98242 34663",
             "email": "rsa4sports@gmail.com",
             "address": {

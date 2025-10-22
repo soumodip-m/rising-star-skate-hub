@@ -26,18 +26,19 @@ export default function About() {
         <title>About RSA - 30+ Years of Sports Excellence in Ahmedabad | Rising Stars Academy</title>
         <meta name="description" content="Learn about Rising Stars Academy's 30+ year legacy of building champions in Gujarat. Meet our founder, discover our mission, values, and world-class facilities that have produced state and national champions." />
         <meta name="keywords" content="about rising stars academy, sports academy ahmedabad history, founder indrajeet sinh gol, sports training gujarat, multi-sport academy, roller skating coach" />
-        <link rel="canonical" href="https://rsaindia.co.in/about" />
+        <link rel="canonical" href="https://rsa.india.co.in/about" />
+        <meta name="robots" content="index, follow" />
         
         <meta property="og:type" content="website" />
         <meta property="og:title" content="About RSA - 30+ Years of Sports Excellence in Ahmedabad" />
         <meta property="og:description" content="Discover Rising Stars Academy's legacy of building champions with world-class coaching and facilities." />
-        <meta property="og:url" content="https://rsaindia.co.in/about" />
-        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
+        <meta property="og:url" content="https://rsa.india.co.in/about" />
+        <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About RSA - 30+ Years of Sports Excellence" />
         <meta name="twitter:description" content="Discover Rising Stars Academy's legacy of building champions with world-class coaching and facilities." />
-        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
+        <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -50,7 +51,7 @@ export default function About() {
               "name": "Indrajeet Sinh Gol"
             },
             "description": "Rising Stars Academy (RSA) is a world-class multi-sport training academy in Ahmedabad with over 30 years of experience in building champions",
-            "url": "https://rsaindia.co.in/about"
+            "url": "https://rsa.india.co.in/about"
           })}
         </script>
       </Helmet>

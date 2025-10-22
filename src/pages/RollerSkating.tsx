@@ -73,18 +73,19 @@ export default function RollerSkating() {
         <title>Roller Skating Training - Inline & Quad Speed Skating | RSA Ahmedabad</title>
         <meta name="description" content="Professional roller skating training in Ahmedabad. Master inline & quad speed skating with certified coaches. Beginner to advanced levels. 250+ state medals, 30+ national qualifiers. Book free trial today!" />
         <meta name="keywords" content="roller skating ahmedabad, speed skating training, inline skating classes, quad skating lessons, roller skating academy, skating coaching ahmedabad, competitive skating training" />
-        <link rel="canonical" href="https://rsaindia.co.in/sports/roller-skating" />
+        <link rel="canonical" href="https://rsa.india.co.in/sports/roller-skating" />
+        <meta name="robots" content="index, follow" />
         
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Roller Skating Training - Inline & Quad Speed Skating | RSA" />
         <meta property="og:description" content="Professional roller skating training in Ahmedabad. 250+ medals, 30+ national qualifiers. Book free trial!" />
-        <meta property="og:url" content="https://rsaindia.co.in/sports/roller-skating" />
-        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
+        <meta property="og:url" content="https://rsa.india.co.in/sports/roller-skating" />
+        <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Roller Skating Training - Inline & Quad Speed Skating" />
         <meta name="twitter:description" content="Professional roller skating training in Ahmedabad. 250+ medals, 30+ national qualifiers." />
-        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
+        <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -96,7 +97,7 @@ export default function RollerSkating() {
             "offers": {
               "@type": "Offer",
               "name": "Free Trial Class",
-              "url": "https://rsaindia.co.in/admissions/trial"
+              "url": "https://rsa.india.co.in/admissions/trial"
             }
           })}
         </script>

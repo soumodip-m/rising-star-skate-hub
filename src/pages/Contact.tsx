@@ -12,24 +12,25 @@ export default function Contact() {
         <title>Contact Us - Rising Stars Academy Ahmedabad | Get in Touch</title>
         <meta name="description" content="Contact Rising Stars Academy in Ahmedabad. Visit us at DPS Skating Rink, Bopal or call +91 98242 34663. Email: rsa4sports@gmail.com. Open Mon-Sat 8AM-10PM, Sun 8AM-6PM." />
         <meta name="keywords" content="contact rising stars academy, sports academy ahmedabad contact, dps skating rink bopal, rsa phone number, sports academy location" />
-        <link rel="canonical" href="https://rsaindia.co.in/contact" />
+        <link rel="canonical" href="https://rsa.india.co.in/contact" />
+        <meta name="robots" content="index, follow" />
         
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Contact Rising Stars Academy Ahmedabad" />
         <meta property="og:description" content="Get in touch with RSA. Located at DPS Skating Rink, Bopal. Call +91 98242 34663" />
-        <meta property="og:url" content="https://rsaindia.co.in/contact" />
-        <meta property="og:image" content="https://rsaindia.co.in/og-image.png" />
+        <meta property="og:url" content="https://rsa.india.co.in/contact" />
+        <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact Rising Stars Academy Ahmedabad" />
         <meta name="twitter:description" content="Get in touch with RSA. Located at DPS Skating Rink, Bopal." />
-        <meta name="twitter:image" content="https://rsaindia.co.in/og-image.png" />
+        <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
         
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ContactPage",
-            "url": "https://rsaindia.co.in/contact",
+            "url": "https://rsa.india.co.in/contact",
             "mainEntity": {
               "@type": "SportsActivityLocation",
               "name": "Rising Stars Academy",
