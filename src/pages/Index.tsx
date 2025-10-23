@@ -132,7 +132,7 @@ export default function Index() {
         {/* Open Graph */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
-        <meta property="og:description" content="25+ years of excellence in sports training. Expert coaching in Roller Skating, Cricket, Football, Basketball, Tennis, Badminton & Athletics." />
+        <meta property="og:description" content="25+ years of excellence in sports training. Expert coaching in Skating and other sports" />
         <meta property="og:url" content="https://rsa.india.co.in/" />
         <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
         
