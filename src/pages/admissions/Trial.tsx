@@ -54,6 +54,8 @@ const packages = [
   }
 ];
 
+import { Helmet } from "react-helmet";
+
 export default function Trial() {
   const [isLoading, setIsLoading] = useState(false);
   const [sport, setSport] = useState("");
@@ -101,6 +103,19 @@ export default function Trial() {
   };
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Book Free Roller Skating Trial Class - Gujarat's No. 1 Skating Academy | RSA</title>
+        <meta name="description" content="Book a free roller skating trial class at Gujarat's no. 1 skating academy. Experience expert speed skating training, inline & quad skating coaching by certified coaches in Ahmedabad. Safe training for kids & beginners." />
+        <meta name="keywords" content="book a roller skating trial class, roller skating trial Ahmedabad, free skating trial, speed skating trial, inline skating trial for kids, quad skating trial, skating academy trial Gujarat, roller skating coaching trial, weekend skating classes, after-school skating batches, summer skating camp ahmedabad, roller skating rink training, safe roller skating training for beginners, roller skating academy admissions & fees" />
+        <link rel="canonical" href="https://rsa.india.co.in/admissions/trial" />
+        
+        <meta property="og:title" content="Book Free Roller Skating Trial Class - Gujarat's No. 1 Skating Academy" />
+        <meta property="og:description" content="Experience expert roller skating coaching. Book your free trial class today at Ahmedabad's best skating academy." />
+        <meta property="og:url" content="https://rsa.india.co.in/admissions/trial" />
+        
+        <meta name="twitter:title" content="Book Free Roller Skating Trial Class - Gujarat's No. 1 Skating Academy" />
+        <meta name="twitter:description" content="Experience expert roller skating coaching. Book your free trial class today at Ahmedabad's best skating academy." />
+      </Helmet>
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
@@ -110,13 +125,13 @@ export default function Trial() {
               <div className="relative z-10">
                 <img 
                   src={trialHeroImage} 
-                  alt="Children learning roller skating" 
+                  alt="Free roller skating trial class for kids - beginner to advanced skating coaching in Ahmedabad" 
                   className="rounded-lg shadow-2xl w-full h-auto max-h-[300px] object-cover opacity-90"
                 />
               </div>
               <div className="relative z-10">
-                <h1 className="text-3xl md:text-4xl font-bold mb-3">Book a Trial Session</h1>
-                <p className="text-lg">Experience our world-class coaching for FREE</p>
+                <h1 className="text-3xl md:text-4xl font-bold mb-3">Book a Free Roller Skating Trial Class</h1>
+                <p className="text-lg">Experience Gujarat's no. 1 skating academy coaching for FREE - Weekend & after-school batches available</p>
               </div>
             </div>
           </div>

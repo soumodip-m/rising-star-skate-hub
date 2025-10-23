@@ -70,21 +70,21 @@ export default function RollerSkating() {
   }];
   return <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Roller Skating Training - Inline & Quad Speed Skating | RSA Ahmedabad</title>
-        <meta name="description" content="Professional roller skating training in Ahmedabad. Master inline & quad speed skating with certified coaches. Beginner to advanced levels. 250+ state medals, 30+ national qualifiers. Book free trial today!" />
-        <meta name="keywords" content="roller skating ahmedabad, speed skating training, inline skating classes, quad skating lessons, roller skating academy, skating coaching ahmedabad, competitive skating training" />
+        <title>Roller Skating Coaching Ahmedabad - Gujarat's No. 1 Skating Academy | Speed Skating Training</title>
+        <meta name="description" content="Gujarat's no. 1 roller skating academy - Rising Stars Academy. Expert speed skating training, inline & quad skating classes for kids, beginner to advanced programs. Certified coaches, competition prep, safe training. Book your roller skating trial class in Ahmedabad today!" />
+        <meta name="keywords" content="roller skating coaching Ahmedabad, speed skating training in Ahmedabad, inline skating classes for kids, quad skating lessons near me, roller skating academy in Gujarat, beginner to advanced roller skating program, speed skating coaching for competitions, inline vs quad skating coaching, roller skating rink training Ahmedabad, children's roller skating classes India, certified roller skating coaches, fitness and conditioning for skaters, safe roller skating training for beginners, after-school skating batches, weekend roller skating classes, girls roller skating coaching programs, inline speed skating techniques, roller skating academy admissions & fees, state and national speed skating prep, roller skating events and results, Indrajeet Sir's skating class, best skating academy in Gujarat, best skating academy in Ahmedabad, Gujarat's no. 1 skating academy, roller skates coaching, roller skating coach, best skating coach in Gujarat, स्केटिंग क्लासेज अहमदाबाद, અમદાવાદ સ્કેટિંગ ક્લાસેસ, best skating classes in Gujarat, summer skating camp ahmedabad, book a roller skating trial class, multi-sport coaching with roller skating, skate balance and endurance training" />
         <link rel="canonical" href="https://rsa.india.co.in/sports/roller-skating" />
         <meta name="robots" content="index, follow" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Roller Skating Training - Inline & Quad Speed Skating | RSA" />
-        <meta property="og:description" content="Professional roller skating training in Ahmedabad. 250+ medals, 30+ national qualifiers. Book free trial!" />
+        <meta property="og:title" content="Roller Skating Coaching Ahmedabad - Gujarat's No. 1 Skating Academy" />
+        <meta property="og:description" content="Expert speed skating training, inline & quad skating classes for kids. Certified coaches, beginner to advanced programs in Ahmedabad. Book free trial!" />
         <meta property="og:url" content="https://rsa.india.co.in/sports/roller-skating" />
         <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Roller Skating Training - Inline & Quad Speed Skating" />
-        <meta name="twitter:description" content="Professional roller skating training in Ahmedabad. 250+ medals, 30+ national qualifiers." />
+        <meta name="twitter:title" content="Roller Skating Coaching Ahmedabad - Gujarat's No. 1 Skating Academy" />
+        <meta name="twitter:description" content="Expert speed skating training, inline & quad skating classes for kids. Certified coaches, beginner to advanced programs. Book free trial!" />
         <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
         
         <script type="application/ld+json">
@@ -130,13 +130,12 @@ export default function RollerSkating() {
             <h1 className="text-6xl md:text-8xl font-black text-white mb-8 drop-shadow-2xl tracking-tight transition-all duration-300" style={{
             transform: `translateY(${scrollY * -0.1}px)`
           }}>
-              Speed Skating
+              Gujarat's No. 1 Skating Academy
             </h1>
             <p className="text-xl md:text-3xl text-white/95 mb-12 drop-shadow-lg leading-relaxed max-w-3xl mx-auto transition-all duration-300" style={{
             transform: `translateY(${scrollY * -0.05}px)`
           }}>
-              Master balance, speed, and race craft with certified coaches. Choose Inline or Quad and progress through
-              comprehensive training levels with clear milestones.
+              Expert roller skating coaching in Ahmedabad - Speed skating training with certified coaches. Inline & quad skating classes for kids, beginner to advanced programs.
             </p>
             <div className="flex flex-wrap gap-6 justify-center transition-all duration-300" style={{
             transform: `translateY(${scrollY * -0.03}px)`

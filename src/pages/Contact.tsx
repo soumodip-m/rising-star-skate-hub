@@ -9,15 +9,15 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Contact Us - Rising Stars Academy Ahmedabad | Get in Touch</title>
-        <meta name="description" content="Contact Rising Stars Academy in Ahmedabad. Visit us at DPS Skating Rink, Bopal or call +91 98242 34663. Email: rsa4sports@gmail.com. Open Mon-Sat 8AM-10PM, Sun 8AM-6PM." />
-        <meta name="keywords" content="contact rising stars academy, sports academy ahmedabad contact, dps skating rink bopal, rsa phone number, sports academy location" />
+        <title>Contact Gujarat's No. 1 Skating Academy - Book Roller Skating Trial | RSA Ahmedabad</title>
+        <meta name="description" content="Contact Gujarat's no. 1 skating academy - Rising Stars Academy in Ahmedabad. Book roller skating trial class, inquire about speed skating training, inline & quad skating classes. Visit DPS Skating Rink Bopal or call +91 98242 34663. Weekend & after-school batches available." />
+        <meta name="keywords" content="contact roller skating academy, book roller skating trial, speed skating coaching Ahmedabad, inline skating classes contact, roller skating academy admissions, skating classes fees Gujarat, Indrajeet Sir contact, best skating academy contact, roller skating rink Ahmedabad, weekend skating classes, after-school skating batches, summer skating camp ahmedabad, roller skating coaching Ahmedabad, અમદાવાદ સ્કેટિંગ ક્લાસેસ, स्केटिंग क्लासेज अहमदाबाद, DPS skating rink Bopal, roller skating trial Ahmedabad" />
         <link rel="canonical" href="https://rsa.india.co.in/contact" />
         <meta name="robots" content="index, follow" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Contact Rising Stars Academy Ahmedabad" />
-        <meta property="og:description" content="Get in touch with RSA. Located at DPS Skating Rink, Bopal. Call +91 98242 34663" />
+        <meta property="og:title" content="Contact Gujarat's No. 1 Skating Academy - Book Roller Skating Trial" />
+        <meta property="og:description" content="Book roller skating trial class at Ahmedabad's best skating academy. Located at DPS Skating Rink, Bopal. Call +91 98242 34663" />
         <meta property="og:url" content="https://rsa.india.co.in/contact" />
         <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
         

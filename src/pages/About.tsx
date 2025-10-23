@@ -23,15 +23,15 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>About RSA - 30+ Years of Sports Excellence in Ahmedabad | Rising Stars Academy</title>
-        <meta name="description" content="Learn about Rising Stars Academy's 30+ year legacy of building champions in Gujarat. Meet our founder, discover our mission, values, and world-class facilities that have produced state and national champions." />
-        <meta name="keywords" content="about rising stars academy, sports academy ahmedabad history, founder indrajeet sinh gol, sports training gujarat, multi-sport academy, roller skating coach" />
+        <title>About RSA - Indrajeet Sir's Skating Class | Best Skating Academy in Gujarat</title>
+        <meta name="description" content="About Rising Stars Academy - Gujarat's no. 1 skating academy in Ahmedabad. Led by Indrajeet Sir, certified roller skating coaches providing expert speed skating training, inline & quad skating classes. 30+ years of excellence producing state & national champions." />
+        <meta name="keywords" content="about RSA, Indrajeet Sir's skating class, best skating coach in Gujarat, roller skating coaching Ahmedabad, certified roller skating coaches, roller skating academy in Gujarat, sports academy for kids Ahmedabad, multi-sport coaching, professional roller skating coach, speed skating coaching, best skating academy in Ahmedabad, Gujarat's no. 1 skating academy, roller skates coaching, fitness and conditioning for skaters, roller skating rink training" />
         <link rel="canonical" href="https://rsa.india.co.in/about" />
         <meta name="robots" content="index, follow" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="About RSA - 30+ Years of Sports Excellence in Ahmedabad" />
-        <meta property="og:description" content="Discover Rising Stars Academy's legacy of building champions with world-class coaching and facilities." />
+        <meta property="og:title" content="About RSA - Indrajeet Sir's Skating Class | Best Skating Academy in Gujarat" />
+        <meta property="og:description" content="Gujarat's no. 1 skating academy. Expert roller skating coaching by certified coaches. 30+ years of excellence in speed skating training." />
         <meta property="og:url" content="https://rsa.india.co.in/about" />
         <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
         
