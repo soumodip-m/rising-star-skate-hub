@@ -29,16 +29,29 @@ export default function About() {
         <link rel="canonical" href="https://rsa.india.co.in/about" />
         <meta name="robots" content="index, follow" />
         
+        {/* Open Graph / Facebook / Instagram / WhatsApp */}
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Rising Stars Academy" />
         <meta property="og:title" content="About RSA - Indrajeet Sir's Skating Class | Best Skating Academy in Gujarat" />
         <meta property="og:description" content="Gujarat's no. 1 skating academy. Expert roller skating coaching by certified coaches. 30+ years of excellence in speed skating training." />
         <meta property="og:url" content="https://rsa.india.co.in/about" />
         <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:secure_url" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="About Rising Stars Academy - Indrajeet Sir's Skating Class" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:locale:alternate" content="hi_IN" />
+        <meta property="og:locale:alternate" content="gu_IN" />
         
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About RSA - 30+ Years of Sports Excellence" />
-        <meta name="twitter:description" content="Discover Rising Stars Academy's legacy of building champions with world-class coaching and facilities." />
+        <meta name="twitter:site" content="@risingstarsacademy" />
+        <meta name="twitter:title" content="About RSA - Indrajeet Sir's Skating Class | Best Skating Academy in Gujarat" />
+        <meta name="twitter:description" content="Gujarat's no. 1 skating academy. Expert roller skating coaching by certified coaches. 30+ years of excellence." />
         <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta name="twitter:image:alt" content="About Rising Stars Academy - Indrajeet Sir's Skating Class" />
         
         <script type="application/ld+json">
           {JSON.stringify({

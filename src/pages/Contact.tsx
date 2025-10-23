@@ -15,16 +15,29 @@ export default function Contact() {
         <link rel="canonical" href="https://rsa.india.co.in/contact" />
         <meta name="robots" content="index, follow" />
         
+        {/* Open Graph / Facebook / Instagram / WhatsApp */}
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Rising Stars Academy" />
         <meta property="og:title" content="Contact Gujarat's No. 1 Skating Academy - Book Roller Skating Trial" />
         <meta property="og:description" content="Book roller skating trial class at Ahmedabad's best skating academy. Located at DPS Skating Rink, Bopal. Call +91 98242 34663" />
         <meta property="og:url" content="https://rsa.india.co.in/contact" />
         <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:secure_url" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Contact Rising Stars Academy Ahmedabad" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:locale:alternate" content="hi_IN" />
+        <meta property="og:locale:alternate" content="gu_IN" />
         
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Rising Stars Academy Ahmedabad" />
-        <meta name="twitter:description" content="Get in touch with RSA. Located at DPS Skating Rink, Bopal." />
+        <meta name="twitter:site" content="@risingstarsacademy" />
+        <meta name="twitter:title" content="Contact Gujarat's No. 1 Skating Academy - Book Roller Skating Trial" />
+        <meta name="twitter:description" content="Book roller skating trial class at Ahmedabad's best skating academy. Call +91 98242 34663" />
         <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta name="twitter:image:alt" content="Contact Rising Stars Academy Ahmedabad" />
         
         <script type="application/ld+json">
           {JSON.stringify({

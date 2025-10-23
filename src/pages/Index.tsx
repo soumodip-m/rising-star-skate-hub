@@ -129,18 +129,29 @@ export default function Index() {
         <link rel="canonical" href="https://rsa.india.co.in/" />
         <meta name="robots" content="index, follow" />
         
-        {/* Open Graph */}
+        {/* Open Graph / Facebook / Instagram / WhatsApp */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
+        <meta property="og:site_name" content="Rising Stars Academy" />
+        <meta property="og:title" content="Rising Stars Academy - Gujarat's No. 1 Skating Academy in Ahmedabad" />
         <meta property="og:description" content="Gujarat's no. 1 skating academy. Expert roller skating coaching, speed skating training, inline & quad skating classes for kids in Ahmedabad. Book a trial class!" />
         <meta property="og:url" content="https://rsa.india.co.in/" />
         <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:secure_url" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Rising Stars Academy - Gujarat's No. 1 Skating Academy" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:locale:alternate" content="hi_IN" />
+        <meta property="og:locale:alternate" content="gu_IN" />
         
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad" />
+        <meta name="twitter:site" content="@risingstarsacademy" />
+        <meta name="twitter:title" content="Rising Stars Academy - Gujarat's No. 1 Skating Academy in Ahmedabad" />
         <meta name="twitter:description" content="Gujarat's no. 1 skating academy. Expert roller skating coaching, speed skating training, inline & quad skating classes for kids in Ahmedabad. Book a trial class!" />
         <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta name="twitter:image:alt" content="Rising Stars Academy - Gujarat's No. 1 Skating Academy" />
         
         {/* Structured Data */}
         <script type="application/ld+json">

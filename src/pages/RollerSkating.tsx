@@ -76,16 +76,29 @@ export default function RollerSkating() {
         <link rel="canonical" href="https://rsa.india.co.in/sports/roller-skating" />
         <meta name="robots" content="index, follow" />
         
+        {/* Open Graph / Facebook / Instagram / WhatsApp */}
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Rising Stars Academy" />
         <meta property="og:title" content="Roller Skating Coaching Ahmedabad - Gujarat's No. 1 Skating Academy" />
         <meta property="og:description" content="Expert speed skating training, inline & quad skating classes for kids. Certified coaches, beginner to advanced programs in Ahmedabad. Book free trial!" />
         <meta property="og:url" content="https://rsa.india.co.in/sports/roller-skating" />
         <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:secure_url" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Roller Skating Training at Rising Stars Academy Ahmedabad" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:locale:alternate" content="hi_IN" />
+        <meta property="og:locale:alternate" content="gu_IN" />
         
+        {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@risingstarsacademy" />
         <meta name="twitter:title" content="Roller Skating Coaching Ahmedabad - Gujarat's No. 1 Skating Academy" />
         <meta name="twitter:description" content="Expert speed skating training, inline & quad skating classes for kids. Certified coaches, beginner to advanced programs. Book free trial!" />
         <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta name="twitter:image:alt" content="Roller Skating Training at Rising Stars Academy Ahmedabad" />
         
         <script type="application/ld+json">
           {JSON.stringify({

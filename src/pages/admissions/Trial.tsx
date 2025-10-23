@@ -109,12 +109,29 @@ export default function Trial() {
         <meta name="keywords" content="book a roller skating trial class, roller skating trial Ahmedabad, free skating trial, speed skating trial, inline skating trial for kids, quad skating trial, skating academy trial Gujarat, roller skating coaching trial, weekend skating classes, after-school skating batches, summer skating camp ahmedabad, roller skating rink training, safe roller skating training for beginners, roller skating academy admissions & fees" />
         <link rel="canonical" href="https://rsa.india.co.in/admissions/trial" />
         
+        {/* Open Graph / Facebook / Instagram / WhatsApp */}
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Rising Stars Academy" />
         <meta property="og:title" content="Book Free Roller Skating Trial Class - Gujarat's No. 1 Skating Academy" />
         <meta property="og:description" content="Experience expert roller skating coaching. Book your free trial class today at Ahmedabad's best skating academy." />
         <meta property="og:url" content="https://rsa.india.co.in/admissions/trial" />
+        <meta property="og:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:secure_url" content="https://rsa.india.co.in/og-image.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Book Free Roller Skating Trial Class at Rising Stars Academy" />
+        <meta property="og:locale" content="en_IN" />
+        <meta property="og:locale:alternate" content="hi_IN" />
+        <meta property="og:locale:alternate" content="gu_IN" />
         
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@risingstarsacademy" />
         <meta name="twitter:title" content="Book Free Roller Skating Trial Class - Gujarat's No. 1 Skating Academy" />
         <meta name="twitter:description" content="Experience expert roller skating coaching. Book your free trial class today at Ahmedabad's best skating academy." />
+        <meta name="twitter:image" content="https://rsa.india.co.in/og-image.png" />
+        <meta name="twitter:image:alt" content="Book Free Roller Skating Trial Class at Rising Stars Academy" />
       </Helmet>
       <Navbar />
       <main className="flex-1">
