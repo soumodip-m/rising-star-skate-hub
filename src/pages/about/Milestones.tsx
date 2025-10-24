@@ -30,7 +30,6 @@ export default function Milestones() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
@@ -39,19 +38,14 @@ export default function Milestones() {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="z-10">
-                <h1 className="text-4xl md:text-5xl font-bold mb-4">RSA Milestones</h1>
-                <p className="text-xl">Our journey of excellence and growth</p>
+                <h1 className="text-4xl font-bold mb-4 md:text-4xl">Our Journey of Excellence</h1>
+                <p className="text-lg">Milestones that definte Team RSA -Rising Stars Academt</p>
               </div>
               <div className="relative z-10">
-                <img 
-                  src={teamSunset} 
-                  alt="RSA Team at sunset" 
-                  className="rounded-lg shadow-2xl w-full h-auto object-cover"
-                  style={{
-                    maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)'
-                  }}
-                />
+                <img src={teamSunset} alt="RSA Team at sunset" className="rounded-lg shadow-2xl w-full h-auto object-cover" style={{
+                maskImage: 'linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)',
+                WebkitMaskImage: 'linear-gradient(to left, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%)'
+              }} />
               </div>
             </div>
           </div>
