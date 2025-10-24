@@ -77,25 +77,34 @@ export default function Trial() {
     };
 
     try {
-      const { error } = await supabase.functions.invoke("send-trial-email", {
+      console.log("Submitting trial booking:", data);
+      
+      const { data: result, error } = await supabase.functions.invoke("send-trial-email", {
         body: data,
       });
 
-      if (error) throw error;
+      if (error) {
+        console.error("Error from edge function:", error);
+        throw error;
+      }
+
+      console.log("Trial email sent successfully:", result);
 
       toast({
-        title: "Trial booked!",
-        description: "We'll contact you soon to confirm your trial session.",
+        title: "Booking Submitted Successfully! ✓",
+        description: "If you do not hear from us in the next 24 hours, we might be busy building champions, so please connect with us over phone or email (provided in the Contact section).",
+        duration: 8000,
       });
 
       e.currentTarget.reset();
       setSport("");
     } catch (error) {
-      console.error("Error booking trial:", error);
+      console.error("Error submitting trial booking:", error);
       toast({
-        title: "Error",
-        description: "Failed to book trial. Please try again.",
+        title: "Submission Error",
+        description: "If you do not hear from us in the next 24 hours, we might be busy building champions, so please connect with us over phone or email (provided in the Contact section).",
         variant: "destructive",
+        duration: 8000,
       });
     } finally {
       setIsLoading(false);
