@@ -138,7 +138,7 @@ export default function Milestones() {
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative gradient-hero text-white py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('/images/hero-roller.jpg')] bg-cover bg-center opacity-10"></div>
+          <div className="absolute inset-0 bg-[url('/images/hero-roller.jpg')] bg-cover bg-center opacity-30"></div>
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-block mb-6">

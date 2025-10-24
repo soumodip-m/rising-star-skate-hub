@@ -221,9 +221,9 @@ export default function Index() {
               }}
             >
               {/* Middle gradient overlay for depth */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
-              {/* Dark gradient for text contrast */}
-              <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+              {/* Lighter gradient for text contrast */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent" />
             </div>
           ))}
 
@@ -252,11 +252,6 @@ export default function Index() {
           ))}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-[200px] md:mt-[180px]">
-            <Link to="/admissions/trial">
-              <Button variant="hero" size="lg" className="min-w-[200px]">
-                Book a Trial
-              </Button>
-            </Link>
             <Link to="/admissions">
               <Button
                 variant="outline"
