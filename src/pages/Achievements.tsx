@@ -69,11 +69,11 @@ export default function Achievements() {
             
             {/* Main Preview Image */}
             <div className="mb-8 bg-white rounded-2xl shadow-lg overflow-hidden">
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[16/10] overflow-hidden flex items-center justify-center bg-gray-100">
                 <img 
                   src={galleryImages[selectedImage].src} 
                   alt={galleryImages[selectedImage].alt}
-                  className="w-full h-full object-cover animate-fade-in"
+                  className="w-full h-full object-contain animate-fade-in"
                   key={selectedImage}
                 />
               </div>
@@ -107,7 +107,7 @@ export default function Achievements() {
                     <img 
                       src={image.src} 
                       alt={image.alt}
-                      className="w-32 h-20 object-cover"
+                      className="w-32 h-20 object-contain bg-gray-100"
                     />
                   </button>
                 ))}
