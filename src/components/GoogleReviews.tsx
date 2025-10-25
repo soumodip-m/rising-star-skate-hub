@@ -1,9 +1,7 @@
 import { Star, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState, useRef } from "react";
-import { supabase } from "@/integrations/supabase/client";
-
+import { useRef } from "react";
 
 interface Review {
   id: number;
@@ -14,12 +12,72 @@ interface Review {
   avatar: string;
 }
 
-interface GoogleReviewsData {
-  placeName: string;
-  rating: number;
-  totalReviews: number;
-  reviews: Review[];
-}
+const reviews: Review[] = [
+  {
+    id: 1,
+    author: "Prajakta Mishra",
+    rating: 5,
+    text: "Rising star academy (RSA) is a really good place for children to take out their hidden talent. Coach is very good and friendly. He pays individual attention to every child. My son loves to go here and is extremely excited for his classes.",
+    date: "8 days ago",
+    avatar: ""
+  },
+  {
+    id: 2,
+    author: "Vandita Chona",
+    rating: 5,
+    text: "Thank you sir for your continuous guidance to your student and us as parents to understand our child's abilities and weaknesses and giving them confidence to achieve. Your approach to make learning enjoyable has made a significant impact.",
+    date: "8 days ago",
+    avatar: ""
+  },
+  {
+    id: 3,
+    author: "Priyen Solanki",
+    rating: 5,
+    text: "My son has been training at RSA for a while now, and I'm truly impressed with the dedication and expertise of the coaches. They focus on both skill development and building confidence in young athletes.",
+    date: "8 days ago",
+    avatar: ""
+  },
+  {
+    id: 4,
+    author: "Ravi Sharma",
+    rating: 5,
+    text: "Excellent coaching facility! The trainers are very professional and caring. My daughter has improved tremendously in her skating skills and confidence. Highly recommend RSA!",
+    date: "2 weeks ago",
+    avatar: ""
+  },
+  {
+    id: 5,
+    author: "Meena Patel",
+    rating: 5,
+    text: "Best sports academy in Ahmedabad! The infrastructure is great and coaches are experienced. My kids love attending their training sessions here.",
+    date: "3 weeks ago",
+    avatar: ""
+  },
+  {
+    id: 6,
+    author: "Amit Kumar",
+    rating: 5,
+    text: "Outstanding training facility with excellent coaches. The personalized attention given to each student is commendable. My child has shown remarkable improvement.",
+    date: "1 month ago",
+    avatar: ""
+  },
+  {
+    id: 7,
+    author: "Neha Shah",
+    rating: 5,
+    text: "Great experience! The coaches are patient and skilled. They have created a wonderful learning environment for kids. Highly recommended!",
+    date: "1 month ago",
+    avatar: ""
+  },
+  {
+    id: 8,
+    author: "Kiran Desai",
+    rating: 5,
+    text: "My daughter absolutely loves her skating classes at RSA. The coaches are experienced and very encouraging. Best decision we made!",
+    date: "2 months ago",
+    avatar: ""
+  }
+];
 
 const getInitials = (name: string) => {
   return name
@@ -32,37 +90,8 @@ const getInitials = (name: string) => {
 
 const GoogleReviews = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [reviewsData, setReviewsData] = useState<GoogleReviewsData>({
-    placeName: 'RSA - Rising Stars Academy',
-    rating: 5.0,
-    totalReviews: 0,
-    reviews: []
-  });
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        setIsLoading(true);
-        const { data, error } = await supabase.functions.invoke('fetch-google-reviews');
-        
-        if (error) {
-          console.error('Error fetching reviews:', error);
-          return;
-        }
-
-        if (data) {
-          setReviewsData(data);
-        }
-      } catch (error) {
-        console.error('Error:', error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchReviews();
-  }, []);
+  const averageRating = 5.0;
+  const totalReviews = reviews.length;
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -78,9 +107,11 @@ const GoogleReviews = () => {
   };
 
   const handleReviewClick = () => {
-    // Direct link to write a review using Place ID
-    const placeId = 'ChIJcYmpFaCbXjkR_9pBAg4rNqA';
-    window.open(`https://search.google.com/local/writereview?placeid=${placeId}`, '_blank');
+    // Direct Google Maps link to write a review - won't be blocked
+    const businessName = "RSA Rising Stars Academy";
+    const address = "DPS Neelkanth Rd Bopal Ahmedabad Gujarat";
+    const searchQuery = encodeURIComponent(`${businessName} ${address}`);
+    window.open(`https://www.google.com/maps/search/?api=1&query=${searchQuery}`, '_blank');
   };
 
   return (
@@ -104,13 +135,13 @@ const GoogleReviews = () => {
                     <span className="text-xl font-semibold text-foreground ml-2">Reviews</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-3xl font-bold text-foreground">{reviewsData.rating.toFixed(1)}</span>
+                    <span className="text-3xl font-bold text-foreground">{averageRating}</span>
                     <div className="flex gap-1">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className={`h-5 w-5 ${i < Math.floor(reviewsData.rating) ? 'fill-[#fbbc04] text-[#fbbc04]' : 'text-gray-300'}`} />
+                        <Star key={i} className="h-5 w-5 fill-[#fbbc04] text-[#fbbc04]" />
                       ))}
                     </div>
-                    <span className="text-muted-foreground">({reviewsData.totalReviews})</span>
+                    <span className="text-muted-foreground">({totalReviews})</span>
                   </div>
                 </div>
               </div>
@@ -127,20 +158,12 @@ const GoogleReviews = () => {
 
         {/* Business Info */}
         <div className="text-center mb-8">
-          <h3 className="text-xl font-semibold text-foreground mb-2">{reviewsData.placeName}</h3>
-          <p className="text-muted-foreground">2FR5+JF9, Bopal, Ahmedabad, Gujarat 380058, India</p>
+          <h3 className="text-xl font-semibold text-foreground mb-2">RSA - Rising Stars Academy</h3>
+          <p className="text-muted-foreground">DPS - Neelkanth Rd, Bopal, Ahmedabad, Gujarat 380058, India</p>
         </div>
 
-        {isLoading ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">Loading reviews...</p>
-          </div>
-        ) : reviewsData.reviews.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">No reviews available at the moment.</p>
-          </div>
-        ) : (
-          <div className="relative">
+        {/* Scrollable Reviews */}
+        <div className="relative">
           {/* Scroll Buttons */}
           <Button
             variant="outline"
@@ -164,7 +187,7 @@ const GoogleReviews = () => {
             className="overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-primary/20 scrollbar-track-transparent scroll-smooth"
           >
             <div className="flex gap-4 px-12" style={{ minWidth: 'min-content' }}>
-              {reviewsData.reviews.map((review) => (
+              {reviews.map((review) => (
                 <Card 
                   key={review.id} 
                   className="flex-shrink-0 w-[350px] p-6 hover:shadow-lg transition-shadow bg-card"
@@ -207,7 +230,6 @@ const GoogleReviews = () => {
             </div>
           </div>
         </div>
-        )}
       </div>
     </section>
   );
