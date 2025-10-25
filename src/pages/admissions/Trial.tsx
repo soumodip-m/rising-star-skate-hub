@@ -11,6 +11,15 @@ import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 import { Check } from "lucide-react";
 import trialHeroImage from "@/assets/trial-hero.png";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 
 const packages = [
   {
@@ -59,6 +68,7 @@ import { Helmet } from "react-helmet";
 export default function Trial() {
   const [isLoading, setIsLoading] = useState(false);
   const [sport, setSport] = useState("");
+  const [showErrorDialog, setShowErrorDialog] = useState(false);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -100,12 +110,7 @@ export default function Trial() {
       setSport("");
     } catch (error) {
       console.error("Error submitting trial booking:", error);
-      toast({
-        title: "Submission Error",
-        description: "If you do not hear from us in the next 24 hours, we might be busy building champions, so please connect with us over phone or email (provided in the Contact section).",
-        variant: "destructive",
-        duration: 8000,
-      });
+      setShowErrorDialog(true);
     } finally {
       setIsLoading(false);
     }
@@ -339,6 +344,21 @@ export default function Trial() {
       </main>
       <Footer />
       <WhatsAppButton />
+      
+      <AlertDialog open={showErrorDialog} onOpenChange={setShowErrorDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Submission Error</AlertDialogTitle>
+            <AlertDialogDescription className="space-y-2">
+              <p>There is some error while submitting the form.</p>
+              <p>Please send an email to <a href="mailto:rsa4sports@gmail.com" className="text-primary hover:underline font-semibold">rsa4sports@gmail.com</a> or call us directly at <a href="tel:+919824234663" className="text-primary hover:underline font-semibold">+91 98242 34663</a></p>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction>Close</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }
