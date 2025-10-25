@@ -53,10 +53,6 @@ export default function Index() {
   }];
   const whyChooseImages = [whyChooseImage, whyChooseTeam, whyChooseTraining, whyChooseRink, whyChooseAngelina, whyChooseTeamMedals, whyChooseCoachAthletes];
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://elfsightcdn.com/platform.js";
-    script.async = true;
-    document.body.appendChild(script);
     const heroInterval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % heroSlides.length);
     }, 3000);
@@ -79,9 +75,6 @@ export default function Index() {
       }
     }, 30);
     return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script);
-      }
       clearInterval(heroInterval);
       clearInterval(whyChooseInterval);
       clearInterval(testimonialInterval);
@@ -391,11 +384,6 @@ export default function Index() {
                 <TestimonialCard quote="My son loves the inclusive atmosphere at RSA. The coaches are patient and truly care about every child's progress." name="Priya Sharma" role="Parent" achievement="Beginner Skater" />
               </div>
             </div>
-          </div>
-
-          {/* Elfsight Google Reviews Widget */}
-          <div className="mt-12">
-            <div className="elfsight-app-efb1cfae-5194-4704-a5c9-7715b85f5cc0" data-elfsight-app-lazy></div>
           </div>
         </div>
       </section>
