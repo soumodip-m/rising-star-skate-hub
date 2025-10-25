@@ -1,8 +1,7 @@
 import { Star, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { useRef, useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { useRef } from "react";
 
 interface Review {
   id: number;
@@ -12,6 +11,73 @@ interface Review {
   date: string;
   avatar: string;
 }
+
+const reviews: Review[] = [
+  {
+    id: 1,
+    author: "Prajakta Mishra",
+    rating: 5,
+    text: "Rising star academy (RSA) is a really good place for children to take out their hidden talent. Coach is very good and friendly. He pays individual attention to every child. My son loves to go here and is extremely excited for his classes.",
+    date: "8 days ago",
+    avatar: ""
+  },
+  {
+    id: 2,
+    author: "Vandita Chona",
+    rating: 5,
+    text: "Thank you sir for your continuous guidance to your student and us as parents to understand our child's abilities and weaknesses and giving them confidence to achieve. Your approach to make learning enjoyable has made a significant impact.",
+    date: "8 days ago",
+    avatar: ""
+  },
+  {
+    id: 3,
+    author: "Priyen Solanki",
+    rating: 5,
+    text: "My son has been training at RSA for a while now, and I'm truly impressed with the dedication and expertise of the coaches. They focus on both skill development and building confidence in young athletes.",
+    date: "8 days ago",
+    avatar: ""
+  },
+  {
+    id: 4,
+    author: "Ravi Sharma",
+    rating: 5,
+    text: "Excellent coaching facility! The trainers are very professional and caring. My daughter has improved tremendously in her skating skills and confidence. Highly recommend RSA!",
+    date: "2 weeks ago",
+    avatar: ""
+  },
+  {
+    id: 5,
+    author: "Meena Patel",
+    rating: 5,
+    text: "Best sports academy in Ahmedabad! The infrastructure is great and coaches are experienced. My kids love attending their training sessions here.",
+    date: "3 weeks ago",
+    avatar: ""
+  },
+  {
+    id: 6,
+    author: "Amit Kumar",
+    rating: 5,
+    text: "Outstanding training facility with excellent coaches. The personalized attention given to each student is commendable. My child has shown remarkable improvement.",
+    date: "1 month ago",
+    avatar: ""
+  },
+  {
+    id: 7,
+    author: "Neha Shah",
+    rating: 5,
+    text: "Great experience! The coaches are patient and skilled. They have created a wonderful learning environment for kids. Highly recommended!",
+    date: "1 month ago",
+    avatar: ""
+  },
+  {
+    id: 8,
+    author: "Kiran Desai",
+    rating: 5,
+    text: "My daughter absolutely loves her skating classes at RSA. The coaches are experienced and very encouraging. Best decision we made!",
+    date: "2 months ago",
+    avatar: ""
+  }
+];
 
 const getInitials = (name: string) => {
   return name
@@ -24,37 +90,8 @@ const getInitials = (name: string) => {
 
 const GoogleReviews = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [averageRating, setAverageRating] = useState(5.0);
-  const [totalReviews, setTotalReviews] = useState(0);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        console.log('Fetching Google reviews...');
-        const { data, error } = await supabase.functions.invoke('fetch-google-reviews');
-        
-        if (error) {
-          console.error('Error fetching reviews:', error);
-          return;
-        }
-        
-        if (data?.reviews) {
-          console.log(`Loaded ${data.reviews.length} reviews`);
-          setReviews(data.reviews);
-          setAverageRating(data.averageRating || 5.0);
-          setTotalReviews(data.totalReviews || data.reviews.length);
-        }
-      } catch (error) {
-        console.error('Failed to fetch reviews:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchReviews();
-  }, []);
+  const averageRating = 5.0;
+  const totalReviews = reviews.length;
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -76,17 +113,6 @@ const GoogleReviews = () => {
     const searchQuery = encodeURIComponent(`${businessName} ${address}`);
     window.open(`https://www.google.com/maps/search/?api=1&query=${searchQuery}`, '_blank');
   };
-
-  if (loading) {
-    return (
-      <section className="py-16 bg-gradient-to-b from-background to-muted/20">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Our Community Speaks</h2>
-          <p className="text-center text-muted-foreground">Loading reviews...</p>
-        </div>
-      </section>
-    );
-  }
 
   return (
     <section className="py-16 bg-gradient-to-b from-background to-muted/20">
