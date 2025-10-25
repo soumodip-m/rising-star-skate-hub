@@ -12,6 +12,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import SportCard from "@/components/SportCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import SocialWall from "@/components/SocialWall";
+import GoogleReviews from "@/components/GoogleReviews";
 import heroImage from "@/assets/hero-roller-skating.jpg";
 import heroQuadImage from "@/assets/hero-quad-skating.jpg";
 import bgTexture from "@/assets/bg-texture.jpg";
@@ -398,6 +399,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews Section */}
+      <GoogleReviews />
 
       {/* Social Media Section */}
       <SocialWall />
