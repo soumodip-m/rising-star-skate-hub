@@ -1,4 +1,4 @@
-import { Star, ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { Star, ExternalLink, ChevronLeft, ChevronRight, Facebook } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
@@ -145,13 +145,22 @@ const GoogleReviews = () => {
                   </div>
                 </div>
               </div>
-              <Button 
-                onClick={handleReviewClick}
-                className="bg-[#4285f4] hover:bg-[#3367d6] text-white px-6 py-6 text-base font-semibold"
-              >
-                Review us on Google
-                <ExternalLink className="ml-2 h-5 w-5" />
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Button 
+                  onClick={handleReviewClick}
+                  className="bg-[#4285f4] hover:bg-[#3367d6] text-white px-6 py-6 text-base font-semibold"
+                >
+                  Review us on Google
+                  <ExternalLink className="ml-2 h-5 w-5" />
+                </Button>
+                <Button 
+                  onClick={() => window.open('https://www.facebook.com/groups/1528245441698569/', '_blank')}
+                  className="bg-[#1877f2] hover:bg-[#166fe5] text-white px-6 py-6 text-base font-semibold"
+                >
+                  <Facebook className="mr-2 h-5 w-5 fill-current" />
+                  Join our Skating Community
+                </Button>
+              </div>
             </div>
           </Card>
         </div>
