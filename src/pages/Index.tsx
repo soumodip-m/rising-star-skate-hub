@@ -39,36 +39,28 @@ export default function Index() {
   const [isPaused, setIsPaused] = useState(false);
   const [otherSportsDialogOpen, setOtherSportsDialogOpen] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
-  const heroSlides = [
-    {
-      image: heroImage,
-      title: "Rise Faster. ",
-      highlight: "Shine Brighter.",
-      description:
-        "Ahmedabad's premier multi-sport academy with 25+ years of experience. Expert coaching, modern facilities, and a supportive culture.",
-    },
-    {
-      image: heroQuadImage,
-      title: "Every Star Deserves to ",
-      highlight: "Shine",
-      description: "Enroll today and let your child's inner star truly shine.",
-    },
-  ];
+  const heroSlides = [{
+    image: heroImage,
+    title: "Rise Faster. ",
+    highlight: "Shine Brighter.",
+    description: "Ahmedabad's premier multi-sport academy with 25+ years of experience. Expert coaching, modern facilities, and a supportive culture."
+  }, {
+    image: heroQuadImage,
+    title: "Every Star Deserves to ",
+    highlight: "Shine",
+    description: "Enroll today and let your child's inner star truly shine."
+  }];
   const whyChooseImages = [whyChooseImage, whyChooseTeam, whyChooseTraining, whyChooseRink, whyChooseAngelina, whyChooseTeamMedals, whyChooseCoachAthletes];
-
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://elfsightcdn.com/platform.js";
     script.async = true;
     document.body.appendChild(script);
-
     const heroInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+      setCurrentSlide(prev => (prev + 1) % heroSlides.length);
     }, 3000);
-
     const whyChooseInterval = setInterval(() => {
-      setCurrentWhyChooseSlide((prev) => (prev + 1) % whyChooseImages.length);
+      setCurrentWhyChooseSlide(prev => (prev + 1) % whyChooseImages.length);
     }, 2000);
 
     // Auto-scroll testimonials
@@ -85,7 +77,6 @@ export default function Index() {
         }
       }
     }, 30);
-
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script);
@@ -95,33 +86,25 @@ export default function Index() {
       clearInterval(testimonialInterval);
     };
   }, [isPaused]);
-  const sports = [
-    {
-      name: "Roller Skating",
-      description:
-        "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
-      image: skatingImage,
-      path: "/sports/roller-skating",
-      featured: true,
-    },
-    {
-      name: "Other Sports",
-      description:
-        "Explore our comprehensive range of sports including Cricket, Football, Basketball, Tennis, Badminton & more.",
-      image: otherSportsImage,
-      path: "/sports",
-      featured: true,
-      showBadge: false,
-    },
-  ];
-
+  const sports = [{
+    name: "Roller Skating",
+    description: "Master speed, balance, and race craft with our flagship program. Inline & Quad coaching for all levels.",
+    image: skatingImage,
+    path: "/sports/roller-skating",
+    featured: true
+  }, {
+    name: "Other Sports",
+    description: "Explore our comprehensive range of sports including Cricket, Football, Basketball, Tennis, Badminton & more.",
+    image: otherSportsImage,
+    path: "/sports",
+    featured: true,
+    showBadge: false
+  }];
   const handleImageClick = (image: string) => {
     setLightboxImage(image);
     setLightboxOpen(true);
   };
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Helmet>
         <title>Rising Stars Academy - Premier Multi-Sport Academy in Ahmedabad | RSA</title>
         <meta name="description" content="Rising Stars Academy - Gujarat's no. 1 skating academy in Ahmedabad. Expert roller skating coaching, speed skating training, inline & quad skating classes for kids. Certified coaches, beginner to advanced programs. Book a trial class today!" />
@@ -156,45 +139,39 @@ export default function Index() {
         {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SportsActivityLocation",
-            "name": "Rising Stars Academy",
-            "description": "Premier multi-sport academy offering professional training in Roller Skating, Cricket, Football, Basketball, Tennis, Badminton, and Athletics",
-            "url": "https://rsa.india.co.in",
-            "telephone": "+91 98242 34663",
-            "email": "rsa4sports@gmail.com",
-            "address": {
-              "@type": "PostalAddress",
-              "streetAddress": "DPS Skating Rink, Bopal",
-              "addressLocality": "Ahmedabad",
-              "addressRegion": "Gujarat",
-              "postalCode": "380058",
-              "addressCountry": "IN"
-            },
-            "geo": {
-              "@type": "GeoCoordinates",
-              "latitude": "23.041544",
-              "longitude": "72.456138"
-            },
-            "openingHoursSpecification": [
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "08:00",
-                "closes": "22:00"
-              },
-              {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Sunday",
-                "opens": "08:00",
-                "closes": "18:00"
-              }
-            ],
-            "sameAs": [
-              "https://www.instagram.com/rising_stars_academy_",
-              "https://www.facebook.com/people/Rising-Stars-Academy/100083315095392/"
-            ]
-          })}
+          "@context": "https://schema.org",
+          "@type": "SportsActivityLocation",
+          "name": "Rising Stars Academy",
+          "description": "Premier multi-sport academy offering professional training in Roller Skating, Cricket, Football, Basketball, Tennis, Badminton, and Athletics",
+          "url": "https://rsa.india.co.in",
+          "telephone": "+91 98242 34663",
+          "email": "rsa4sports@gmail.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "DPS Skating Rink, Bopal",
+            "addressLocality": "Ahmedabad",
+            "addressRegion": "Gujarat",
+            "postalCode": "380058",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "23.041544",
+            "longitude": "72.456138"
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "08:00",
+            "closes": "22:00"
+          }, {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "08:00",
+            "closes": "18:00"
+          }],
+          "sameAs": ["https://www.instagram.com/rising_stars_academy_", "https://www.facebook.com/people/Rising-Stars-Academy/100083315095392/"]
+        })}
         </script>
       </Helmet>
       <Navbar />
@@ -204,60 +181,39 @@ export default function Index() {
         {/* Multi-layered background */}
         <div className="absolute inset-0">
           {/* Layer 1: Bottom - Subtle texture */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{
-              backgroundImage: `url(${bgTexture})`,
-            }}
-          />
+          <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{
+          backgroundImage: `url(${bgTexture})`
+        }} />
 
           {/* Layer 2: Hero images with crossfade */}
-          {heroSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-            >
+          {heroSlides.map((slide, index) => <div key={index} className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${currentSlide === index ? "opacity-100" : "opacity-0"}`} style={{
+          backgroundImage: `url(${slide.image})`
+        }}>
               {/* Middle gradient overlay for depth */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
               {/* Lighter gradient for text contrast */}
               <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/30 to-transparent" />
-            </div>
-          ))}
+            </div>)}
 
           {/* Layer 3: Top - Wave pattern for depth and motion */}
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-soft-light"
-            style={{
-              backgroundImage: `url(${bgWaves})`,
-            }}
-          />
+          <div className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-soft-light" style={{
+          backgroundImage: `url(${bgWaves})`
+        }} />
         </div>
 
         <div className="relative z-10 container mx-auto px-4 py-20 text-center">
           {/* Hero text with crossfade */}
-          {heroSlides.map((slide, index) => (
-            <div
-              key={index}
-              className={`absolute inset-x-0 transition-opacity duration-1000 ${currentSlide === index ? "opacity-100" : "opacity-0"}`}
-            >
+          {heroSlides.map((slide, index) => <div key={index} className={`absolute inset-x-0 transition-opacity duration-1000 ${currentSlide === index ? "opacity-100" : "opacity-0"}`}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6">
                 {slide.title}
                 <span className="text-gradient">{slide.highlight}</span>
               </h1>
               <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">{slide.description}</p>
-            </div>
-          ))}
+            </div>)}
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-[200px] md:mt-[180px]">
             <Link to="/admissions">
-              <Button
-                variant="outline"
-                size="lg"
-                className="min-w-[200px] bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground"
-              >
+              <Button variant="outline" size="lg" className="min-w-[200px] bg-white/10 backdrop-blur-sm border-white text-white hover:bg-white hover:text-foreground">
                 Join Now
               </Button>
             </Link>
@@ -324,15 +280,9 @@ export default function Index() {
 
           <div className="flex justify-center">
             <div className="grid md:grid-cols-2 gap-6 max-w-4xl">
-              {sports.map((sport) => (
-                sport.name === "Other Sports" ? (
-                  <div key={sport.name} onClick={() => setOtherSportsDialogOpen(true)} className="cursor-pointer">
+              {sports.map(sport => sport.name === "Other Sports" ? <div key={sport.name} onClick={() => setOtherSportsDialogOpen(true)} className="cursor-pointer">
                     <SportCard {...sport} path="#" />
-                  </div>
-                ) : (
-                  <SportCard key={sport.name} {...sport} />
-                )
-              ))}
+                  </div> : <SportCard key={sport.name} {...sport} />)}
             </div>
           </div>
         </div>
@@ -348,17 +298,7 @@ export default function Index() {
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Image Slideshow with Ripple Effect */}
             <div className="order-2 lg:order-1 relative overflow-hidden rounded-lg cursor-pointer group">
-              {whyChooseImages.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`RSA Training Facility ${index + 1}`}
-                  onClick={() => handleImageClick(image)}
-                  className={`w-full h-full object-cover rounded-lg shadow-xl border-4 border-primary transition-all duration-500 group-hover:scale-110 ${
-                    currentWhyChooseSlide === index ? "relative animate-ripple" : "absolute inset-0 opacity-0"
-                  }`}
-                />
-              ))}
+              {whyChooseImages.map((image, index) => <img key={index} src={image} alt={`RSA Training Facility ${index + 1}`} onClick={() => handleImageClick(image)} className={`w-full h-full object-cover rounded-lg shadow-xl border-4 border-primary transition-all duration-500 group-hover:scale-110 ${currentWhyChooseSlide === index ? "relative animate-ripple" : "absolute inset-0 opacity-0"}`} />)}
             </div>
 
             {/* Features Grid */}
@@ -370,11 +310,8 @@ export default function Index() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2">30+ Years of Excellence</h3>
-                  <p className="text-muted-foreground">
-                    Three decades of proven success in roller skating training with a legacy of champions and
-                    disciplined coaching.
-                  </p>
+                  <h3 className="text-xl font-bold mb-2">25+ Years of Excellence</h3>
+                  <p className="text-muted-foreground">A legacy of champions built over two and a half decades of dedicated roller skating training and disciplined coaching.</p>
                 </div>
               </div>
 
@@ -435,45 +372,22 @@ export default function Index() {
             <p className="text-lg text-muted-foreground">Stories That Inspire Us Every Day</p>
           </div>
 
-          <div
-            ref={scrollContainerRef}
-            className="overflow-x-auto scrollbar-hide"
-            onMouseEnter={() => setIsPaused(true)}
-            onMouseLeave={() => setIsPaused(false)}
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
+          <div ref={scrollContainerRef} className="overflow-x-auto scrollbar-hide" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)} style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none"
+        }}>
             <div className="flex gap-6 min-w-max pb-4">
               <div className="w-80 flex-shrink-0">
-                <TestimonialCard
-                  quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!"
-                  name="Soumodip Mukherjee"
-                  role="Parent"
-                  achievement="Advanced Inline Skater"
-                />
+                <TestimonialCard quote="RSA's roller skating program transformed my daughter's confidence and skill. She's now competing at advanced level!" name="Soumodip Mukherjee" role="Parent" achievement="Advanced Inline Skater" />
               </div>
               <div className="w-80 flex-shrink-0">
-                <TestimonialCard
-                  quote="The coaches here are amazing. They pushed me to achieve more than I thought possible."
-                  name="Rudra Gol"
-                  role="Student (16)"
-                  achievement="National Medalist"
-                />
+                <TestimonialCard quote="The coaches here are amazing. They pushed me to achieve more than I thought possible." name="Rudra Gol" role="Student (16)" achievement="National Medalist" />
               </div>
               <div className="w-80 flex-shrink-0">
-                <TestimonialCard
-                  quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment."
-                  name="Gourab Mitra"
-                  role="Parent"
-                  achievement="National Qualifier"
-                />
+                <TestimonialCard quote="Best sports academy in Ahmedabad. Professional coaching, great facilities, and supportive environment." name="Gourab Mitra" role="Parent" achievement="National Qualifier" />
               </div>
               <div className="w-80 flex-shrink-0">
-                <TestimonialCard
-                  quote="My son loves the inclusive atmosphere at RSA. The coaches are patient and truly care about every child's progress."
-                  name="Priya Sharma"
-                  role="Parent"
-                  achievement="Beginner Skater"
-                />
+                <TestimonialCard quote="My son loves the inclusive atmosphere at RSA. The coaches are patient and truly care about every child's progress." name="Priya Sharma" role="Parent" achievement="Beginner Skater" />
               </div>
             </div>
           </div>
@@ -581,26 +495,12 @@ export default function Index() {
       </section>
 
       {/* Lightbox Modal */}
-      {lightboxOpen && (
-        <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in"
-          onClick={() => setLightboxOpen(false)}
-        >
-          <button
-            onClick={() => setLightboxOpen(false)}
-            className="absolute top-4 right-4 text-white hover:text-primary transition-colors"
-            aria-label="Close lightbox"
-          >
+      {lightboxOpen && <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in" onClick={() => setLightboxOpen(false)}>
+          <button onClick={() => setLightboxOpen(false)} className="absolute top-4 right-4 text-white hover:text-primary transition-colors" aria-label="Close lightbox">
             <X className="h-8 w-8" />
           </button>
-          <img
-            src={lightboxImage}
-            alt="RSA Facility"
-            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-scale-in"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+          <img src={lightboxImage} alt="RSA Facility" className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl animate-scale-in" onClick={e => e.stopPropagation()} />
+        </div>}
 
       {/* Other Sports Dialog */}
       <Dialog open={otherSportsDialogOpen} onOpenChange={setOtherSportsDialogOpen}>
@@ -621,6 +521,5 @@ export default function Index() {
 
       <WhatsAppButton />
       <Footer />
-    </div>
-  );
+    </div>;
 }
