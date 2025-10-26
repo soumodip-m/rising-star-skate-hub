@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ConfettiBurst from "@/components/ConfettiBurst";
 import { useState } from "react";
 import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { X } from "lucide-react";
@@ -87,6 +88,7 @@ export default function FunAtRSA() {
     alt: string;
   } | null>(null);
   return <div className="min-h-screen flex flex-col">
+      <ConfettiBurst />
       <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
