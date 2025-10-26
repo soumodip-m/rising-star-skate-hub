@@ -10,6 +10,7 @@ import warriorChampionship from "@/assets/milestones/warrior-championship.jpg";
 import sagWinners from "@/assets/milestones/sag-winners-2014.jpg";
 import championTeam from "@/assets/milestones/champion-team-trophies.jpg";
 import teamMedals from "@/assets/milestones/team-medals-outdoor.jpg";
+import angelinaCollage from "@/assets/achievements/angelina-collage.jpg";
 
 interface Milestone {
   year: string;
@@ -97,6 +98,7 @@ const milestones: Milestone[] = [
     title: "Special Olympics",
     description: "Student won medal in Special Olympics, Berlin",
     icon: Award,
+    image: angelinaCollage,
   },
   {
     year: "2024",
