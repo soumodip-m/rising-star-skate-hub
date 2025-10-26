@@ -28,6 +28,12 @@ import whyChooseRink from "@/assets/why-choose-rink.jpg";
 import whyChooseAngelina from "@/assets/why-choose-angelina.jpg";
 import whyChooseTeamMedals from "@/assets/why-choose-team-medals.jpg";
 import whyChooseCoachAthletes from "@/assets/why-choose-coach-athletes.png";
+import beginnerSkaters2014 from "@/assets/why-choose/beginner-skaters-2014.jpg";
+import teamRink2017 from "@/assets/why-choose/team-rink-2017.jpg";
+import warriorTrophy2025 from "@/assets/why-choose/warrior-trophy-2025.jpg";
+import muhuratSkating from "@/assets/why-choose/muhurat-skating.jpg";
+import dpsRink from "@/assets/why-choose/dps-rink.png";
+import racerAction from "@/assets/why-choose/racer-action.jpg";
 import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
@@ -53,7 +59,7 @@ export default function Index() {
     highlight: "Shine",
     description: "Enroll today and let your child's inner star truly shine."
   }];
-  const whyChooseImages = [whyChooseImage, whyChooseTeam, whyChooseTraining, whyChooseRink, whyChooseAngelina, whyChooseTeamMedals, whyChooseCoachAthletes];
+  const whyChooseImages = [whyChooseImage, whyChooseTeam, whyChooseTraining, whyChooseRink, whyChooseAngelina, whyChooseTeamMedals, whyChooseCoachAthletes, beginnerSkaters2014, teamRink2017, warriorTrophy2025, muhuratSkating, dpsRink, racerAction];
   useEffect(() => {
     const heroInterval = setInterval(() => {
       setCurrentSlide(prev => (prev + 1) % heroSlides.length);
