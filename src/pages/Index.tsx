@@ -32,6 +32,8 @@ import srLogo from "@/assets/wellwishers/sr-logo-color.png";
 import rsfiLogo from "@/assets/wellwishers/rsfi-logo-color.png";
 import grsaLogo from "@/assets/wellwishers/grsa-logo-color.jpg";
 import dpsLogo from "@/assets/wellwishers/dps-logo-color.png";
+import blueSkyLogo from "@/assets/wellwishers/blue-sky-logo.jpg";
+import blueBuddhaLogo from "@/assets/wellwishers/blue-buddha-logo.jpg";
 export default function Index() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [currentWhyChooseSlide, setCurrentWhyChooseSlide] = useState(0);
@@ -482,6 +484,8 @@ export default function Index() {
               <img src={rsfiLogo} alt="Roller Skating Federation of India" className="h-24 object-contain" />
               <img src={grsaLogo} alt="Gujarat State Roller Skating Association" className="h-24 object-contain" />
               <img src={dpsLogo} alt="Delhi Public School Bopal" className="h-24 object-contain" />
+              <img src={blueSkyLogo} alt="Blue Sky Overseas" className="h-24 object-contain" />
+              <img src={blueBuddhaLogo} alt="Blue Buddha London" className="h-24 object-contain" />
             </div>
           </div>
         </div>
