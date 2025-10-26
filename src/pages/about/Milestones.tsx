@@ -94,7 +94,7 @@ const milestones: Milestone[] = [
     highlight: true,
   },
   {
-    year: "2022",
+    year: "2023",
     title: "Special Olympics",
     description: "Student won medal in Special Olympics, Berlin",
     icon: Award,
@@ -230,11 +230,11 @@ export default function Milestones() {
                               </div>
 
                               {milestone.image && (
-                                <div className="mt-4 rounded-lg overflow-hidden">
+                                <div className="mt-4 rounded-lg overflow-hidden bg-muted/20">
                                   <img
                                     src={milestone.image}
                                     alt={milestone.title}
-                                    className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                                    className="w-full h-48 object-contain hover:scale-105 transition-transform duration-300"
                                   />
                                 </div>
                               )}
