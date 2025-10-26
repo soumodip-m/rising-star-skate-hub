@@ -56,6 +56,30 @@ const funImages = [{
   src: "/images/fun/kite-running.jpg",
   alt: "Kite running celebration",
   rotation: "rotate-2"
+}, {
+  src: "/images/fun/movie-time.jpg",
+  alt: "Movie time with team",
+  rotation: "rotate-1"
+}, {
+  src: "/images/fun/diwali-outdoor.jpg",
+  alt: "Diwali outdoor celebration",
+  rotation: "-rotate-2"
+}, {
+  src: "/images/fun/diwali-sparklers.jpg",
+  alt: "Diwali sparklers fun",
+  rotation: "rotate-2"
+}, {
+  src: "/images/fun/movie-time-2.jpg",
+  alt: "Cinema outing celebration",
+  rotation: "-rotate-1"
+}, {
+  src: "/images/fun/tiranga-rally.jpg",
+  alt: "Tiranga rally by Team RSA",
+  rotation: "rotate-1"
+}, {
+  src: "/images/fun/kite-flying-duo.jpg",
+  alt: "Kite flying duo",
+  rotation: "-rotate-2"
 }];
 export default function FunAtRSA() {
   const [selectedImage, setSelectedImage] = useState<{
@@ -94,7 +118,7 @@ export default function FunAtRSA() {
                   alt: image.alt
                 })}>
                       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10" />
-                      <img src={image.src} alt={image.alt} className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500 brightness-110" />
+                      <img src={image.src} alt={image.alt} className="w-full h-full object-contain transform group-hover:scale-110 transition-transform duration-500 brightness-110" />
                       {/* Funky colored border effect */}
                       <div className="absolute top-0 bottom-0 left-2 right-0 border-4 border-primary/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30" style={{
                     borderColor: `hsl(var(--primary) / ${0.2 + index % 5 * 0.15})`
