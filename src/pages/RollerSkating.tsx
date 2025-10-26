@@ -424,7 +424,7 @@ export default function RollerSkating() {
                       Book Free Trial
                     </Button>
                   </Link>
-                  <Link to="/contact">
+                  <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
                     <Button variant="outline" size="lg">
                       Contact Us
                     </Button>
