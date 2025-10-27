@@ -1,10 +1,12 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, ShoppingCart, Wrench } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { ExternalLink, ShoppingCart, Wrench, ShoppingBag, Phone } from "lucide-react";
 
 const featuredProducts = [
   {
@@ -110,6 +112,8 @@ const maintenanceTips = [
 ];
 
 export default function Equipment() {
+  const [shopDialogOpen, setShopDialogOpen] = useState(false);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -150,7 +154,7 @@ export default function Equipment() {
                     </div>
                     <p className="text-muted-foreground mb-4">{product.description}</p>
                     <p className="text-xl font-bold text-primary mb-4">{product.price}</p>
-                    <Button className="w-full" variant="outline">
+                    <Button className="w-full" variant="outline" onClick={() => setShopDialogOpen(true)}>
                       View Details
                     </Button>
                   </CardContent>
@@ -250,6 +254,38 @@ export default function Equipment() {
       </main>
       <Footer />
       <WhatsAppButton />
+
+      {/* Shop Dialog */}
+      <Dialog open={shopDialogOpen} onOpenChange={setShopDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <div className="flex justify-center mb-4">
+              <ShoppingBag className="h-12 w-12 text-primary" />
+            </div>
+            <DialogTitle className="text-2xl font-bold text-center">RSA Shop Coming Soon!</DialogTitle>
+            <DialogDescription className="text-center pt-4 space-y-4">
+              <p className="text-base">
+                We're working on bringing you the best skating gear and RSA merchandise.
+              </p>
+              <p className="text-base font-medium">
+                For immediate equipment needs, please contact us:
+              </p>
+              <div className="flex items-center justify-center gap-2 text-primary pt-2">
+                <Phone className="h-5 w-5" />
+                <a href="tel:+919825042321" className="text-lg font-semibold hover:underline">+91 98242 34663</a>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                or reach out via WhatsApp for quick assistance
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center pt-2">
+            <Button onClick={() => setShopDialogOpen(false)} className="min-w-[120px]">
+              Got it!
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
