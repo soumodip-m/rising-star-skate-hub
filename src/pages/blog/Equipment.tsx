@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { ExternalLink, ShoppingCart, Wrench, ShoppingBag, Phone } from "lucide-react";
+import { ExternalLink, ShoppingCart, Wrench, ShoppingBag, Phone, Mail, MessageCircle, MapPin } from "lucide-react";
 
 const featuredProducts = [
   {
@@ -113,6 +113,7 @@ const maintenanceTips = [
 
 export default function Equipment() {
   const [shopDialogOpen, setShopDialogOpen] = useState(false);
+  const [connectDialogOpen, setConnectDialogOpen] = useState(false);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -223,6 +224,16 @@ export default function Equipment() {
                   </Card>
                 ))}
               </div>
+              
+              <div className="mt-8 text-center">
+                <Button 
+                  size="lg" 
+                  className="gradient-primary shadow-glow"
+                  onClick={() => setConnectDialogOpen(true)}
+                >
+                  Connect with us
+                </Button>
+              </div>
             </div>
           </div>
         </section>
@@ -282,6 +293,82 @@ export default function Equipment() {
           <div className="flex justify-center pt-2">
             <Button onClick={() => setShopDialogOpen(false)} className="min-w-[120px]">
               Got it!
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Connect with us Dialog */}
+      <Dialog open={connectDialogOpen} onOpenChange={setConnectDialogOpen}>
+        <DialogContent className="sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center mb-2">Get Expert Equipment Advice</DialogTitle>
+            <DialogDescription className="text-center text-base">
+              If you are interested in any skating equipment, please connect with us via phone, WhatsApp or email.
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="space-y-4 py-4">
+            {/* Location */}
+            <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors">
+              <MapPin className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Location</h3>
+                <p className="text-sm text-muted-foreground">
+                  DPS Skating Rink, Beside DPS School,<br />
+                  Bopal, Ahmedabad - 380058
+                </p>
+              </div>
+            </div>
+
+            {/* Phone */}
+            <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors">
+              <Phone className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Phone</h3>
+                <a 
+                  href="tel:+919824234663" 
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  +91 98242 34663
+                </a>
+              </div>
+            </div>
+
+            {/* WhatsApp */}
+            <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors">
+              <MessageCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">WhatsApp</h3>
+                <a 
+                  href="https://wa.me/919824234663" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  Chat with us on WhatsApp
+                </a>
+              </div>
+            </div>
+
+            {/* Email */}
+            <div className="flex items-start gap-4 p-4 rounded-lg bg-muted/50 hover:bg-muted/70 transition-colors">
+              <Mail className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="font-semibold mb-1">Email</h3>
+                <a 
+                  href="mailto:angelinabhanushali@yahoo.co.in" 
+                  className="text-sm text-primary hover:underline font-medium"
+                >
+                  angelinabhanushali@yahoo.co.in
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex justify-center pt-2">
+            <Button onClick={() => setConnectDialogOpen(false)} className="min-w-[120px]">
+              Close
             </Button>
           </div>
         </DialogContent>
