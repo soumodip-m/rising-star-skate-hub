@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dumbbell, Zap, Heart, Target, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const programs = [
   {
@@ -148,7 +149,9 @@ export default function Training() {
                         </li>
                       ))}
                     </ul>
-                    <Button className="w-full mt-6">Start Program</Button>
+                    <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>
+                      <Button className="w-full mt-6">Start Program</Button>
+                    </Link>
                   </CardContent>
                 </Card>
               ))}
