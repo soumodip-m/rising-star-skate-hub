@@ -380,7 +380,7 @@ export default function RollerSkating() {
             backgroundRepeat: "no-repeat, no-repeat",
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-muted/70 to-muted/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-muted/40 to-muted/30" />
         <div className="container mx-auto px-4 relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-amber-700">Achievements at a Glance</h2>
 
