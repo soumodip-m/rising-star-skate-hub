@@ -90,8 +90,8 @@ const getInitials = (name: string) => {
 
 const GoogleReviews = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const averageRating = 5.0;
   const totalReviews = reviews.length;
+  const averageRating = (reviews.reduce((sum, review) => sum + review.rating, 0) / totalReviews).toFixed(1);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
