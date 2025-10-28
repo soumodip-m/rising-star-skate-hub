@@ -6,6 +6,8 @@ import { Book, Zap, Trophy, Users, Globe, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import skatingDisciplinesBanner from "@/assets/skating-disciplines-banner.png";
+
 const features = [{
   icon: Book,
   title: "Rich History",
@@ -83,6 +85,19 @@ export default function Blog() {
                     </Button>
                   </CardContent>
                 </Card>)}
+            </div>
+          </div>
+        </section>
+
+        {/* Skating Disciplines Banner */}
+        <section className="py-8 bg-background overflow-hidden">
+          <div className="container mx-auto px-4">
+            <div className="w-full">
+              <img 
+                src={skatingDisciplinesBanner} 
+                alt="Skating Disciplines - Speed, Artistic, Roller Hockey, Inline Hockey, Inline Freestyle, Inline Alpine, Inline Downhill, Roller Derby, Roller Freestyle, Skateboarding" 
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
         </section>
