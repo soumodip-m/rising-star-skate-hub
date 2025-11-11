@@ -19,6 +19,7 @@ import podiumCeremonyImg from "@/assets/achievements/podium-ceremony.jpg";
 import cisceTournamentImg from "@/assets/achievements/cisce-tournament.jpg";
 import podiumThreeAthletesImg from "@/assets/achievements/podium-three-athletes.jpg";
 import teamMedalStatsImg from "@/assets/achievements/team-medal-stats.jpg";
+import gujaratStateChampionship2025Img from "@/assets/achievements/gujarat-state-championship-2025.jpg";
 
 const galleryImages = [
   { src: team1Img, alt: "Team RSA champions with medals and trophies" },
@@ -36,6 +37,7 @@ const galleryImages = [
   { src: cisceTournamentImg, alt: "CISCE Regional Skating Tournament 2025 - Multiple podium finishes" },
   { src: podiumThreeAthletesImg, alt: "Three RSA athletes on podium at state championship" },
   { src: teamMedalStatsImg, alt: "Team RSA group photos with detailed medal statistics" },
+  { src: gujaratStateChampionship2025Img, alt: "45th Gujarat State Roller Skating Championship 2025 - RSA athletes on podium 6-8 years boys category" },
 ];
 export default function Achievements() {
   const [selectedImage, setSelectedImage] = useState(0);
