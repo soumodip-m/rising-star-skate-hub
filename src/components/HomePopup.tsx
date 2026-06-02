@@ -34,7 +34,7 @@ export default function HomePopup() {
     if (!open) return;
     const id = setInterval(() => {
       setIndex((i) => (i + 1) % slides.length);
-    }, 2000);
+    }, 4500);
     return () => clearInterval(id);
   }, [open]);
 
@@ -47,13 +47,13 @@ export default function HomePopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 animate-fade-in"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 p-4 animate-fade-in"
       onClick={close}
       role="dialog"
       aria-modal="true"
     >
       <div
-        className="relative w-full max-w-[min(92vw,420px)] max-h-[92vh] flex flex-col items-center"
+        className="relative w-full max-w-[min(95vw,640px)] max-h-[95vh] flex flex-col items-center"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -64,12 +64,12 @@ export default function HomePopup() {
           <X className="h-5 w-5" />
         </button>
 
-        <div className="relative w-full rounded-xl overflow-hidden shadow-2xl bg-black">
+        <div className="relative w-full rounded-xl overflow-hidden shadow-2xl bg-transparent">
           <img
             key={index}
             src={slides[index].src}
             alt={slides[index].alt}
-            className="w-full h-auto max-h-[80vh] object-contain animate-fade-in"
+            className="w-full h-auto max-h-[85vh] object-contain animate-fade-in"
           />
         </div>
 
@@ -89,3 +89,4 @@ export default function HomePopup() {
     </div>
   );
 }
+
