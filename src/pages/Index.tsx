@@ -9,6 +9,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import HomePopup from "@/components/HomePopup";
 import SportCard from "@/components/SportCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import SocialWall from "@/components/SocialWall";
@@ -521,6 +522,7 @@ RSA helps young athletes learn faster and compete smarter. From our flagship Rol
         </DialogContent>
       </Dialog>
 
+      <HomePopup />
       <WhatsAppButton />
       <Footer />
     </div>;
