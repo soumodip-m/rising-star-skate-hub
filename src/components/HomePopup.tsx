@@ -8,7 +8,7 @@ const slides = [
   { src: khwabImg, alt: "Khwab - State Champion, National Medalist, 91% in 12th Boards" },
 ];
 
-const STORAGE_KEY = "rsa_home_popup_closed";
+const STORAGE_KEY = "rsa_home_popup_closed_v2";
 const SLIDE_MS = 4500;
 const SWIPE_THRESHOLD = 40;
 
